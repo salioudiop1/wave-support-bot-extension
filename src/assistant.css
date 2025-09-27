@@ -1,0 +1,1156 @@
+/* assistant.css */
+
+/* === Mode embarqué : racine pleine hauteur === */
+.assistant-root{ display:flex; flex-direction:column; height:100%; min-height:0; }
+
+/* ===== Assistant minimal style ===== */
+.assistant-modal { padding: 0; overflow: hidden; position: relative; }
+
+.assistant-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 14px; border-bottom:1px solid #eef1f6; background:#fff;
+  position: sticky; top:0; z-index:1002;
+}
+
+.assistant-body{ position:relative; padding:16px; background:#fafbff; flex:1; overflow:auto; min-height:0; }
+
+/* Hero */
+.assistant-hero{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px; margin-top:28px; }
+.assistant-hero .hero-circle{ width:72px; height:72px; border-radius:9999px; background:#eef2ff;
+  display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow: inset 0 0 0 1px #e5e9f5; overflow:hidden; padding:5px; }
+.assistant-hero .hero-logo-clip{ width:100%; height:100%; object-fit:contain; border-radius:100%; image-rendering:-webkit-optimize-contrast; }
+.assistant-hero .hero-fallback{ width:100%; height:100%; display:grid; place-items:center; font-weight:800; color:#334155; }
+.assistant-hero .hero-title{ font-weight:700; font-size:16px; }
+.assistant-hero .hero-sub{ color:#6b7280; font-size:13.5px; }
+.assistant-hero .chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+.assistant-hero .chip{ border:none; background:#fff; padding:10px 14px; border-radius:999px; box-shadow:0 1.5px 4px rgba(2,8,23,.08); cursor:pointer; font-weight:600; }
+
+/* Chat */
+.chat-area{ display:flex; flex-direction:column; gap:12px; }
+.chat-turn{ display:flex; }
+.chat-turn.asst{ justify-content:flex-start; }
+.chat-turn.user{ justify-content:flex-end; }
+.chat-msg{ max-width:78%; background:#fff; border:1px solid #eef1f6; border-radius:16px; padding:12px 14px; box-shadow:0 2px 8px rgba(2,8,23,.06); }
+.chat-turn.user .chat-msg{ background:#eef3ff; border:1px solid #dbe6ff; box-shadow:0 2px 8px rgba(47,107,255,.10); }
+.msg-text{ white-space:pre-wrap; line-height:1.5; color:#0f172a; }
+.msg-text.user{ color:#0b1a4a; }
+
+.chat-msg.wide{ max-width:92%; }
+.assistant-root .chat-turn.asst .chat-msg.wide{ max-width:80% !important; width:80% !important; flex:1 1 80% !important; }
+@media (max-width:640px){
+  .assistant-root .chat-turn.asst .chat-msg.wide{ max-width:95% !important; width:95% !important; flex-basis:95% !important; }
+}
+
+/* Template block */
+.tpl-shell{ border:1px solid #e6ebf5; border-radius:14px; background:#fafbff; overflow:hidden; width:100%; }
+.tpl-top{ display:flex; align-items:center; justify-content:space-between; padding:8px 10px; border-bottom:1px solid #eceff6; background:#f8f9ff; gap:8px; }
+.tpl-top .tpl-title{ font-weight:700; font-size:13.5px; color:#0f172a; }
+.lang-pills .lang-pill{ border:1px solid #e5e9f4; background:#fff; padding:3px 8px; border-radius:9999px; font-size:12px; margin-left:6px; cursor:pointer; }
+.lang-pills .lang-pill.active{ background:#2f6bff; color:#fff; border-color:#2f6bff; }
+.tpl-code{ width:100%; border:none; background:#0f172a0a; font:13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+  padding:12px 14px; min-height:96px; max-height:280px; resize:none; outline:none; overflow-y:auto; }
+
+/* Nouveau footer des templates (Reset + Copier) */
+.tpl-bottom{ display:flex; align-items:center; gap:10px; padding:8px 10px; border-top:1px solid #f1f3fa; background:#fff; }
+.tpl-btn{ display:inline-flex; align-items:center; gap:8px; border:1px solid #e5e9f4; background:#fff; border-radius:10px; padding:6px 10px; cursor:pointer; font-weight:600; }
+.tpl-btn:hover{ background:#f2f6ff; border-color:#dae4ff; }
+.tpl-btn.success{ color:#16a34a; border-color:#b6f3c4; background:#f0fff4; }
+
+/* Quick replies */
+.qr-panel{ margin-left:auto; background:#f7f9ff; border:1px solid #e4ebff; box-shadow:0 8px 28px rgba(2,8,23,.08); border-radius:14px; padding:10px; display:flex; flex-wrap:wrap; gap:8px; max-width:92%; }
+.qr-btn{ appearance:none; border:1px solid #dbe6ff; background:#fff; border-radius:9999px; padding:10px 14px; font-size:14px; font-weight:600; color:#0f172a; cursor:pointer;
+  transition: transform .06s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.qr-btn:hover{ background:#eef3ff; border-color:#c9d8ff; box-shadow:0 4px 14px rgba(47,107,255,.18); }
+.qr-btn:active{ transform:translateY(1px); }
+.qr-btn:focus-visible{ outline:2px solid #2f6bff; outline-offset:2px; }
+@media (max-width:520px){ .qr-btn{ padding:8px 12px; font-size:13px; } }
+
+/* Input */
+.assistant-input-wrap.ai{ position:sticky; bottom:0; z-index:1000; padding:16px; background:#fff; border-top:1px solid #eef1f6; }
+.ai-input{ position:relative; display:flex; align-items:center; background:#fbfcff; border:1px solid #e7ebf4; border-radius:14px; padding:10px 48px 10px 40px;
+  box-shadow:0 2px 10px rgba(2,8,23,.06), inset 0 0 0 1px rgba(255,255,255,.6); }
+.ai-input-icon{ position:absolute; left:14px; font-size:14px; color:#96a0b5; }
+.ai-input-field{ width:100%; border:none; outline:none; background:transparent; font-size:14.5px; color:#111827; }
+.ai-input-send{ position:absolute; right:10px; width:34px; height:34px; border-radius:999px; border:none; display:flex; align-items:center; justify-content:center;
+  background:#2f6bff; color:white; cursor:pointer; box-shadow:0 6px 18px rgba(47,107,255,.35); }
+.ai-input-send:hover{ filter:brightness(1.05); }
+.ai-input-restart{ position:absolute; right:52px; width:34px; height:34px; border-radius:9999px; border:none; display:flex; align-items:center; justify-content:center;
+  background:#ff954e; color:#fff; cursor:pointer; box-shadow:0 6px 18px rgba(255,138,61,.35); }
+.ai-input-restart:hover{ filter:brightness(1.05); }
+.ai-input-restart:active{ transform:translateY(1px); }
+.ai-input-restart:disabled{ opacity:.55; cursor:not-allowed; box-shadow:none; }
+.ai-toast{ position:relative; left:0; top:0; margin-bottom:8px; background:#fff7ed; color:#9a3412; border:1px solid #fed7aa; border-radius:10px; padding:6px 10px; font-size:13px; }
+
+/* Suggestions */
+.ai-suggest{ position:absolute; left:16px; right:16px; bottom:70px; background:#fff; border:1px solid #e7ebf4; border-radius:14px; box-shadow:0 14px 40px rgba(2,8,23,.16);
+  overflow:hidden; max-height:280px; overflow-y:auto; backdrop-filter:saturate(1.1); z-index:1001; }
+.ai-suggest-item{ display:flex; align-items:flex-start; gap:12px; width:100%; text-align:left; padding:12px 14px; background:#fff; cursor:pointer; border:none; transition:background .15s ease; }
+.ai-suggest-item + .ai-suggest-item{ border-top:1px solid #f3f5fa; }
+.ai-suggest-item:hover{ background:#f6f8ff; }
+.ai-suggest-item.active{ background:#eef3ff; }
+.ai-suggest-icon{ width:28px; height:28px; border-radius:8px; background:#f1f4fb; color:#50618a; display:flex; align-items:center; justify-content:center; flex:0 0 28px; }
+.ai-suggest-texts{ flex:1; min-width:0; }
+.ai-suggest-title{ font-weight:700; font-size:14.5px; color:#0f172a; }
+.ai-suggest-sub{ margin-top:2px; font-size:12.5px; color:#687386; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ai-suggest-tags{ margin-top:6px; display:flex; gap:6px; flex-wrap:wrap; }
+.ai-tag{ font-size:11px; color:#42526e; background:#f2f5ff; border:1px solid #e1e8ff; border-radius:999px; padding:3px 8px; }
+.ai-suggest-caret{ color:#9aa6bf; margin-left:8px; margin-top:4px; }
+
+/* Surlignage */
+mark{ background:#ffedb0; color:inherit; padding:0 2px; border-radius:3px; }
+
+/* Finitions */
+.assistant-body{ padding:24px 20px; background:#f6f8ff; }
+
+
+
+/* Bouton Accueil dans la barre d'entrée (remplace Send) */
+.ai-input-home{
+  position:absolute;
+  right:10px;
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#2f6bff;
+  color:#fff;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(47,107,255,.35);
+}
+.ai-input-home:hover{ filter:brightness(1.05); }
+
+/* Le bouton Recommencer reste à gauche du bouton Accueil */
+.ai-input-restart{ right:52px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Modal Templates — layout
+   ========================= */
+/* Conteneur principal du modal templates — HAUTEUR FIXE */
+.modal-card.qto-modal.modal-elevated.tpl-modal {
+  width: min(96vw, 1040px);
+  height: min(90vh, 720px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Corps du modal : remplit la hauteur restante, gère les colonnes */
+.tpl-modal { display: flex; flex-direction: column; } /* safety */
+.tpl-modal-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  padding: 12px 16px 16px;
+  overflow: hidden; /* scrolls délégués aux enfants */
+}
+
+/* Responsive : sidebar au-dessus, contenu dessous */
+@media (max-width: 992px) {
+  .tpl-modal-body { grid-template-columns: 1fr; grid-template-rows: 200px 1fr; }
+  .tpl-sidebar { max-height: 200px; }
+}
+
+/* =========================
+   Sidebar
+   ========================= */
+.tpl-sidebar {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  padding: 8px;
+  overflow: auto;
+  min-height: 0;
+  padding-right: 8px; /* confort scrollbar */
+}
+
+.tpl-sidebar-head {
+  font-weight: 700;
+  color: #111;
+  padding: 8px 10px 12px;
+  border-bottom: 1px dashed rgba(0,0,0,.08);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tpl-proc-list { list-style: none; padding: 0; margin: 0; }
+
+.tpl-proc-btn {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin: 4px 0;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: #f7f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tpl-proc-btn:hover { background: #eef1f6; }
+.tpl-proc-btn.active { background: #e8f0ff; border-color: #d6e4ff; }
+
+.proc-title { font-weight: 600; line-height: 1.2; }
+
+.proc-badge {
+  border-radius: 999px;
+  padding: 2px 8px;
+  background: #eef1f6;
+  color: #344;
+  font-weight: 600;
+}
+
+.proc-badge.empty { background: #f2f2f2; color: #aaa; }
+
+/* =========================
+   Main (colonne droite)
+   ========================= */
+.tpl-main {
+  min-width: 0;
+  min-height: 0;          /* pour les scrolls internes */
+  overflow: hidden;       /* la grille scrolle, pas le header */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Toolbar sticky en haut de la colonne droite */
+.tpl-toolbar {
+  position: sticky; top: 0; z-index: 1;
+  background: #fff;
+  padding-bottom: 8px; margin-bottom: 8px;
+  display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  border-bottom: 1px dashed rgba(0,0,0,.08);
+}
+
+.tpl-toolbar .searchbar-input { border-radius: 12px; background: #f8fafc; }
+
+.tpl-results { margin: 6px 2px 10px; }
+
+/* =========================
+   Grille des templates
+   ========================= */
+.tpl-grid {
+  display: grid;
+  grid-template-columns: 1fr;      /* 1 carte par ligne */
+  gap: 14px;
+
+  /* zone scrollable */
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding-bottom: 8px;
+
+  /* NE PAS ÉTIRER les items verticalement */
+  align-items: start;               /* clé: évite stretch */
+  align-content: start;             /* ne répartit pas l’espace libre */
+  grid-auto-rows: max-content;      /* hauteur naturelle des items */
+}
+
+/* =========================
+   Carte template
+   ========================= */
+.tpl-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 18px rgba(0,0,0,.04);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+
+  align-self: start;  /* sécurité contre tout stretch de l’item */
+  height: auto;
+}
+
+.tpl-card::before {
+  content:"";
+  position:absolute; left:0; top:0; bottom:0; width:3px;
+  border-radius:16px 0 0 16px;
+  background: linear-gradient(180deg, #3b5bfd, #6f42c1);
+  opacity:.9;
+}
+
+.tpl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  border-color: rgba(59,91,253,.18);
+}
+
+.tpl-card-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px;
+}
+
+.tpl-card-title {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.2px;
+  color: #0f172a;
+  font-size: 1rem;
+  max-width: 72%;
+}
+
+.tpl-card-body { flex: 1; }
+
+/* Textarea — scroll interne et cap de hauteur */
+.tpl-textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.10);
+  background:
+    linear-gradient(#fbfcff,#fbfcff) padding-box,
+    linear-gradient(180deg, rgba(26,115,232,.12), rgba(111,66,193,.10)) border-box;
+  resize: vertical;
+  min-height: 160px;
+  max-height: 280px;               /* cap raisonnable pour éviter d’énormes cartes */
+  line-height: 1.55;
+  font-size: .97rem;
+  padding: .75rem .85rem;
+  transition: box-shadow .15s, border-color .15s, background .15s;
+  overflow: auto;                  /* scroll actif */
+  scrollbar-width: none;           /* Firefox : barre cachée */
+}
+
+.tpl-textarea::-webkit-scrollbar { width:0; height:0; }
+
+.tpl-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26,115,232,.15);
+  border-color: rgba(26,115,232,.35);
+}
+
+.tpl-card-foot {
+  display: flex; align-items: center; justify-content: space-between; margin-top: 10px; gap: 10px;
+}
+
+.btn-copy {
+  background: linear-gradient(45deg,#3b5bfd,#6f42c1);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  letter-spacing: .1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(59,91,253,.20);
+  transition: transform .12s, filter .12s, box-shadow .12s;
+}
+
+.btn-copy:hover { transform: translateY(-1px); filter: brightness(1.02); box-shadow: 0 10px 24px rgba(59,91,253,.26); }
+.btn-copy:active { transform: none; box-shadow: 0 6px 18px rgba(59,91,253,.22); }
+
+.copied-toast { margin-left: auto; font-size: 12px; color: #0a8f47; font-weight: 700; }
+
+/* =========================
+   Inline editor (ProcessModal)
+   ========================= */
+.tpl-inline {
+  margin-top: .6rem;
+  border: 1px solid #eef1f5;
+  border-radius: 12px;
+  background:#fff;
+  padding: .75rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,.04);
+}
+
+.tpl-inline-head {
+  display:flex; align-items:center; justify-content:space-between; gap:.5rem; margin-bottom:.5rem;
+}
+
+.tpl-inline-title { font-weight:700; color:#0f172a; }
+
+.lang-global { display: flex; align-items: center; gap: 6px; }
+
+.lang-pill {
+  border: 1px solid rgba(0,0,0,.12);
+  background: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+  color: #334155;
+  transition: background .15s, color .15s, border-color .15s;
+}
+
+.lang-pill:hover { background: #f8fafc; }
+.lang-pill.active { background: #1a73e8; color: #fff; border-color: #1a73e8; }
+
+/* équivalent de .tpl-inline-tabs .lang-pill { @extend .lang-pill } */
+.tpl-inline-tabs .lang-pill {
+  border: 1px solid rgba(0,0,0,.12);
+  background: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+  color: #334155;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.tpl-inline-tabs .lang-pill:hover { background: #f8fafc; }
+.tpl-inline-tabs .lang-pill.active { background: #1a73e8; color: #fff; border-color: #1a73e8; }
+
+.tpl-inline-textarea {
+  width:100%;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.10);
+  background:
+    linear-gradient(#fbfcff,#fbfcff) padding-box,
+    linear-gradient(180deg, rgba(26,115,232,.12), rgba(111,66,193,.10)) border-box;
+  min-height: 180px;
+  line-height:1.55;
+  font-size:.97rem;
+  padding:.75rem .85rem;
+  resize: vertical;
+  transition: box-shadow .15s, border-color .15s, background .15s;
+  overflow: auto; scrollbar-width: none;
+}
+
+.tpl-inline-textarea::-webkit-scrollbar { width:0; height:0; }
+
+.tpl-inline-textarea:focus {
+  outline:none;
+  box-shadow:0 0 0 3px rgba(26,115,232,.15);
+  border-color:rgba(26,115,232,.35);
+}
+
+.tpl-inline-hint { font-size:.85rem; color:#6b7280; margin-top:.35rem; }
+.tpl-inline-actions { display:flex; align-items:center; gap:.5rem; margin-top:.6rem; }
+
+.qto-modal .course-content .tpl-inline { margin-left:0; margin-right:0; }
+.qto-modal .course-content { padding-left:0; padding-right:0; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Modal Templates — layout
+   ========================= */
+/* Conteneur principal du modal templates — HAUTEUR FIXE */
+.modal-card.qto-modal.modal-elevated.tpl-modal {
+  width: min(96vw, 1040px);
+  height: min(90vh, 720px); /* << fixe la hauteur */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Corps du modal : remplit la hauteur restante, gère les colonnes */
+.tpl-modal {
+  display: flex;
+  flex-direction: column;
+} /* safety */
+.tpl-modal-body {
+  flex: 1; /* occupe la hauteur restante */
+  min-height: 0; /* nécessaire pour overflow dans un flex */
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  padding: 12px 16px 16px;
+  overflow: hidden; /* scrolls délégués aux enfants */
+}
+
+/* Responsive : sidebar au-dessus, contenu dessous */
+@media (max-width: 992px) {
+  .tpl-modal-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 1fr;
+  }
+  .tpl-sidebar {
+    max-height: 200px;
+  } /* scroll vertical propre sur mobile */
+}
+/* =========================
+   Sidebar
+   ========================= */
+.tpl-sidebar {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 8px;
+  overflow: auto;
+  min-height: 0; /* indispensable avec les layouts contraints */
+  padding-right: 8px; /* confort scrollbar */
+}
+
+.tpl-sidebar-head {
+  font-weight: 700;
+  color: #111;
+  padding: 8px 10px 12px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tpl-proc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tpl-proc-btn {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin: 4px 0;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: #f7f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.tpl-proc-btn:hover {
+  background: #eef1f6;
+}
+.tpl-proc-btn.active {
+  background: #e8f0ff;
+  border-color: #d6e4ff;
+}
+
+.proc-title {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.proc-badge {
+  border-radius: 999px;
+  padding: 2px 8px;
+  background: #eef1f6;
+  color: #344;
+  font-weight: 600;
+}
+.proc-badge.empty {
+  background: #f2f2f2;
+  color: #aaa;
+}
+
+/* =========================
+   Main (colonne droite)
+   ========================= */
+.tpl-main {
+  min-width: 0;
+  min-height: 0; /* pour les scrolls internes */
+  overflow: hidden; /* la grille scrolle, pas le header */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Toolbar sticky en haut de la colonne droite */
+.tpl-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+}
+.tpl-toolbar .searchbar-input {
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.tpl-results {
+  margin: 6px 2px 10px;
+}
+
+/* =========================
+   Grille des templates
+   ========================= */
+.tpl-grid {
+  /* layout de grille */
+  display: grid;
+  grid-template-columns: 1fr; /* 1 carte par ligne */
+  gap: 14px;
+  /* zone scrollable */
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding-bottom: 8px;
+  /* NE PAS ÉTIRER les items verticalement */
+  align-items: start; /* clé: évite stretch */
+  align-content: start; /* ne répartit pas l’espace libre */
+  grid-auto-rows: max-content; /* hauteur naturelle des items */
+}
+
+/* =========================
+   Carte template
+   ========================= */
+.tpl-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  align-self: start; /* sécurité contre tout stretch de l’item */
+  height: auto;
+  /* liseré d’accent à gauche */
+}
+.tpl-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 16px 0 0 16px;
+  background: linear-gradient(180deg, #3b5bfd, #6f42c1);
+  opacity: 0.9;
+}
+.tpl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  border-color: rgba(59, 91, 253, 0.18);
+}
+
+.tpl-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tpl-card-title {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+  color: #0f172a;
+  font-size: 1rem;
+  max-width: 72%;
+}
+
+.tpl-card-body {
+  flex: 1;
+}
+
+/* Textarea — scroll interne et cap de hauteur */
+.tpl-textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(#fbfcff, #fbfcff) padding-box, linear-gradient(180deg, rgba(26, 115, 232, 0.12), rgba(111, 66, 193, 0.1)) border-box;
+  resize: vertical;
+  min-height: 160px;
+  max-height: 280px; /* cap raisonnable pour éviter d’énormes cartes */
+  line-height: 1.55;
+  font-size: 0.97rem;
+  padding: 0.75rem 0.85rem;
+  transition: box-shadow 0.15s, border-color 0.15s, background 0.15s;
+  overflow: auto; /* scroll actif */
+  scrollbar-width: none; /* Firefox : barre cachée */
+}
+.tpl-textarea::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.tpl-textarea { /* Chrome/Edge/Safari : barre cachée */ }
+.tpl-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+  border-color: rgba(26, 115, 232, 0.35);
+}
+
+.tpl-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.btn-copy {
+  background: linear-gradient(45deg, #3b5bfd, #6f42c1);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(59, 91, 253, 0.2);
+  transition: transform 0.12s, filter 0.12s, box-shadow 0.12s;
+}
+.btn-copy:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+  box-shadow: 0 10px 24px rgba(59, 91, 253, 0.26);
+}
+.btn-copy:active {
+  transform: none;
+  box-shadow: 0 6px 18px rgba(59, 91, 253, 0.22);
+}
+
+.copied-toast {
+  margin-left: auto;
+  font-size: 12px;
+  color: #0a8f47;
+  font-weight: 700;
+}
+
+/* =========================
+   Inline editor (ProcessModal)
+   ========================= */
+.tpl-inline {
+  margin-top: 0.6rem;
+  border: 1px solid #eef1f5;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.75rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.tpl-inline-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tpl-inline-title {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.lang-global {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-pill, .tpl-inline-tabs .lang-pill {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+  color: #334155;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.lang-pill:hover {
+  background: #f8fafc;
+}
+.lang-pill.active {
+  background: #1a73e8;
+  color: #fff;
+  border-color: #1a73e8;
+}
+
+.tpl-inline-textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(#fbfcff, #fbfcff) padding-box, linear-gradient(180deg, rgba(26, 115, 232, 0.12), rgba(111, 66, 193, 0.1)) border-box;
+  min-height: 180px;
+  line-height: 1.55;
+  font-size: 0.97rem;
+  padding: 0.75rem 0.85rem;
+  resize: vertical;
+  transition: box-shadow 0.15s, border-color 0.15s, background 0.15s;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.tpl-inline-textarea::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.tpl-inline-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+  border-color: rgba(26, 115, 232, 0.35);
+}
+
+.tpl-inline-hint {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.35rem;
+}
+
+.tpl-inline-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.qto-modal .course-content .tpl-inline {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.qto-modal .course-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+
+
+
+
+
+/* ========== Templates — look & feel proche de la maquette ========= */
+
+/* Carte : surlignage automatique quand focus dedans */
+.tpl-card { border-radius: 18px; padding: 12px; }
+.tpl-card:focus-within {
+  border-color: rgba(47,107,255,.35);
+  box-shadow: 0 6px 22px rgba(47,107,255,.12);
+}
+.tpl-card:focus-within::before {
+  background: linear-gradient(180deg,#2f6bff,#6f42c1);
+  opacity: 1;
+}
+
+/* Head */
+.tpl-card-head { padding: 2px 4px 8px; }
+.tpl-card-title { font-size: 1.02rem; letter-spacing: -.15px; }
+
+/* Pills langues (FR / WO / EN) */
+.tpl-lang-pills { display: inline-flex; gap: 8px; margin-left: auto; }
+.tpl-lang-pill {
+  min-width: 34px;
+  height: 26px;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid #e4e8f2;
+  background: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  color: #5b6b88;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s, color .15s, border-color .15s, box-shadow .15s;
+}
+.tpl-lang-pill:hover { background: #f7f9ff; }
+.tpl-lang-pill.active {
+  background: #2f6bff;
+  color: #fff;
+  border-color: #2f6bff;
+  box-shadow: 0 6px 18px rgba(47,107,255,.25);
+}
+
+/* Editor bloc (cadre doux + grande textarea) */
+.tpl-editor {
+  border: 1px solid #e7ebf4;
+  border-radius: 14px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.6);
+}
+.tpl-editor-textarea {
+  width: 100%;
+  min-height: 180px;
+  max-height: 320px;
+  resize: vertical;
+  border: none;
+  outline: none;
+  background: linear-gradient(#fbfcff,#fbfcff) padding-box;
+  color: #0f172a;
+  line-height: 1.6;
+  font-size: 14.8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.tpl-editor-textarea::-webkit-scrollbar { width: 0; height: 0; }
+.tpl-editor-textarea:focus {
+  box-shadow: 0 0 0 3px rgba(47,107,255,.14);
+}
+
+/* Hint sous l’éditeur */
+.tpl-editor-hint {
+  margin-top: 6px;
+  font-size: 12.8px;
+  color: #8a5b8f; /* léger accent violacé comme sur la maquette */
+}
+.tpl-editor-hint code {
+  background: #fff4fc;
+  border: 1px solid #f6d9ff;
+  padding: 0 6px;
+  border-radius: 8px;
+}
+
+/* Footer : boutons reset + copier à droite */
+.tpl-card-foot {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tpl-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e7ebf3;
+  background: #fff;
+  color: #111827;
+  border-radius: 12px;
+  padding: 9px 12px;
+  font-weight: 700;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+  transition: background .15s, border-color .15s, transform .05s;
+}
+.tpl-reset-btn:hover { background: #f7f9ff; border-color: #dfe6f6; }
+.tpl-reset-btn:active { transform: translateY(1px); }
+
+.btn-copy {
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 800;
+}
+.btn-copy-right {
+  margin-left: auto;
+  background: linear-gradient(45deg,#5948ff,#6f42c1);
+  box-shadow: 0 8px 22px rgba(89,72,255,.28);
+}
+.btn-copy-right:hover { filter: brightness(1.03); box-shadow: 0 10px 26px rgba(89,72,255,.34); }
+.btn-copy-right:active { transform: translateY(1px); }
+
+/* Badge “copié” discret */
+.copied-toast { margin-left: 6px; color: #0a8f47; font-weight: 800; }
+
+/* Sidebar items : look “pills” + compteur */
+.tpl-proc-btn {
+  background: #f7f9ff;
+  border: 1px solid #e7ecfb;
+  border-radius: 12px;
+}
+.tpl-proc-btn:hover { background: #f1f5ff; }
+.tpl-proc-btn.active {
+  background: #eaf1ff;
+  border-color: #d6e4ff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.6);
+}
+.proc-badge {
+  background: #eef2ff;
+  color: #344;
+  border: 1px solid #e2e7ff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.03);
+}
+
+/* résultat(s)… */
+.tpl-results { color:#6b7280; }
+
+/* le bleu vertical à gauche des cartes est déjà géré via ::before
+   on accentue quand focus-within (voir plus hau
+
+
+
+
+
+
+
+
+
+
+/* -------- Header du modal templates : align, spacing, pas de micro-pill -------- */
+.qto-modal-header.clean-header {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eef1f6;
+  background: #fff;
+}
+.qto-modal-header .fw-700 { font-weight: 700; }
+
+/* -------- Colonne droite : montrer la carte sans couper -------- */
+.tpl-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* autorise le scroll interne */
+}
+.tpl-results {
+  flex: 0 0 auto;
+  margin: 6px 2px 10px;
+}
+.tpl-grid {
+  /* zone scrollable principale */
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding-right: 4px; /* petit confort scrollbar */
+}
+
+/* -------- Carte : hauteur maîtrisée et lisible -------- */
+.tpl-card { margin: 0; }
+.tpl-card-body { display: flex; flex-direction: column; gap: 6px; }
+
+/* Éditeur : hauteur un peu réduite pour tenir dans 720px */
+.tpl-editor-textarea {
+  min-height: 150px;   /* était 180+ */
+  max-height: 220px;   /* était 320 — évite que la carte déborde de l’écran */
+  font-size: 14.6px;
+  line-height: 1.58;
+}
+
+/* sur mobile : autoriser un peu plus de hauteur */
+@media (max-width: 992px) {
+  .tpl-editor-textarea {
+    max-height: 260px;
+  }
+}
+
+/* -------- Accent visuel de la carte active sans “manger” l’espace -------- */
+.tpl-card { border-left-width: 2px; }
+.tpl-card::before { width: 2px; }
+.tpl-card:focus-within { border-color: rgba(47,107,255,.3); }
+
+/* -------- Boutons du pied de carte : pas de chevauchement -------- */
+.tpl-card-foot {
+  gap: 8px;
+  padding-top: 2px;
+}
+.btn-copy-right { margin-left: auto; }
+
+/* -------- Sidebar : searchbar revue (icône + focus ring) -------- */
+.searchbar {
+  position: relative;
+  margin: 4px 4px 10px;
+}
+.searchbar-input {
+  width: 100%;
+  padding: 10px 36px 10px 12px; /* place pour l’icône à droite */
+  border-radius: 12px;
+  border: 1px solid #e6ebf5;
+  background: #f8fafc;
+  outline: none;
+  color: #0f172a;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.6);
+  transition: box-shadow .15s, border-color .15s, background .15s;
+  font-size: 14px;
+}
+.searchbar-input::placeholder { color: #9aa6bf; }
+.searchbar-input:focus {
+  background: #fff;
+  border-color: #dbe6ff;
+  box-shadow: 0 0 0 3px rgba(47,107,255,.15);
+}
+.searchbar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #95a1b7;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* Sidebar items plus nets */
+.tpl-proc-btn {
+  background: #f5f8ff;
+  border: 1px solid #e3e9fb;
+}
+.tpl-proc-btn:hover { background: #eef3ff; }
+.tpl-proc-btn.active {
+  background: #eaf1ff;
+  border-color: #d6e4ff;
+}
+.proc-badge {
+  background: #eef2ff;
+  border: 1px solid #e1e7ff;
+  font-weight: 700;
+}
+
+
+
+
+
+/* Sidebar : pas de scroll horizontal */
+.tpl-sidebar { overflow-y: auto; overflow-x: hidden; }
+.searchbar, .searchbar-input { box-sizing: border-box; min-width: 0; }
+.searchbar-input { width: 100%; }
+.searchbar-icon svg { display:block; }
+
+/* Icônes seules sur les boutons pied de carte */
+.tpl-reset-btn span,
+.btn-copy span { display: none; } /* au cas où il resterait du texte */
+.tpl-reset-btn svg,
+.btn-copy svg { width: 16px; height: 16px; }
+
+/* Hauteur textarea plus contenue (et aucun débordement) */
+.tpl-editor-textarea {
+  min-height: 140px;   /* était plus haut */
+  max-height: 220px;   /* évite de “gonfler” la carte */
+  overflow: auto;
+}
+
+
+/* Évite tout dépassement horizontal dans la carte */
+.tpl-card,
+.tpl-card-body,
+.tpl-editor { min-width: 0; }
+
+/* Le bloc éditeur coupe proprement le contenu interne */
+.tpl-editor { overflow: hidden; }
+
+/* Textarea parfaitement contraint à son conteneur */
+.tpl-editor-textarea{
+  box-sizing: border-box;   /* prend en compte padding/borders dans les 100% */
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0;                /* évite un éventuel +1px */
+  overflow-x: hidden;       /* interdit le scroll horizontal */
+  resize: vertical;         /* déjà présent, on confirme */
+}
+
+/* Bonus : sur Windows, compense la scrollbar */
+@supports selector(::-webkit-scrollbar) {
+  .tpl-editor { padding-right: 8px; }  /* petit confort pour la scrollbar */
+}
