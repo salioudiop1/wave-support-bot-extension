@@ -15,4 +15,4 @@ Cette extension Chrome n’exige ni ne collecte aucune donnée personnelle, fina
 - L’extension ne vend, ne transfère ni ne partage aucune donnée avec des tiers.
 
 ## Contact
-Pour toute question, vous pouvez nous contacter à : **[ton email pro]**
+Pour toute question, vous pouvez nous contacter à : saliou.diop@wave.com
