@@ -1,0 +1,191 @@
+[
+    {
+        "slug": "deplafonnement",
+        "title": "Déplafonnement",
+        "summary": "Vérifications KYC et parcours client pour déplafonner un compte.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754861465/review_dnb45m.png"
+    },
+    {
+        "slug": "reset-pin",
+        "title": "Recover / Reset PIN",
+        "summary": "Vérifications KYC et accompagnement à la réinitialisation du code secret.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754866525/recover_eyxihy.png"
+    },
+    {
+        "slug": "clear-pin-block",
+        "title": "Clear PIN Block",
+        "summary": "Débloque l’attente après 3 codes PIN erronés si le client n’a pas oublié son code.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754925229/unblock_bemhws.png",
+        "version": 1,
+        "tags": ["pin", "block", "rate limit", "too many attempts", "remove_login_rate_limit", "slack", "code secret"]
+    },
+    {
+        "slug": "refund",
+        "title": "Refund",
+        "summary": "Annulation totale/partielle d’un transfert après vérifications ; gestion des cas KO et disputes.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754935804/refund_euqxpn.png",
+        "version": 1,
+        "tags": ["refund", "annulation", "transfert", "dispute", "fraude", "sn-fraud-tickets", "bo"]
+    },
+    {
+        "slug": "rename-user",
+        "title": "Rename user",
+        "summary": "Modification du nom du titulaire après identification et contrôles KYC.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754945343/rename_sjydaj.png",
+        "version": 1,
+        "tags": ["rename", "changement nom", "titulaire", "kyc", "recover pin", "identité"]
+    },
+    {
+        "slug": "rename-wallet",
+        "title": "Rename wallet",
+        "summary": "Changer le nom d’un bénéficiaire sans compte (WD code), sur demande du sender.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754947437/rename-wallet_un8jnn.png",
+        "version": 1,
+        "tags": ["rename wallet", "wd code", "bénéficiaire", "sender", "renommer", "transfert", "code 8 chiffres"]
+    },
+    {
+        "slug": "forget-qr",
+        "title": "Forget QR",
+        "summary": "Détacher une carte QR d’un compte ; gérer selon présence/oubli de PIN.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754960320/forget-qr_ogl98y.png",
+        "version": 1,
+        "tags": ["qr", "carte", "forget", "pin", "reset pin", "app", "detach"]
+    },
+    {
+        "slug": "sms-code",
+        "title": "SMS Code",
+        "summary": "Code de validation à 4 chiffres : règles de communication selon SIM/localisation + cas numéro ne match pas.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754961965/sms-code_xzybjq.png",
+        "version": 1,
+        "tags": ["sms", "code", "validation", "sim", "reset pin", "numéro ne match pas", "kyc"]
+    },
+    {
+        "slug": "cas-de-deces",
+        "title": "Cas de décès",
+        "summary": "Traitement des comptes de clients décédés : prérequis, documents selon cas, messages prêts à envoyer.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1755006559/cas-deces_brxygc.png",
+        "version": 1,
+        "tags": ["décès", "succession", "héritiers", "documents", "formulaire", "solde", "kyc"]
+    },
+    {
+        "slug": "sim-reattribuee",
+        "title": "SIM réattribuée / Terminate User",
+        "summary": "Traitement des cartes SIM réattribuées : rename user + reset PIN, terminate user, cession de SIM, preuves d’identification opérateurs.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1755009045/sim-reattribuee_vbbc24.png",
+        "version": 1,
+        "tags": ["SIM", "terminate user", "rename user", "reset pin", "1xbet", "opérateurs"]
+    },
+    {
+        "slug": "dormancy-block",
+        "title": "Dormancy Block",
+        "summary": "Blocage pour inactivité, déblocage, cas à l’étranger, fonds non réclamés et escalade.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1755010595/dormancy-block_sgdokf.png",
+        "version": 1,
+        "tags": ["inactivité", "dormancy", "reset pin", "unclaimed funds"]
+    },
+    {
+        "slug": "minor-compliance",
+        "title": "Minor Compliance",
+        "summary": "Autorisation parentale requise pour les clients KYC2 < 18 ans : transferts, achats de crédit, paiements.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1755013981/minor-compliance_dotf5j.png",
+        "version": 1,
+        "tags": ["mineur", "autorisation parentale", "BCEAO", "KYC2"]
+    },
+    {
+        "slug": "scam-case",
+        "title": "Cas de scams",
+        "summary": "Sécurisation (logout), orientation BO Fraud, ticket à l’étranger (WhatsApp), sensibilisation anti-escroquerie.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1755016266/scam_ckeyqn.png",
+        "version": 1,
+        "tags": ["sécurité", "fraude", "scam", "logout", "200600"]
+    },
+    {
+        "slug": "requetes-agents",
+        "title": "Requêtes Agents",
+        "summary": "Rebalance, ouvertures de point, PIN Agent, changements administratifs, commission/UV, Overdraft, erreurs (Freeze ATX).",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1755018426/agent-request_vw4ks5.png",
+        "version": 1,
+        "tags": ["agent", "rebalance", "overdraft", "commission", "freeze"]
+    },
+    {
+        "slug": "bill-payments",
+        "title": "Bill Payments",
+        "summary": "Paiements de factures (Senelec, Woyofal, Sen’Eau, Canal+, Rapido, Baobab+) : règles, cas particuliers et escalades Integration Ops.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1755023671/bill_eczq6r.png",
+        "version": 1,
+        "tags": ["factures", "senelec", "woyofal", "sen’eau", "canal+", "rapido", "baobab+", "integration ops", "partner tx id", "non annulable"]
+    },
+    {
+        "slug": "refund-verification",
+        "title": "Refund Verification",
+        "summary": "Vérification Back-office des remboursements à haut risque (scan, historiques de disputes) avec délais et notes internes.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754935804/refund_euqxpn.png",
+        "version": 1,
+        "tags": ["refund", "verification", "back-office", "scan", "dispute", "48h", "digital-support"]
+    },
+    {
+        "slug": "bank-to-wallet",
+        "title": "Bank to Wallet",
+        "summary": "Liaison banque ↔ Wave : activation dans l’app (clé d’activation à remettre en agence) et autorisation d’un nouvel appareil.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754955825/manual-airtime_ilkmyx.png",
+        "version": 1,
+        "tags": ["bank to wallet", "banque", "liaison", "activation", "clé d’activation", "nouvel appareil", "device link", "digital-support", "sn-digitalbackoffice"]
+    },
+    {
+        "slug": "move-balance",
+        "title": "Move Balance",
+        "summary": "Déplacement de l’intégralité du solde vers un autre compte après validations KYC ; cas Sénégal / à l’étranger",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1754951658/manual-transfer_y2zve8.png",
+        "version": 1,
+        "tags": ["move balance", "transfert de solde", "procuration", "kyc", "digital-support"]
+    },
+    {
+        "slug": "vault",
+        "title": "Vault / Coffre",
+        "summary": "Sous-compte pour mettre de l’argent de côté ; transfert Coffre → Solde principal, multi-coffres, process & escalade BO.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1757200023/vault_v8jbhp.png",
+        "version": 1,
+        "tags": ["coffre", "vault", "sous-compte", "move balance", "multi-coffres", "back-office", "digital-support"]
+    },
+    {
+        "slug": "unblock-account",
+        "title": "Unblock account / Stolen phone",
+        "summary": "Déblocage d’un compte après récupération de la SIM : identification, contrôles KYC, alternative nouveau compte + Move balance.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1757207997/20250907_0118_Account_Recovery_Illustration_simple_compose_01k4gvzd7wfdprd5yspjj3a7t0_kc7grg.png",
+        "version": 1,
+        "tags": ["unblock", "stolen phone", "sim", "déblocage", "kyc", "move balance"]
+    },
+    {
+        "slug": "security-challenge",
+        "title": "Security Challenge",
+        "summary": "Blocage de sécurité (appareil nouveau ou transaction suspecte) : explication au client, vérifications KYC puis déblocage via CLEAR.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1757208321/security-challenge_m7ysrw.png",
+        "version": 1,
+        "tags": ["clear", "front", "nouvel appareil", "transaction suspecte", "kyc1", "kyc2", "sécurité"]
+    },
+    {
+        "slug": "in-app-device-restriction",
+        "title": "In-App Device Restriction",
+        "summary": "Limiter l’accès de l’app à un appareil : explication, KYC si numéro différent, puis action Change Device ou Disable Feature.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1757208612/in-app-device-restriction_wkpeum.png",
+        "version": 1,
+        "tags": ["device restriction", "change device", "disable feature", "kyc", "front"]
+    },
+    {
+        "slug": "wave-business",
+        "title": "Wave Business",
+        "summary": "Ouverture de compte marchand, conditions d’éligibilité, et gestion des paiements marchands.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1757208892/wave-business_x0ll3h.png",
+        "version": 1,
+        "tags": ["wave business", "merchant", "marchand", "lien application", "éligibilité", "paiement marchand", "non annulable", "escalade"]
+    },
+    {
+        "slug": "virtual-visa-card",
+        "title": "Virtual Visa Card",
+        "summary": "Carte Visa virtuelle : activation, détails, recharge/retrait, plafonds, verrouillage/suppression, réclamations.",
+        "cover": "https://res.cloudinary.com/dc9jld4yo/image/upload/v1757209188/visa_ms7ty6.png",
+        "version": 1,
+        "tags": ["visa", "carte", "virtuelle", "plafonds", "ecobank", "support app", "move balance", "kyc", "integration"]
+    }
+
+]

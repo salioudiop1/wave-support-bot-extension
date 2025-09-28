@@ -1,0 +1,2834 @@
+{
+  "version": 1,
+  "flows": {
+    "reset-pin": {
+        "title": "Recover / Reset PIN",
+        "start": "prereq_location",
+        "nodes": {
+            "prereq_location": {
+            "type": "question",
+            "text": "Vérifier la localisation du client.",
+            "templateId": "location-check-senegal",
+            "options": [
+                { "label": "Au Sénégal", "next": "prereq_sim" },
+                { "label": "À l'étranger (hors Sénégal)", "next": "out_abroad" },
+                { "label": "À l'étranger mais peut recevoir le SMS", "next": "prereq_sim" }
+            ]
+            },
+
+            "out_abroad": {
+            "type": "info",
+            "text": "Client hors du Sénégal : le reset n’est pas possible (pas de réception du code).",
+            "templateId": "reset-pin-etranger"
+            },
+
+            "prereq_sim": {
+            "type": "question",
+            "text": "Vérifier la possession de la SIM.",
+            "templateId": "sim-possession-check",
+            "options": [
+                { "label": "SIM en possession", "next": "opt_sim_extra" },
+                { "label": "Pas de SIM / ne peut pas recevoir les SMS", "next": "no_sim" }
+            ]
+            },
+            "opt_sim_extra": {
+            "type": "question",
+            "text": "Besoin de demander depuis quand le client possède cette SIM ?",
+            "options": [
+                { "label": "Demander la durée (optionnel)", "next": "ask_sim_duration" },
+                { "label": "Passer à la vérification KYC", "next": "step1_confirm_number" }
+            ]
+            },
+            "ask_sim_duration": {
+            "type": "info",
+            "text": "Envoyer la question sur la durée de possession.",
+            "templateId": "sim-possession-duration",
+            "next": "step1_confirm_number"
+            },
+
+            "no_sim": {
+            "type": "info",
+            "text": "Sans SIM / pas de réception SMS : ne pas procéder.",
+            "templateId": "reset-pin-no-sim"
+            },
+
+            "step1_confirm_number": {
+            "type": "question",
+            "text": "Confirmer le numéro objet de la demande. Le numéro match-il celui du compte ?",
+            "options": [
+                { "label": "Numéro match", "next": "caseA_min_checks" },
+                { "label": "Numéro ne match pas", "next": "caseB_strict_checks" }
+            ]
+            },
+
+            "caseA_min_checks": {
+            "type": "question",
+            "text": "Poser les questions de sécurité de base : dernière transaction + adresse du point.",
+            "templateId": "reset-pin-match",
+            "options": [
+                { "label": "1 élément conforme (Client KYC1)", "next": "ask_recipient" },
+                { "label": "1 élément conforme (Client KYC2)", "next": "ask_nin" },
+                { "label": "Tout est OK", "next": "activate_recovery" },
+                { "label": "Infos fausses / incohérentes", "next": "end_false_info" }
+            ]
+            },
+            "ask_recipient": {
+            "type": "info",
+            "text": "Demander le nom/numéro d’un destinataire habituel.",
+            "templateId": "recipient-name-or-number",
+            "next": "caseA_validate"
+            },
+            "ask_nin": {
+            "type": "info",
+            "text": "Demander la CNI.",
+            "templateId": "nin-request",
+            "next": "caseA_validate"
+            },
+            "caseA_validate": {
+            "type": "question",
+            "text": "Les éléments fournis sont-ils OK ?",
+            "options": [
+                { "label": "OK", "next": "activate_recovery" },
+                { "label": "Faux / incohérents", "next": "end_false_info" }
+            ]
+            },
+
+            "caseB_strict_checks": {
+            "type": "question",
+            "text": "Le numéro ne match pas : les 3 points deviennent obligatoires.",
+            "templateId": "reset-pin-no-match",
+            "options": [
+                { "label": "Tout est OK", "next": "activate_recovery" },
+                { "label": "Infos fausses / incohérentes", "next": "end_false_info" },
+                { "label": "Info manquant : dernière transaction", "next": "ask_last_tx" },
+                { "label": "Info manquant : adresse habituelle", "next": "ask_last_addr" },
+                { "label": "Info manquant : NIN", "next": "ask_nin_B" }
+            ]
+            },
+            "ask_last_tx": {
+            "type": "info",
+            "text": "Demander la nature et le montant de la dernière transaction.",
+            "templateId": "last-tx-nature-and-amount",
+            "next": "caseB_validate"
+            },
+            "ask_last_addr": {
+            "type": "info",
+            "text": "Demander l’adresse habituelle de dépôts/retraits.",
+            "templateId": "habitual-deposit-withdrawal-location",
+            "next": "caseB_validate"
+            },
+            "ask_nin_B": {
+            "type": "info",
+            "text": "Demander le NIN.",
+            "templateId": "nin-request",
+            "next": "caseB_validate"
+            },
+            "caseB_validate": {
+            "type": "question",
+            "text": "Les 3 éléments requis sont-ils conformes ?",
+            "options": [
+                { "label": "OK", "next": "activate_recovery" },
+                { "label": "Faux / incohérents", "next": "end_false_info" }
+            ]
+            },
+
+            "activate_recovery": {
+            "type": "info",
+            "text": "Si tout est OK → activer le Recovery PIN puis guider le client.",
+            "templateId": "reset-pin-done",
+            "next": "end_success"
+            },
+
+            "end_false_info": {
+            "type": "info",
+            "text": "Informations non conformes.",
+            "templateId": "reset-pin-false-information"
+            },
+            "end_success": { "type": "end", "text": "Le client peut maintenant réinitialiser son PIN. 🎉" }
+        }
+    },
+
+    "deplafonnement": {
+        "title": "Déplafonnement",
+        "start": "prereq_location",
+        "nodes": {
+        "prereq_location": {
+            "type": "question",
+            "text": "Vérifier la localisation du client.",
+            "templateId": "location-check-senegal",
+            "options": [
+            { "label": "Au Sénégal", "next": "sn_template" },
+            { "label": "À l'étranger (hors Sénégal)", "next": "out_abroad" }
+            ]
+        },
+
+        "sn_template": {
+            "type": "info",
+            "text": "Envoyer les instructions pour déplafonner au Sénégal (point Wave + pièce d’identité valide).",
+            "templateId": "deplafonnement-sn"
+        },
+
+        "out_abroad": {
+            "type": "info",
+            "text": "Le déplafonnement à distance n’est pas disponible (conformité).",
+            "templateId": "deplafonnement-hors-sn"
+        },
+
+        "end_sn":         { "type": "end", "text": "Terminer : client orienté vers un point Wave au Sénégal." },
+        "end_out_abroad": { "type": "end", "text": "Clôture : inviter le client à revenir vers nous une fois au Sénégal." }
+        }
+    },
+
+    "clear-pin-block": {
+        "title": "Clear PIN Block",
+        "start": "remember_q",
+        "nodes": {
+        "remember_q": {
+            "type": "question",
+            "text": "Confirmer que le client se souvient encore de son PIN.",
+            "templateId": "clear-pin-remember-check",
+            "options": [
+            { "label": "Oui, il s’en souvient", "next": "clear_and_notify" },
+            { "label": "Non / il a oublié", "next": "end_go_reset" }
+            ]
+        },
+
+        "clear_and_notify": {
+            "type": "info",
+            "text": "Lever le blocage puis informer le client que le blocage a été levé.",
+            "templateId": "clear-pin-done"
+        },
+
+        "end_go_reset": {
+            "type": "end",
+            "text": "Passez au process du « Recover / Reset PIN »."
+        }
+        }
+    },
+
+    "refund": {
+        "title": "Refund",
+        "start": "prereq_bot",
+        "nodes": {
+        "prereq_bot": {
+            "type": "question",
+            "text": "Les informations du BOT et d’identification sont-elles complètes ?",
+            "options": [
+            { "label": "Oui, c’est complet", "next": "route_tx_type" },
+            { "label": "Non, il manque des infos", "next": "ask_missing" }
+            ]
+        },
+
+        "ask_missing": {
+            "type": "question",
+            "text": "Sélectionne ce qu’il faut demander au client.",
+            "templateId": "refund-info",
+            "options": [
+            { "label": "Demander capture d’écran", "next": "ask_screenshot" },
+            { "label": "Demander le numéro utilisé", "next": "ask_phone" },
+            { "label": "Demander le montant", "next": "ask_amount" },
+            { "label": "J’ai maintenant tout", "next": "route_tx_type" }
+            ]
+        },
+        "ask_screenshot": {
+            "type": "info",
+            "text": "Demander la capture d’écran de la transaction.",
+            "templateId": "refund-screenshot",
+            "next": "gather_more"
+        },
+        "ask_phone": {
+            "type": "info",
+            "text": "Demander le numéro utilisé pour le transfert.",
+            "templateId": "transfer-phone-number",
+            "next": "gather_more"
+        },
+        "ask_amount": {
+            "type": "info",
+            "text": "Demander le montant de la transaction.",
+            "templateId": "refund-amount",
+            "next": "gather_more"
+        },
+        "gather_more": {
+            "type": "question",
+            "text": "As-tu maintenant toutes les informations nécessaires ?",
+            "options": [
+            { "label": "Oui", "next": "route_tx_type" },
+            { "label": "Non, encore manquantes", "next": "ask_missing" }
+            ]
+        },
+
+        "route_tx_type": {
+            "type": "question",
+            "text": "Type d’opération à annuler ?",
+            "options": [
+            { "label": "Transfert vers wallet (P2P)", "next": "funds_check" },
+            { "label": "Paiement vers partenaire", "next": "partner_not_ref" },
+            { "label": "Achat de crédit téléphonique", "next": "airtime_not_ref" }
+            ]
+        },
+
+        "partner_not_ref": {
+            "type": "info",
+            "text": "Paiement partenaire : non annulable par Wave (contacter le partenaire).",
+            "templateId": "partner-payment-non-refundable"
+        },
+
+        "airtime_not_ref": {
+            "type": "info",
+            "text": "Achat de crédit : non annulable.",
+            "templateId": "refund-airtime-not-possible"
+        },
+
+        "funds_check": {
+            "type": "question",
+            "text": "État des fonds chez le bénéficiaire ?",
+            "options": [
+            { "label": "Non utilisés (entiers)", "next": "cancel_full" },
+            { "label": "Partiellement utilisés", "next": "partial_info" },
+            { "label": "Déjà totalement utilisés", "next": "funds_used_ko" }
+            ]
+        },
+
+        "cancel_full": {
+            "type": "info",
+            "text": "Procéder à l’annulation complète, puis confirmer au client.",
+            "templateId": "refund-done"
+        },
+
+        "partial_info": {
+            "type": "info",
+            "text": "Informer le client que les fonds sont partiellement utilisés, puis demander s’il souhaite annuler le restant.",
+            "templateId": "refund-partially-used",
+            "next": "partial_decide"
+        },
+        "partial_decide": {
+            "type": "question",
+            "text": "Souhaite-t-il annuler le montant restant ?",
+            "options": [
+            { "label": "Oui, annuler le restant", "next": "cancel_full" },
+            { "label": "Non", "next": "end_stop" }
+            ]
+        },
+
+        "funds_used_ko": {
+            "type": "info",
+            "text": "Fonds déjà utilisés par le bénéficiaire : annulation impossible.",
+            "templateId": "refund-ko",
+            "next": "insist_q"
+        },
+        "insist_q": {
+            "type": "question",
+            "text": "Le client insiste malgré tout ?",
+            "options": [
+            { "label": "Oui", "next": "refund_ko_insist" },
+            { "label": "Non", "next": "end_stop" }
+            ]
+        },
+        "refund_ko_insist": {
+            "type": "info",
+            "text": "Orientation amiable/légale.",
+            "templateId": "refund-ko-insiste"
+        }
+        }
+    },
+    "rename-user": {
+        "title": "Rename user",
+        "start": "ask_num_current",
+        "nodes": {
+        "ask_num_current": {
+            "type": "question",
+            "text": "Merci de nous communiquer le numéro objet de la demande et le nom actuel enregistré sur le compte.",
+            "templateId": "rename-user-number-and-current-name",
+            "options": [
+            { "label": "Tout est OK", "next": "kyc_two_items" },
+            { "label": "Prénom & Nom non conformes", "next": "end_name_nonconform" }
+            ]
+        },
+
+        "kyc_two_items": {
+            "type": "question",
+            "text": "Poser les questions de sécurités.",
+            "templateId": "rename-user-kyc-two-items",
+            "options": [
+            { "label": "Tout est conforme", "next": "confirm_new_name" },
+            { "label": "1 élément conforme", "next": "kyc_select_type" },
+            { "label": "Infos non conformes", "next": "end_stop" }
+            ]
+        },
+
+        "kyc_select_type": {
+            "type": "question",
+            "text": "Un seul élément est conforme. Le client est-il KYC1 ou KYC2 ?",
+            "options": [
+            { "label": "Client KYC1", "next": "kyc1_request" },
+            { "label": "Client KYC2", "next": "kyc2_request" }
+            ]
+        },
+        "kyc1_request": {
+            "type": "info",
+            "text": "Demande KYC1 (contact habituel).",
+            "templateId": "rename-user-kyc1-request",
+            "next": "kyc_alt_validate"
+        },
+        "kyc2_request": {
+            "type": "info",
+            "text": "Demande KYC2 (CNI/passeport).",
+            "templateId": "rename-user-kyc2-request",
+            "next": "kyc_alt_validate"
+        },
+        "kyc_alt_validate": {
+            "type": "question",
+            "text": "L’élément complémentaire fourni est-il conforme ?",
+            "options": [
+            { "label": "Oui", "next": "confirm_new_name" },
+            { "label": "Non", "next": "end_stop" }
+            ]
+        },
+
+        "confirm_new_name": {
+            "type": "question",
+            "text": "Confirmer avec le client l’orthographe exacte du nouveau nom complet (accents, espaces, majuscules).",
+            "templateId": "rename-user-new-name-request",
+            "options": [
+            { "label": "Prenom & Nom fournis", "next": "rename_and_notify" }
+            ]
+        },
+
+        "rename_and_notify": {
+            "type": "info",
+            "text": "Procéder au Rename user dans Front puis informer le client que le changement a été effectué.",
+            "templateId": "rename-user-done"
+        },
+
+        "end_name_nonconform": {
+            "type": "end",
+            "text": "Ne pas procéder : prénom & nom non conformes."
+        },
+        "end_stop": {
+            "type": "end",
+            "text": "Clôture : informations non conformes."
+        }
+        }
+    },
+    "rename-wallet":  {
+        "title": "Rename wallet",
+        "start": "who_is_contacting",
+        "nodes": {
+        "who_is_contacting": {
+            "type": "question",
+            "text": "Vérifier si c’est le sender ou le destinataire qui nous contacte.",
+            "options": [
+            { "label": "C'est le sender", "next": "ask_beneficiary_and_newname" },
+            { "label": "C'est le destinataire", "next": "not_sender_info" }
+            ]
+        },
+
+        "not_sender_info": {
+            "type": "info",
+            "text": "Seul le sender peut nous contacter pour demander le changement.",
+            "templateId": "rename-wallet-only-sender",
+            "next": "end_not_sender"
+        },
+
+        "ask_beneficiary_and_newname": {
+            "type": "info",
+            "text": "Recueillir le numéro bénéficiaire et le nouveau nom complet (orthographe exacte).",
+            "templateId": "rename-wallet-beneficiary-and-newname",
+            "next": "validate_beneficiary"
+        },
+
+        "validate_beneficiary": {
+            "type": "question",
+            "text": "Les informations bénéficiaire + nouveau nom complet sont-elles complètes ?",
+            "options": [
+            { "label": "Oui", "next": "do_rename" },
+            { "label": "Non", "next": "end_missing_info" }
+            ]
+        },
+
+        "do_rename": {
+            "type": "info",
+            "text": "Procéder au Rename wallet dans Front.",
+            "next": "notify_done"
+        },
+
+        "notify_done": {
+            "type": "info",
+            "text": "Informer le client que la mise à jour du nom bénéficiaire est effectuée.",
+            "templateId": "rename-wallet-done"
+        },
+
+        "end_not_sender": {
+            "type": "end",
+            "text": "Ne pas procéder : seule la personne émettrice (sender) peut demander la modification."
+        },
+
+        "end_missing_info": {
+            "type": "end",
+            "text": "Clôture : informations insuffisantes pour procéder au rename."
+        }
+        }
+    },
+    "forget-qr": {
+        "title": "Forget QR",
+        "start": "base_info",
+        "nodes": {
+        "base_info": {
+            "type": "question",
+            "text": "Les infos de base sont-elles confirmées ? (Nom & Prénom + numéro du compte lié à la carte QR)",
+            "options": [
+            { "label": "Oui", "next": "pin_linked_check" },
+            { "label": "Non, demander au client", "next": "ask_ident" }
+            ]
+        },
+
+        "ask_ident": {
+            "type": "info",
+            "text": "Demander l’identification (Nom & Prénom).",
+            "templateId": "forget-qr-id",
+            "next": "confirm_ident"
+        },
+        "confirm_ident": {
+            "type": "question",
+            "text": "As-tu reçu les informations demandées (nom, prénom, numéro du compte) ?",
+            "options": [
+            { "label": "Oui", "next": "pin_linked_check" },
+            { "label": "Non", "next": "end_missing" }
+            ]
+        },
+
+        "pin_linked_check": {
+            "type": "question",
+            "text": "Sur Front, la carte QR est-elle liée à un PIN ?",
+            "options": [
+            { "label": "Oui (PIN défini)", "next": "remember_pin" },
+            { "label": "Non (jamais défini)", "next": "do_forget_qr" }
+            ]
+        },
+
+        "remember_pin": {
+            "type": "question",
+            "text": "Le client se souvient-il de son PIN ? (Ne jamais demander le code, juste vérifier s’il s’en souvient)",
+            "templateId": "forget-qr-remember-pin-check",
+            "options": [
+            { "label": "Oui, il s’en souvient", "next": "do_forget_qr" },
+            { "label": "Non / oublié", "next": "end_go_reset" }
+            ]
+        },
+
+        "do_forget_qr": {
+            "type": "info",
+            "text": "Effectuer le Forget QR sur Front.",
+            "next": "notify_done"
+        },
+
+        "notify_done": {
+            "type": "info",
+            "text": "Informer le client que la carte a été annulée.",
+            "templateId": "forget-qr-suite"
+        },
+
+        "end_go_reset": {
+            "type": "end",
+            "text": "Passez au process du « Recover / Reset PIN »."
+        },
+        "end_missing": {
+            "type": "end",
+            "text": "Clôture : informations insuffisantes pour procéder."
+        }
+        }
+    },
+    "sms-code": {
+        "title": "SMS Code",
+        "start": "location",
+        "nodes": {
+            "location": {
+            "type": "question",
+            "text": "Localisation actuelle du client ?",
+            "templateId": "location-check-senegal",
+            "options": [
+                { "label": "Au Sénégal", "next": "sim_check_sn" },
+                { "label": "À l'étranger", "next": "number_match_abroad" }
+            ]
+            },
+
+            "sim_check_sn": {
+            "type": "question",
+            "text": "Le client possède-t-il la SIM ?",
+            "templateId": "sim-possession-check",
+            "options": [
+                { "label": "Oui (SIM en possession)", "next": "number_match_sn" },
+                { "label": "Non (pas de SIM)", "next": "no_sim" }
+            ]
+            },
+
+            "number_match_sn": {
+            "type": "question",
+            "text": "Le numéro avec lequel le client nous contacte correspond-il au numéro concerné par sa demande ?",
+            "options": [
+                { "label": "Oui (match)", "next": "base_kyc_sn" },
+                { "label": "Non (ne match pas)", "next": "no_match_collect_sn" }
+            ]
+            },
+
+            "number_match_abroad": {
+            "type": "question",
+            "text": "Le numéro avec lequel le client nous contacte correspond-il au numéro concerné par sa demande ?",
+            "options": [
+                { "label": "Oui (match)", "next": "base_kyc_abroad" },
+                { "label": "Non (ne match pas)", "next": "no_match_collect_abroad" }
+            ]
+            },
+
+            "base_kyc_sn": {
+            "type": "question",
+            "text": "Poser les questions de sécurité de base : dernière transaction + adresse du point.",
+            "templateId": "sms-code-kyc-base",
+            "options": [
+                { "label": "Tout est conforme", "next": "route_expired_or_send" },
+                { "label": "Infos non conformes", "next": "end_stop" },
+                { "label": "1 élément conforme", "next": "ask_profile_sn" }
+            ]
+            },
+
+            "ask_profile_sn": {
+            "type": "question",
+            "text": "Quel est le profil du client ?",
+            "options": [
+                { "label": "KYC1", "next": "ask_recipient_sn" },
+                { "label": "KYC2", "next": "ask_nin_sn" }
+            ]
+            },
+
+            "ask_recipient_sn": {
+            "type": "info",
+            "text": "Demander le nom/numéro d’un contact/destinataire habituel (alternative KYC1).",
+            "templateId": "sms-code-alt-kyc1",
+            "next": "validate_after_alt_sn"
+            },
+
+            "ask_nin_sn": {
+            "type": "info",
+            "text": "Demander le numéro de CNI/passeport (alternative KYC2).",
+            "templateId": "sms-code-alt-kyc2",
+            "next": "validate_after_alt_sn"
+            },
+
+            "validate_after_alt_sn": {
+            "type": "question",
+            "text": "Les éléments fournis sont-ils OK après la question alternative ?",
+            "options": [
+                { "label": "OK", "next": "route_expired_or_send" },
+                { "label": "Faux / incohérents", "next": "end_stop" }
+            ]
+            },
+
+            "base_kyc_abroad": {
+            "type": "question",
+            "text": "Poser les questions de sécurité de base : dernière transaction + adresse du point.",
+            "templateId": "sms-code-kyc-base",
+            "options": [
+                { "label": "Tout est conforme", "next": "abroad_alert" },
+                { "label": "Infos non conformes", "next": "end_stop" },
+                { "label": "1 élément conforme", "next": "ask_profile_abroad" }
+            ]
+            },
+
+            "ask_profile_abroad": {
+            "type": "question",
+            "text": "Quel est le profil du client ?",
+            "options": [
+                { "label": "KYC1", "next": "ask_recipient_abroad" },
+                { "label": "KYC2", "next": "ask_nin_abroad" }
+            ]
+            },
+
+            "ask_recipient_abroad": {
+            "type": "info",
+            "text": "Demander le nom/numéro d’un contact/destinataire habituel (alternative KYC1).",
+            "templateId": "sms-code-alt-kyc1",
+            "next": "validate_after_alt_abroad"
+            },
+
+            "ask_nin_abroad": {
+            "type": "info",
+            "text": "Demander le numéro de CNI/passeport (alternative KYC2).",
+            "templateId": "sms-code-alt-kyc2",
+            "next": "validate_after_alt_abroad"
+            },
+
+            "validate_after_alt_abroad": {
+            "type": "question",
+            "text": "Les éléments fournis sont-ils OK après la question alternative ?",
+            "options": [
+                { "label": "OK", "next": "abroad_alert" },
+                { "label": "Faux / incohérents", "next": "end_stop" }
+            ]
+            },
+
+            "no_match_collect_sn": {
+            "type": "info",
+            "text": "Numéro ne match pas : demander les 3 contrôles obligatoires.",
+            "templateId": "sms-code-no-match-kyc",
+            "next": "no_match_validate_sn"
+            },
+
+            "no_match_validate_sn": {
+            "type": "question",
+            "text": "Les 3 éléments requis (dernière transaction + adresse du point + CNI) sont-ils fournis et conformes ?",
+            "options": [
+                { "label": "Oui", "next": "route_expired_or_send" },
+                { "label": "Non", "next": "end_stop" }
+            ]
+            },
+
+            "no_match_collect_abroad": {
+            "type": "info",
+            "text": "Numéro ne match pas : demander les 3 contrôles obligatoires.",
+            "templateId": "sms-code-no-match-kyc",
+            "next": "no_match_validate_abroad"
+            },
+
+            "no_match_validate_abroad": {
+            "type": "question",
+            "text": "Les 3 éléments requis (dernière transaction + adresse du point + CNI) sont-ils fournis et conformes ?",
+            "options": [
+                { "label": "Oui", "next": "abroad_alert" },
+                { "label": "Non", "next": "end_stop" }
+            ]
+            },
+
+            "abroad_alert": {
+            "type": "info",
+            "text": "Envoyer l’alerte sur le risque de réattribution SIM, puis communiquer le code.",
+            "templateId": "sms-code-abroad-alert",
+            "next": "send_code"
+            },
+
+            "route_expired_or_send": {
+            "type": "question",
+            "text": "Le code de validation est-il disponible sur Front ?",
+            "options": [
+                { "label": "Non (expiré)", "next": "login_code_expired" },
+                { "label": "Oui (disponible)", "next": "send_code" }
+            ]
+            },
+
+            "login_code_expired": {
+            "type": "info",
+            "text": "Conseiller de relancer la connexion pour que le système redemande un code, puis revenir vers nous.",
+            "templateId": "login-sms-code-expired",
+            "next": "route_expired_or_send"
+            },
+
+            "send_code": {
+            "type": "info",
+            "text": "Communiquer le code de validation au client.",
+            "templateId": "sms-code-send",
+            "next": "end_success"
+            },
+
+            "no_sim": {
+            "type": "info",
+            "text": "Pas de SIM : refuser la communication du code et expliquer.",
+            "templateId": "sms-code-2",
+            "next": "offer_move_balance"
+            },
+
+            "offer_move_balance": {
+            "type": "question",
+            "text": "Proposer la solution d’ouverture d’un nouveau compte + move balance ?",
+            "options": [
+                { "label": "Oui, proposer", "next": "move_balance_info" },
+                { "label": "Non", "next": "end_no_sim" }
+            ]
+            },
+
+            "move_balance_info": {
+            "type": "info",
+            "text": "Envoyer la marche à suivre selon KYC1/KYC2 pour ouvrir un nouveau compte et déplacer les fonds.",
+            "templateId": "get-smscode-solut1",
+            "next": "end_no_sim"
+            },
+
+            "end_success": {
+            "type": "end",
+            "text": "Code communiqué après vérifications complètes."
+            },
+            "end_no_sim": {
+            "type": "end",
+            "text": "Clôture : pas de SIM ; solution éventuelle proposée."
+            },
+            "end_login_expired": {
+            "type": "end",
+            "text": "Attente : le client relance la connexion pour générer un nouveau code."
+            },
+            "end_stop": {
+            "type": "end",
+            "text": "Clôture : informations fausses/incomplètes."
+            }
+        }
+        },
+    "cas-de-deces": {
+        "title": "Cas de décès",
+        "start": "already_blocked_check",
+        "nodes": {
+        "already_blocked_check": {
+            "type": "question",
+            "text": "Le compte est-il déjà bloqué ?",
+            "options": [
+            { "label": "Oui (déjà bloqué)", "next": "choose_case" },
+            { "label": "Non (pas encore bloqué)", "next": "ask_relation_and_cert" }
+            ]
+        },
+
+        "ask_relation_and_cert": {
+            "type": "info",
+            "text": "Demander le lien de parenté et une photo lisible du certificat de décès officiel.",
+            "templateId": "deces-ask-relation-cert",
+            "next": "has_cert"
+        },
+
+        "has_cert": {
+            "type": "question",
+            "text": "As-tu reçu un certificat de décès officiel, net et lisible (autorité, date, identité visibles) ?",
+            "options": [
+            { "label": "Oui, reçu et lisible", "next": "check_match" },
+            { "label": "Non", "next": "no_cert" }
+            ]
+        },
+
+        "no_cert": {
+            "type": "info",
+            "text": "Sans certificat officiel, ne pas bloquer le compte.",
+            "templateId": "deces-no-block-without-cert",
+            "next": "end_no_cert"
+        },
+
+        "check_match": {
+            "type": "question",
+            "text": "Le certificat correspond-il au compte (nom/prénom ↔ titulaire, numéro) ?",
+            "options": [
+            { "label": "Oui, correspond", "next": "block_and_internal" },
+            { "label": "Non, ne correspond pas", "next": "mismatch" }
+            ]
+        },
+
+        "mismatch": {
+            "type": "info",
+            "text": "Certificat non conforme au compte : informer et stopper.",
+            "templateId": "deces-cert-mismatch",
+            "next": "end_mismatch"
+        },
+
+        "block_and_internal": {
+            "type": "info",
+            "text": "Bloquer le compte et faire la remontée dans #sn-deceases-cases.",
+            "templateId": "deces-internal-slack-note",
+            "next": "choose_case"
+        },
+
+        "choose_case": {
+            "type": "question",
+            "text": "Quel cas s’applique pour la mise à disposition des fonds ?",
+            "options": [
+            { "label": "Titulaire majeur — solde ≤ 500 000 F", "next": "adult_leq_500k" },
+            { "label": "Titulaire majeur — solde > 500 000 F", "next": "adult_gt_500k" },
+            { "label": "Titulaire mineur — solde ≤ 500 000 F", "next": "minor_leq_500k" },
+            { "label": "Titulaire mineur — solde > 500 000 F", "next": "minor_gt_500k" },
+            { "label": "Compte sans fonds", "next": "no_funds" }
+            ]
+        },
+
+        "adult_leq_500k": {
+            "type": "info",
+            "text": "Envoyer la liste des pièces — Majeur (≤ 500k).",
+            "templateId": "cas-de-deces1",
+            "next": "offer_sim_recovery"
+        },
+
+        "adult_gt_500k": {
+            "type": "info",
+            "text": "Envoyer la liste des pièces — Majeur (> 500k).",
+            "templateId": "cas-de-deces2",
+            "next": "offer_sim_recovery"
+        },
+
+        "minor_leq_500k": {
+            "type": "info",
+            "text": "Envoyer la liste des pièces — Mineur (≤ 500k).",
+            "templateId": "cas-de-deces-mineur-leq-500k",
+            "next": "offer_sim_recovery"
+        },
+
+        "minor_gt_500k": {
+            "type": "info",
+            "text": "Envoyer la liste des pièces — Mineur (> 500k).",
+            "templateId": "cas-de-deces-mineur-gt-500k",
+            "next": "offer_sim_recovery"
+        },
+
+        "no_funds": {
+            "type": "info",
+            "text": "Informer qu’il n’y a pas de fonds disponibles.",
+            "templateId": "cas-de-deces-pasdefond",
+            "next": "offer_sim_recovery"
+        },
+
+        "offer_sim_recovery": {
+            "type": "question",
+            "text": "La famille souhaite-t-elle réutiliser le numéro / la SIM ?",
+            "options": [
+            { "label": "Oui", "next": "sim_recovery" },
+            { "label": "Non", "next": "end_done" }
+            ]
+        },
+
+        "sim_recovery": {
+            "type": "info",
+            "text": "Indiquer la marche à suivre pour ré-identifier le numéro auprès de l’opérateur.",
+            "templateId": "cas-de-deces-recuperation-sim",
+            "next": "end_done"
+        },
+
+        "end_no_cert": { "type": "end", "text": "Clôture : pas de blocage sans certificat officiel." },
+        "end_mismatch": { "type": "end", "text": "Clôture : certificat ne correspondant pas au compte." },
+        "end_done": { "type": "end", "text": "Terminé : compte sécurisé, instructions envoyées." }
+        }
+    },
+    "sim-reattribuee": {
+        "title": "SIM réattribuée / Terminate User",
+        "start": "choose_scenario",
+        "nodes": {
+        "choose_scenario": {
+            "type": "question",
+            "text": "Quel cas souhaitez-vous traiter ?",
+            "options": [
+            { "label": "Compte SANS historique de transaction", "next": "nohist_collect" },
+            { "label": "Compte AVEC historique de transactions (Terminate)", "next": "tx_collect_ident" },
+            { "label": "Payout 1XBET", "next": "x1_has_sim" },
+            { "label": "Cession de carte SIM", "next": "cession_start" }
+            ]
+        },
+
+        "nohist_collect": {
+            "type": "info",
+            "text": "Demande d'identité + date d'achat SIM.",
+            "templateId": "sim-reat-ident-ask",
+            "next": "nohist_terminate"
+        },
+        "nohist_terminate": {
+            "type": "info",
+            "text": "Après validation → effectuer un Terminate User (ancien compte sans transactions).",
+            "next": "nohist_confirm"
+        },
+        "nohist_confirm": {
+            "type": "info",
+            "text": "Confirmer au client que c’est fait et qu’il peut ouvrir un nouveau compte.",
+            "templateId": "sim-reattribuee-confirmation",
+            "next": "end_done"
+        },
+
+        "tx_collect_ident": {
+            "type": "info",
+            "text": "Collecte d'identité + date d'achat de la SIM.",
+            "templateId": "sim-reat-ident-ask",
+            "next": "tx_pick_operator"
+        },
+        "tx_pick_operator": {
+            "type": "question",
+            "text": "Quel est l’opérateur de la SIM pour obtenir la preuve d’identification ?",
+            "options": [
+            { "label": "YAS / Free", "next": "tx_op_yas" },
+            { "label": "Orange", "next": "tx_op_orange" },
+            { "label": "Promobile / Expresso", "next": "tx_op_promo" }
+            ]
+        },
+        "tx_op_yas": {
+            "type": "info",
+            "text": "Envoyer les instructions USSD pour YAS/Free.",
+            "templateId": "yas-sim-ident-ussd",
+            "next": "tx_proof_check"
+        },
+        "tx_op_orange": {
+            "type": "info",
+            "text": "Envoyer les instructions USSD pour Orange.",
+            "templateId": "orange-sim-ident-ussd",
+            "next": "tx_proof_check"
+        },
+        "tx_op_promo": {
+            "type": "info",
+            "text": "Demander l’attestation d’identification (Promobile / Expresso).",
+            "templateId": "promobile-sim-ident",
+            "next": "tx_proof_check"
+        },
+        "tx_proof_check": {
+            "type": "question",
+            "text": "Preuve d’identification SIM reçue et concordante ? (obligatoire si historique de transactions)",
+            "options": [
+            { "label": "Oui, reçue et OK", "next": "tx_terminate" },
+            { "label": "Non / non valide", "next": "tx_no_proceed" }
+            ]
+        },
+        "tx_terminate": {
+            "type": "info",
+            "text": "Procéder au Terminate User, puis confirmer au client.",
+            "next": "tx_confirm"
+        },
+        "tx_confirm": {
+            "type": "info",
+            "text": "Confirmation après Terminate : ouvrir un nouveau compte, etc.",
+            "templateId": "sim-reattribuee-confirmation",
+            "next": "end_done"
+        },
+        "tx_no_proceed": {
+            "type": "info",
+            "text": "Impossible de procéder tant que la preuve d’identification n’est pas fournie.",
+            "templateId": "sim-reat-no-proof",
+            "next": "end_stop"
+        },
+
+        "x1_has_sim": {
+            "type": "question",
+            "text": "Le client a-t-il la carte SIM en sa possession ?",
+            "options": [
+            { "label": "Oui", "next": "x1_collect_docs" },
+            { "label": "Non", "next": "x1_no_sim_cancel" }
+            ]
+        },
+        "x1_no_sim_cancel": {
+            "type": "info",
+            "text": "Sans la carte SIM : demander au client de solliciter l’annulation côté 1XBET.",
+            "templateId": "sim-reat-1xbet-cancel",
+            "next": "end_stop"
+        },
+        "x1_collect_docs": {
+            "type": "info",
+            "text": "Demander au client de nous transmettre une capture du message de retrait 1XBET ainsi qu'une preuve d’identification de la SIM.",
+            "templateId": "sim-reat-1xbet-ask",
+            "next": "x1_docs_check"
+        },
+        "x1_docs_check": {
+            "type": "question",
+            "text": "As-tu reçu les DEUX captures (payout 1XBET + preuve d’identification SIM) ?",
+            "options": [
+            { "label": "Oui, reçues", "next": "x1_sim_ident_check" },
+            { "label": "Non / incomplet", "next": "tx_no_proceed" }
+            ]
+        },
+        "x1_sim_ident_check": {
+            "type": "question",
+            "text": "La preuve montre-t-elle que la SIM est identifiée au nom du client ?",
+            "options": [
+            { "label": "Oui", "next": "x1_terminate" },
+            { "label": "Non", "next": "x1_identify_or_cancel" }
+            ]
+        },
+        "x1_identify_or_cancel": {
+            "type": "info",
+            "text": "SIM non identifiée au nom du client : l’inviter à faire identifier la ligne. S’il ne peut pas, demander l’annulation côté 1XBET.",
+            "templateId": "sim-reat-1xbet-identification-or-cancel",
+            "next": "end_stop"
+        },
+        "x1_terminate": {
+            "type": "info",
+            "text": "Procéder au Terminate, puis guider sur ouverture de compte et reversement des fonds.",
+            "templateId": "sim-reat-1xbet-terminate",
+            "next": "end_done"
+        },
+
+        "cession_start": {
+            "type": "question",
+            "text": "Parlez-vous au titulaire du compte à clôturer ?",
+            "options": [
+            { "label": "Oui", "next": "cession_kyc_checks" },
+            { "label": "Non", "next": "cession_owner_contact" }
+            ]
+        },
+        "cession_owner_contact": {
+            "type": "info",
+            "text": "Demander que le titulaire initial nous contacte directement (consentement + questions de sécurité).",
+            "templateId": "sim-reat-cession-ask",
+            "next": "end_stop"
+        },
+        "cession_kyc_checks": {
+            "type": "question",
+            "text": "Questions de sécurité : dernière transaction (nature + montant) ET adresse du dernier dépôt/retrait.",
+            "templateId": "sim-reat-kyc-main",
+            "options": [
+            { "label": "Tout est conforme", "next": "cession_terminate" },
+            { "label": "1 élément conforme", "next": "cession_alt_choice" },
+            { "label": "Infos non conformes", "next": "end_cession_not_ok" }
+            ]
+        },
+        "cession_alt_choice": {
+            "type": "question",
+            "text": "Un élément manque : choisir une alternative pour finaliser la vérification.",
+            "options": [
+            { "label": "KYC1 — Contact habituel", "next": "cession_ask_kyc1" },
+            { "label": "KYC2 — CNI / Passeport", "next": "cession_ask_kyc2" }
+            ]
+        },
+        "cession_ask_kyc1": {
+            "type": "info",
+            "text": "Demander le nom/numéro d’un contact habituel (KYC1).",
+            "templateId": "sim-reat-kyc1",
+            "next": "cession_alt_validate"
+        },
+        "cession_ask_kyc2": {
+            "type": "info",
+            "text": "Demander le numéro de CNI / passeport (KYC2).",
+            "templateId": "sim-reat-kyc2",
+            "next": "cession_alt_validate"
+        },
+        "cession_alt_validate": {
+            "type": "question",
+            "text": "Les éléments fournis complètent-ils la vérification ?",
+            "options": [
+            { "label": "Oui", "next": "cession_terminate" },
+            { "label": "Non", "next": "end_cession_not_ok" }
+            ]
+        },
+        "cession_terminate": {
+            "type": "info",
+            "text": "Vérification OK → terminer l’ancien compte, puis confirmer.",
+            "templateId": "sim-reat-cession-done",
+            "next": "end_done"
+        },
+
+        "end_done": { "type": "end", "text": "Traitement effectué. ✅" },
+        "end_stop": { "type": "end", "text": "Arrêt : éléments manquants ou non recevables." },
+        "end_cession_not_ok": { "type": "end", "text": "Cession : vérification non conforme — ne pas procéder." }
+        }
+    },
+    "dormancy-block": {
+        "title": "Dormancy Block",
+        "start": "ask_ident",
+        "nodes": {
+        "ask_ident": {
+            "type": "info",
+            "text": "Demander le numéro objet de la demande et le Nom/Prénom.",
+            "templateId": "dormancy-ident-ask",
+            "next": "ident_ok"
+        },
+
+        "ident_ok": {
+            "type": "question",
+            "text": "L’identification est-elle conforme ?",
+            "options": [
+            { "label": "Oui", "next": "ask_abroad" },
+            { "label": "Non", "next": "end_route_sim" }
+            ]
+        },
+        "end_route_sim": {
+            "type": "end",
+            "text": "Passez au process « SIM réattribuée / Terminate User »."
+        },
+
+        "ask_abroad": {
+            "type": "question",
+            "text": "Le client est-il actuellement au Sénégal ?",
+            "templateId": "location-check-senegal",
+            "options": [
+            { "label": "Oui", "next": "pin_known" },
+            { "label": "Non", "next": "abroad_pin_known" }
+            ]
+        },
+
+        "pin_known": {
+            "type": "question",
+            "text": "Confirmer que le client se souvient encore de son PIN.",
+            "templateId": "clear-pin-remember-check",
+            "options": [
+            { "label": "Oui", "next": "unblock_confirm" },
+            { "label": "Non", "next": "kyc_collect" }
+            ]
+        },
+        "unblock_confirm": {
+            "type": "info",
+            "text": "Lever le Dormancy Block dans Front puis confirmer au client qu’il peut se reconnecter.",
+            "templateId": "dormancy",
+            "next": "end_success"
+        },
+
+        "kyc_collect": {
+            "type": "info",
+            "text": "Demander les éléments KYC (adresse point habituel, CNI, contact habituel).",
+            "templateId": "dormancy-kyc-ask",
+            "next": "kyc_validate"
+        },
+        "kyc_validate": {
+            "type": "question",
+            "text": "Les éléments KYC sont-ils conformes ?",
+            "options": [
+            { "label": "OK", "next": "reset_seq_1" },
+            { "label": "Non", "next": "end_stop" }
+            ]
+        },
+        "reset_seq_1": {
+            "type": "info",
+            "text": "Étape Reset PIN (1).",
+            "templateId": "reset-pin-match-1",
+            "next": "reset_seq_2"
+        },
+        "reset_seq_2": {
+            "type": "info",
+            "text": "Étape Reset PIN (2).",
+            "templateId": "reset-pin-match-2",
+            "next": "reset_done"
+        },
+        "reset_done": {
+            "type": "info",
+            "text": "Confirmer au client la mise en place du nouveau PIN.",
+            "templateId": "reset-pin-done",
+            "next": "end_success"
+        },
+
+        "abroad_pin_known": {
+            "type": "question",
+            "text": "Confirmer que le client se souvient encore de son PIN.",
+            "templateId": "clear-pin-remember-check",
+            "options": [
+            { "label": "Oui", "next": "abroad_unblock_assist" },
+            { "label": "Non", "next": "abroad_unblock_warn" }
+            ]
+        },
+        "abroad_unblock_assist": {
+            "type": "info",
+            "text": "Débloquer le compte. Aider si difficulté de réception SMS.",
+            "templateId": "dormancy-abroad-known-pin",
+            "next": "end_success"
+        },
+        "abroad_unblock_warn": {
+            "type": "info",
+            "text": "Débloquer puis informer que le Reset PIN n’est pas disponible depuis l’étranger.",
+            "templateId": "dormancy-abroad-reset-unavailable",
+            "next": "end_info"
+        },
+
+        "end_success": { "type": "end", "text": "Dormancy levé / procédure terminée. ✅" },
+        "end_info":    { "type": "end", "text": "Information communiquée au client. ℹ️" },
+        "end_stop":    { "type": "end", "text": "Clôture : éléments non conformes — ne pas procéder." }
+        }
+    },
+    "minor-compliance": {
+        "title": "Minor Compliance",
+        "start": "check_minor_kyc2",
+        "nodes": {
+        "check_minor_kyc2": {
+            "type": "question",
+            "text": "Le client est-il un mineur KYC2 (< 18 ans) ?",
+            "options": [
+            { "label": "Oui", "next": "ask_caller_role" },
+            { "label": "Non", "next": "end_not_applicable" }
+            ]
+        },
+
+        "ask_caller_role": {
+            "type": "question",
+            "text": "Qui nous contacte ?",
+            "options": [
+            { "label": "Le mineur", "next": "send_link_minor" },
+            { "label": "Le parent / tuteur", "next": "send_link_guardian" }
+            ]
+        },
+
+        "send_link_minor": {
+            "type": "info",
+            "text": "Envoyer le lien de demande d’approbation au mineur (via Front ou /toolsn send_minor_request_link).",
+            "templateId": "minor-compliance1",
+            "next": "minor_approval_check"
+        },
+        "minor_approval_check": {
+            "type": "question",
+            "text": "L’approbation par le parent/tuteur (KYC2, majeur, connecté à l’app) a-t-elle été validée ?",
+            "options": [
+            { "label": "Oui, approuvée", "next": "notify_approved" },
+            { "label": "Non / en attente", "next": "end_waiting" }
+            ]
+        },
+
+        "send_link_guardian": {
+            "type": "info",
+            "text": "Envoyer le lien d’approbation au parent/tuteur (via Front ou /toolsn send_guardian_approval_link).",
+            "templateId": "minor-compliance2",
+            "next": "guardian_approval_check"
+        },
+        "guardian_approval_check": {
+            "type": "question",
+            "text": "Le parent/tuteur remplit-il les conditions (KYC2, majeur, connecté) et a-t-il approuvé ?",
+            "options": [
+            { "label": "Oui, approuvée", "next": "notify_approved" },
+            { "label": "Non / conditions non remplies", "next": "end_requirements" }
+            ]
+        },
+
+        "notify_approved": {
+            "type": "info",
+            "text": "Informer le mineur que l’autorisation est validée et qu’il peut effectuer transferts/paiements.",
+            "templateId": "minor-compliance-approved",
+            "next": "end_success"
+        },
+
+        "end_not_applicable": { "type": "end", "text": "Hors périmètre : la Minor Compliance s’applique aux clients KYC2 mineurs (<18 ans)." },
+        "end_waiting":        { "type": "end", "text": "Demande envoyée : en attente d’approbation du parent/tuteur." },
+        "end_requirements":   { "type": "end", "text": "Conditions non remplies (parent/tuteur KYC2, majeur, connecté) : ne pas procéder." },
+        "end_success":        { "type": "end", "text": "Autorisation validée. Le client peut effectuer transferts, achats de crédit et paiements. 🎉" }
+        }
+    },
+    "scam-case": {
+        "title": "Scam (Arnaque) — Sécurisation & orientation",
+        "start": "loc",
+        "nodes": {
+        "loc": {
+            "type": "question",
+            "text": "Où se trouve le client ?",
+            "options": [
+            { "label": "Au Sénégal", "next": "sn_identify" },
+            { "label": "À l’étranger", "next": "abroad_identify" }
+            ]
+        },
+
+        "sn_identify": {
+            "type": "info",
+            "text": "Demander l’identification (Nom/Prénom + numéro objet).",
+            "templateId": "scam-ident-ask",
+            "next": "sn_ident_confirm"
+        },
+        "sn_ident_confirm": {
+            "type": "question",
+            "text": "Identification reçue et conforme ?",
+            "options": [
+            { "label": "Identification OK", "next": "sn_logout_and_orient" },
+            { "label": "Identification NOK", "next": "end_stop" }
+            ]
+        },
+        "sn_logout_and_orient": {
+            "type": "info",
+            "text": "Déconnectez toutes les sessions de l’utilisateur avec la commande :`/toolsn logout_all_devices_used_by_user +221XXXXXXXXX`, puis invitez-le à contacter directement le 200 600 pour obtenir une assistance optimale.",
+            "templateId": "scam-logout-confirm-sn",
+            "next": "sn_note"
+        },
+        "sn_note": {
+            "type": "info",
+            "text": "Laisser une note Front : « Nouveau cas de scam : logout done ».",
+            "templateId": "scam-note-logout-done",
+            "next": "send_awareness"
+        },
+
+        "abroad_identify": {
+            "type": "info",
+            "text": "Demander l’identification (Nom/Prénom + numéro objet).",
+            "templateId": "scam-ident-ask",
+            "next": "abroad_ident_confirm"
+        },
+        "abroad_ident_confirm": {
+            "type": "question",
+            "text": "Identification reçue et conforme ?",
+            "options": [
+            { "label": "Identification OK", "next": "abroad_logout" },
+            { "label": "Identification NOK", "next": "end_stop" }
+            ]
+        },
+        "abroad_logout": {
+            "type": "info",
+            "text": "Déconnecter toutes les sessions : /toolsn logout_all_devices_used_by_user +221XXXXXXXXX",
+            "next": "abroad_ask_whatsapp"
+        },
+        "abroad_ask_whatsapp": {
+            "type": "info",
+            "text": "Demander le numéro WhatsApp joignable pour l’équipe Fraude.",
+            "templateId": "scam-ask-whatsapp",
+            "next": "abroad_note"
+        },
+        "abroad_note": {
+            "type": "info",
+            "text": "Créer un ticket Fraude (mentionner contact WhatsApp) et laisser la note « logout done ».",
+            "templateId": "scam-note-logout-done",
+            "next": "abroad_msg_client"
+        },
+        "abroad_msg_client": {
+            "type": "info",
+            "text": "Informer le client que le dossier est escaladé à la Fraude (contact via WhatsApp).",
+            "templateId": "scam-escalade-fraude-client",
+            "next": "send_awareness"
+        },
+
+        "end_stop": { "type": "end", "text": "Clôture : identification requise pour poursuivre." },
+
+        "send_awareness": {
+            "type": "question",
+            "text": "Souhaitez-vous envoyer un message de sensibilisation sécurité ?",
+            "options": [
+            { "label": "Sensibilisation générale", "next": "awareness_general" },
+            { "label": "Rappels sécurité (ne rien partager)", "next": "awareness_suspicious" },
+            { "label": "Imposteurs (numéro officiel / WhatsApp vérifié)", "next": "awareness_impostor" },
+            { "label": "Appel robot (Robotcall)", "next": "awareness_robotcall" },
+            { "label": "Non merci", "next": "end_done" }
+            ]
+        },
+        "awareness_general": {
+            "type": "info",
+            "text": "Envoyer la sensibilisation générale.",
+            "templateId": "scam-sensibilisation",
+            "next": "end_done"
+        },
+        "awareness_suspicious": {
+            "type": "info",
+            "text": "Envoyer les rappels sécurité (ne jamais partager les infos).",
+            "templateId": "scam-suspicious-2",
+            "next": "end_done"
+        },
+        "awareness_impostor": {
+            "type": "info",
+            "text": "Envoyer le message sur les imposteurs (numéro officiel/WhatsApp vérifié).",
+            "templateId": "scam-wave-imposteur",
+            "next": "end_done"
+        },
+        "awareness_robotcall": {
+            "type": "info",
+            "text": "Envoyer le message explicatif sur l’appel robot (robotcall).",
+            "templateId": "scam-robotcall",
+            "next": "end_done"
+        },
+
+        "end_done": { "type": "end", "text": "Sécurisation effectuée. Client informé et orienté. 🎯" }
+        }
+    },
+    "requetes-agents": {
+        "title": "Requêtes Agents",
+        "start": "topic",
+        "nodes": {
+        "topic": {
+            "type": "question",
+            "text": "Quelle catégorie de demande agent souhaitez-vous traiter ?",
+            "options": [
+            { "label": "Ouverture de point Wave", "next": "openpoint_q_pre" },
+            { "label": "Code PIN — Application Agent", "next": "agent_pin_menu" },
+            { "label": "Changements & Administration", "next": "changes_menu" },
+            { "label": "Commission & UV", "next": "commission_menu" },
+            { "label": "Overdraft (UV de secours)", "next": "overdraft_info" }
+            ]
+        },
+
+        "openpoint_q_pre": {
+            "type": "question",
+            "text": "Avez-vous déjà soumis une demande d'ouverture de point (formulaire en ligne) ?",
+            "templateId": "agent-open-point-ask-submitted",
+            "options": [
+            { "label": "Jamais (demande initiale)", "next": "openpoint_initial" },
+            { "label": "Oui, formulaire déjà rempli", "next": "openpoint_filled" }
+            ]
+        },
+        "openpoint_initial": {
+            "type": "info",
+            "text": "Envoyer le lien du formulaire et demander au client de patienter (aucun délai communiqué).",
+            "templateId": "agent-open-point-initial",
+            "next": "end_openpoint_initial"
+        },
+        "end_openpoint_initial": { "type": "end", "text": "Ouverture de point — demande initiale traitée." },
+
+        "openpoint_filled": {
+            "type": "question",
+            "text": "Avez-vous reçu un retour (message/email) suite au formulaire ?",
+            "templateId": "agent-open-point-ask-got-reply",
+            "options": [
+            { "label": "Oui, j’ai reçu un message", "next": "openpoint_got_reply" },
+            { "label": "Non, aucun retour", "next": "openpoint_no_reply" }
+            ]
+        },
+        "openpoint_got_reply": {
+            "type": "info",
+            "text": "Demander le contenu / une capture du message reçu pour adapter l’explication.",
+            "templateId": "agent-open-point-got-reply",
+            "next": "end_openpoint_got_reply"
+        },
+        "end_openpoint_got_reply": { "type": "end", "text": "Ouverture de point — client a reçu un message." },
+
+        "openpoint_no_reply": {
+            "type": "info",
+            "text": "Confirmer que la demande est en cours, sans indiquer de délai.",
+            "templateId": "agent-open-point-no-reply",
+            "next": "end_openpoint_no_reply"
+        },
+        "end_openpoint_no_reply": { "type": "end", "text": "Ouverture de point — pas de retour (en cours de traitement)." },
+
+        "agent_pin_menu": {
+            "type": "question",
+            "text": "Code PIN (app Agent) — que souhaite l’agent ?",
+            "options": [
+            { "label": "J’ai oublié le code PIN", "next": "agent_pin_forgot" },
+            { "label": "Je souhaite modifier le code PIN", "next": "agent_pin_change" }
+            ]
+        },
+        "agent_pin_forgot": {
+            "type": "info",
+            "text": "Suivre le process Reset PIN et demander obligatoirement la CNI."
+        },
+
+        "agent_pin_change": {
+            "type": "info",
+            "text": "Guider l’agent vers Paramètres > Changer le code PIN.",
+            "templateId": "agent-app-change-pin",
+            "next": "end_agent_pin_change"
+        },
+        "end_agent_pin_change": { "type": "end", "text": "PIN Agent — instructions de changement envoyées." },
+
+        "changes_menu": {
+            "type": "question",
+            "text": "Changements & Administration — que souhaitez-vous faire ?",
+            "options": [
+            { "label": "Ajouter / désactiver l’assistant", "next": "change_assistant" },
+            { "label": "Changer mon numéro principal", "next": "change_main_number" },
+            { "label": "Changer le nom de la boutique", "next": "change_shopname" },
+            { "label": "Supprimer mes rebalance limits", "next": "rebalance_limits_check" }
+            ]
+        },
+        "change_assistant": {
+            "type": "info",
+            "text": "Inviter l’agent à passer par son responsable d’équipe.",
+            "templateId": "agent-assistant-contact-tl",
+            "next": "end_change_assistant"
+        },
+        "end_change_assistant": { "type": "end", "text": "Assistant — redirection vers le Team Lead." },
+
+        "change_main_number": {
+            "type": "info",
+            "text": "Renvoyer vers le responsable d’équipe.",
+            "templateId": "agent-main-number-contact-tl",
+            "next": "end_change_main_number"
+        },
+        "end_change_main_number": { "type": "end", "text": "Numéro principal — redirection vers le Team Lead." },
+
+        "change_shopname": {
+            "type": "info",
+            "text": "Renvoyer vers le responsable d’équipe.",
+            "templateId": "agent-shopname-contact-tl",
+            "next": "end_change_shopname"
+        },
+        "end_change_shopname": { "type": "end", "text": "Nom de la boutique — redirection vers le Team Lead." },
+
+        "rebalance_limits_check": {
+            "type": "question",
+            "text": "Le compte est-il flagué risque ?",
+            "options": [
+            { "label": "Non flagué", "next": "rebalance_unflagged" },
+            { "label": "Flagué", "next": "rebalance_flagged" }
+            ]
+        },
+        "rebalance_unflagged": {
+            "type": "info",
+            "text": "Faire la demande via Front (bouton « Request to suspend rebalance limits »).",
+            "templateId": "agent-rebalance-limits-unflagged",
+            "next": "end_rebalance_unflagged"
+        },
+        "end_rebalance_unflagged": { "type": "end", "text": "Rebalance limits — demande envoyée (non flagué)." },
+
+        "rebalance_flagged": {
+            "type": "info",
+            "text": "Demander à l’agent de contacter son responsable de zone.",
+            "templateId": "agent-rebalance-limits-flagged",
+            "next": "end_rebalance_flagged"
+        },
+        "end_rebalance_flagged": { "type": "end", "text": "Rebalance limits — redirection vers le responsable de zone (flagged)." },
+
+        "commission_menu": {
+            "type": "question",
+            "text": "Commission & UV — sélectionnez une option :",
+            "options": [
+            { "label": "Réduction de commission — explication", "next": "commission_cut" },
+            { "label": "Overdraft / Formation / Performance — infos", "next": "training_perf" }
+            ]
+        },
+        "commission_cut": {
+            "type": "info",
+            "text": "Effectuer la demande depuis Front (« Request to explain commission cuts »).",
+            "templateId": "agent-commission-cut-escalate-risk",
+            "next": "end_commission_cut"
+        },
+        "end_commission_cut": { "type": "end", "text": "Commission — demande d’explication transmise." },
+
+        "training_perf": {
+            "type": "info",
+            "text": "Orienter vers le responsable de zone.",
+            "templateId": "agent-training-performance",
+            "next": "end_training_perf"
+        },
+        "end_training_perf": { "type": "end", "text": "Infos Overdraft/Formation/Performance — redirection effectuée." },
+
+        "overdraft_info": {
+            "type": "info",
+            "text": "Rappeler les règles clés des UV de secours (éligibilité, activation, remboursement, part de commission).",
+            "templateId": "agent-overdraft-summary",
+            "next": "end_overdraft_info"
+        },
+        "end_overdraft_info": { "type": "end", "text": "Overdraft — récapitulatif envoyé." }
+        }
+    },
+    "bill-payments": {
+        "title": "Bill Payments",
+        "start": "choose_partner",
+        "nodes": {
+        "choose_partner": {
+            "type": "question",
+            "text": "Quel partenaire est concerné par le paiement de facture ?",
+            "options": [
+            { "label": "Senelec / Sen’Eau", "next": "senelec_entry" },
+            { "label": "Woyofal", "next": "woyofal_entry" },
+            { "label": "Baobab+", "next": "baobab_entry" },
+            { "label": "Rapido", "next": "rapido_entry" },
+            { "label": "Canal+", "next": "canal_entry" },
+            { "label": "Autre / Je ne sais pas", "next": "generic_escalate" }
+            ]
+        },
+
+        "senelec_entry": {
+            "type": "question",
+            "text": "Quel est le besoin sur Senelec / Sen’Eau ?",
+            "options": [
+            { "label": "Bon de coupure reçu après paiement", "next": "senelec_txid" },
+            { "label": "Demande d’annulation", "next": "senelec_non_cancellable" },
+            { "label": "Autre (inexpliqué côté support)", "next": "generic_escalate" }
+            ]
+        },
+        "senelec_txid": {
+            "type": "info",
+            "text": "Communiquer au client le Partner Tx ID pour présentation en agence.",
+            "templateId": "bill-pay-senelec-seneau-partner-txid",
+            "next": "end_senelec"
+        },
+        "senelec_non_cancellable": {
+            "type": "info",
+            "text": "Informer que ces paiements ne sont pas annulables par Wave.",
+            "templateId": "bill-pay-non-cancellable",
+            "next": "end_senelec"
+        },
+        "end_senelec": { "type": "end", "text": "Senelec / Sen’Eau — traitement terminé." },
+
+        "woyofal_entry": {
+            "type": "question",
+            "text": "Quel est le besoin sur Woyofal ?",
+            "options": [
+            { "label": "Code de recharge non reçu", "next": "woyofal_resend" },
+            { "label": "Assistance technique (compteur / code / kWh…)", "next": "woyofal_support" },
+            { "label": "Demande d’annulation", "next": "woyofal_non_cancellable" },
+            { "label": "Autre (inexpliqué côté support)", "next": "generic_escalate" }
+            ]
+        },
+        "woyofal_resend": {
+            "type": "info",
+            "text": "Renvoyer le code via Front (Bill Pay code) ou le communiquer.",
+            "templateId": "bill-pay-woyofal-resend",
+            "next": "end_woyofal"
+        },
+        "woyofal_support": {
+            "type": "info",
+            "text": "Rediriger vers le service client Woyofal (301006666 / 33 867 66 66).",
+            "templateId": "bill-pay-woyofal-support",
+            "next": "end_woyofal"
+        },
+        "woyofal_non_cancellable": {
+            "type": "info",
+            "text": "Informer que les paiements Woyofal ne sont pas annulables.",
+            "templateId": "bill-pay-non-cancellable",
+            "next": "end_woyofal"
+        },
+        "end_woyofal": { "type": "end", "text": "Woyofal — traitement terminé." },
+
+        "baobab_entry": {
+            "type": "question",
+            "text": "Le crédit Baobab+ est-il encore entièrement non utilisé ?",
+            "options": [
+            { "label": "Oui (crédit intact)", "next": "baobab_cancel_possible" },
+            { "label": "Non (crédit déjà utilisé, même partiellement)", "next": "baobab_cancel_unavailable" }
+            ]
+        },
+        "baobab_cancel_possible": {
+            "type": "info",
+            "text": "Annulation possible si crédit intact (remontée partenaire effectuée).",
+            "templateId": "bill-pay-baobab-cancel-possible",
+            "next": "end_baobab"
+        },
+        "baobab_cancel_unavailable": {
+            "type": "info",
+            "text": "Annulation impossible car le crédit a déjà été utilisé.",
+            "templateId": "bill-pay-baobab-cancel-unavailable",
+            "next": "end_baobab"
+        },
+        "end_baobab": { "type": "end", "text": "Baobab+ — traitement terminé." },
+
+        "rapido_entry": {
+            "type": "question",
+            "text": "Le montant total rechargé chez Rapido est-il encore entièrement disponible ?",
+            "options": [
+            { "label": "Oui (solde intact)", "next": "rapido_cancel_possible" },
+            { "label": "Non (solde utilisé)", "next": "rapido_cancel_unavailable" }
+            ]
+        },
+        "rapido_cancel_possible": {
+            "type": "info",
+            "text": "Annulation possible si le montant total est encore disponible.",
+            "templateId": "bill-pay-rapido-cancel-possible",
+            "next": "end_rapido"
+        },
+        "rapido_cancel_unavailable": {
+            "type": "info",
+            "text": "Annulation impossible pour cette opération.",
+            "templateId": "bill-pay-non-cancellable",
+            "next": "end_rapido"
+        },
+        "end_rapido": { "type": "end", "text": "Rapido — traitement terminé." },
+
+        "canal_entry": {
+            "type": "question",
+            "text": "Erreur de numéro d’abonnement Canal+ — quel timing ?",
+            "options": [
+            { "label": "Avant prise d’effet (client contacte ≥ 8 jours avant)", "next": "canal_pre_effect" },
+            { "label": "Après prise d’effet", "next": "canal_post_effect" },
+            { "label": "Autre", "next": "generic_escalate" }
+            ]
+        },
+        "canal_pre_effect": {
+            "type": "info",
+            "text": "Remonter à Integration Ops pour repositionnement (joindre le bon n° de carte).",
+            "templateId": "bill-pay-canal-pre-effect-escalate",
+            "next": "end_canal"
+        },
+        "canal_post_effect": {
+            "type": "info",
+            "text": "Inviter le client à contacter directement le service client Canal+.",
+            "templateId": "bill-pay-canal-post-effect-contact",
+            "next": "end_canal"
+        },
+        "end_canal": { "type": "end", "text": "Canal+ — traitement terminé." },
+
+        "generic_escalate": {
+            "type": "info",
+            "text": "Cas non explicable côté support : escalader via « Report Bill Pay Problem » dans Front.",
+            "templateId": "bill-pay-escalation-integration",
+            "next": "end_generic"
+        },
+        "end_generic": { "type": "end", "text": "Bill Pay — escalade effectuée." }
+        }
+    },
+    "refund-verification": {
+        "title": "Refund Verification",
+        "start": "choose_typology",
+        "nodes": {
+        "choose_typology": {
+            "type": "question",
+            "text": "Quel est le cas à traiter ?",
+            "options": [
+            { "label": "refund (ticket créé / gel des fonds)", "next": "scan_ack" },
+            { "label": "Cas dans les 48h (gel en cours)", "next": "within48_menu" },
+            { "label": "Cas au-delà des 48h (suite Dispute)", "next": "after48_menu" }
+            ]
+        },
+
+        "scan_ack": {
+            "type": "info",
+            "text": "Informer le client que la demande est en vérification, fonds gelés, traitement sous 48h.",
+            "templateId": "refund-verif-scan-ack",
+            "next": "end_scan_ack"
+        },
+        "end_scan_ack": { "type": "end", "text": "Typologie « scan » — accusé pris en compte." },
+
+        "within48_menu": {
+            "type": "question",
+            "text": "Cas dans les 48h — quelle situation ?",
+            "options": [
+            { "label": "Le sender réclame l’annulation initiée", "next": "wait_48_sender" },
+            { "label": "Le sender veut renoncer à l’annulation", "next": "renounce_48_sender" },
+            { "label": "Le recipient confirme l’annulation", "next": "recipient_confirm_48" },
+            { "label": "Le recipient conteste l’annulation", "next": "recipient_contest_48" }
+            ]
+        },
+
+        "wait_48_sender": {
+            "type": "info",
+            "text": "Inviter le sender à patienter : vérification en cours, fonds gelés, délai 48h.",
+            "templateId": "refund-verif-wait-48h-sender",
+            "next": "end_within48"
+        },
+
+        "renounce_48_sender": {
+            "type": "info",
+            "text": "Le sender renonce à l’annulation : inviter à patienter et poster la demande dans #digital-support en mentionnant @sn-digitalbackoffice.",
+            "templateId": "refund-verif-sender-renounce-48h",
+            "next": "end_within48"
+        },
+
+        "recipient_confirm_48": {
+            "type": "info",
+            "text": "Recipient confirme : renvoyer les fonds via Front avec « Turn Frozen Funds into Sender ».",
+            "templateId": "refund-verif-recipient-confirm-48h",
+            "next": "end_within48"
+        },
+
+        "recipient_contest_48": {
+            "type": "info",
+            "text": "Recipient conteste : créer un ticket « Refunding Dispute ». Informer le client : traitement sous 72h.",
+            "templateId": "refund-verif-recipient-contest-48h",
+            "next": "end_within48"
+        },
+
+        "end_within48": { "type": "end", "text": "Traitement « dans les 48h » — terminé." },
+
+        "after48_menu": {
+            "type": "question",
+            "text": "Au-delà des 48h (suite Dispute) — quel cas ?",
+            "options": [
+            { "label": "Le sender souhaite être remboursé", "next": "after48_sender_wants_refund" },
+            { "label": "Le recipient dit avoir été remboursé", "next": "after48_recipient_claims_refund" }
+            ]
+        },
+
+        "after48_sender_wants_refund": {
+            "type": "info",
+            "text": "Inviter à patienter et poster la demande dans #digital-support en taguant @sn-digitalbackoffice.",
+            "templateId": "refund-verif-after48h-sender-wants-refund",
+            "next": "end_after48"
+        },
+
+        "after48_recipient_claims_refund": {
+            "type": "info",
+            "text": "Inviter à patienter et poster la demande dans #digital-support en taguant @sn-digitalbackoffice.",
+            "templateId": "refund-verif-after48h-recipient-claims-refund",
+            "next": "end_after48"
+        },
+
+        "end_after48": { "type": "end", "text": "Traitement « au-delà des 48h » — terminé." }
+        }
+    },
+    "bank-to-wallet": {
+        "title": "Bank to Wallet",
+        "start": "choose_scenario",
+        "nodes": {
+        "choose_scenario": {
+            "type": "question",
+            "text": "Quel besoin traite-t-on ?",
+            "options": [
+            { "label": "Activer Bank ↔ Wave (clé d’activation)", "next": "send_activation_steps" },
+            { "label": "Lier un NOUVEL appareil (device link)", "next": "collect_link_device_info" }
+            ]
+        },
+
+        "send_activation_steps": {
+            "type": "info",
+            "text": "Envoyer au client les étapes pour générer la clé d’activation dans l’app Wave et l’apporter en banque.",
+            "templateId": "b2w-activ"
+        },
+
+        "collect_link_device_info": {
+            "type": "info",
+            "text": "Collecter toutes les informations nécessaires pour lier le NOUVEL appareil.",
+            "templateId": "b2w-linkdevice",
+            "next": "confirm_info_ok"
+        },
+
+        "confirm_info_ok": {
+            "type": "question",
+            "text": "Les informations demandées ont-elles été fournies et semblent-elles correctes ?",
+            "options": [
+            { "label": "Informations fournies", "next": "escalate_backoffice" },
+            { "label": "Infos manquantes / incorrectes", "next": "which_info_incorrect" }
+            ]
+        },
+
+        "which_info_incorrect": {
+            "type": "question",
+            "text": "Quelles informations sont incorrectes ?",
+            "options": [
+            { "label": "Marque/modèle de l’ANCIEN téléphone incorrect", "next": "inform_oldphone_incorrect" },
+            { "label": "N° CNI / Passeport incorrect", "next": "inform_id_incorrect" }
+            ]
+        },
+
+        "inform_oldphone_incorrect": {
+            "type": "info",
+            "text": "Informer le client que la marque/modèle de l’ANCIEN téléphone est incorrect(e) ; demander vérification et renvoi des bonnes informations.",
+            "templateId": "b2w-oldphone-incorrect",
+            "next": "check_info_corrected"
+        },
+
+        "inform_id_incorrect": {
+            "type": "info",
+            "text": "Informer le client que le N° de CNI/passeport est incorrect ; demander vérification et renvoi d’un numéro valide (ou photo nette).",
+            "templateId": "b2w-id-incorrect",
+            "next": "check_info_corrected"
+        },
+
+        "check_info_corrected": {
+            "type": "question",
+            "text": "Le client a-t-il maintenant fourni les informations manquantes/corrigées ?",
+            "options": [
+            { "label": "Oui", "next": "escalate_backoffice" },
+            { "label": "Non", "next": "cannot_proceed_info" }
+            ]
+        },
+
+        "cannot_proceed_info": {
+            "type": "info",
+            "text": "Informer le client que nous ne pouvons pas procéder tant que les informations corrigées ne sont pas reçues.",
+            "templateId": "b2w-cannot-proceed"
+        },
+
+        "escalate_backoffice": {
+            "type": "info",
+            "text": "Escalader au Back-office via le canal #digital-support en taguant @sn-digitalbackoffice.",
+            "templateId": "device-linking-b2w"
+        }
+        }
+    },
+    "move-balance": {
+        "title": "Move Balance",
+        "start": "collect_ident",
+        "nodes": {
+        "collect_ident": {
+            "type": "info",
+            "text": "Demander l’identification (Nom & Prénom) et confirmer le numéro objet.",
+            "templateId": "move-balance-ident",
+            "next": "confirm_ident"
+        },
+
+        "confirm_ident": {
+            "type": "question",
+            "text": "Les informations d’identification ont-elles été reçues et correspondent-elles ?",
+            "options": [
+            { "label": "Identification OK", "next": "where_is_client" },
+            { "label": "Identification NOK / incomplète", "next": "end_need_ident" }
+            ]
+        },
+
+        "where_is_client": {
+            "type": "question",
+            "text": "Localisation du client ?",
+            "options": [
+            { "label": "Au Sénégal", "next": "ask_kyc_checks" },
+            { "label": "À l’étranger", "next": "abroad_collect_relative" }
+            ]
+        },
+
+        "ask_kyc_checks": {
+            "type": "info",
+            "text": "Poser les questions de sécurité (dernière transaction + adresse dernier dépôt/retrait).",
+            "templateId": "move-balance-kyc-ask",
+            "next": "verify_kyc"
+        },
+
+        "verify_kyc": {
+            "type": "question",
+            "text": "Les contrôles KYC sont-ils validés ?",
+            "options": [
+            { "label": "Tout est conforme", "next": "post_ds_note_sn" },
+            { "label": "1 élément conforme", "next": "ask_alt_kyc" },
+            { "label": "Infos non conformes", "next": "end_cannot_proceed" }
+            ]
+        },
+
+        "ask_alt_kyc": {
+            "type": "question",
+            "text": "Le client est un KYC1 ou un KYC2 ?",
+            "options": [
+            { "label": "KYC1", "next": "collect_alt_kyc1" },
+            { "label": "KYC2", "next": "collect_alt_kyc2" }
+            ]
+        },
+
+        "collect_alt_kyc1": {
+            "type": "info",
+            "text": "Demander le nom complet et le numéro d’un contact habituel de transaction.",
+            "templateId": "recipient-name-or-number",
+            "next": "recheck_kyc_after_alt"
+        },
+
+        "collect_alt_kyc2": {
+            "type": "info",
+            "text": "Demander le numéro de CNI/passeport.",
+            "templateId": "nin-request",
+            "next": "recheck_kyc_after_alt"
+        },
+
+        "recheck_kyc_after_alt": {
+            "type": "question",
+            "text": "Avec la question alternative, la vérification est-elle maintenant conforme ?",
+            "options": [
+            { "label": "Oui, conforme", "next": "post_ds_note_sn" },
+            { "label": "Non, toujours non conforme", "next": "end_cannot_proceed" }
+            ]
+        },
+
+        "post_ds_note_sn": {
+            "type": "info",
+            "text": "Poster la demande dans #digital-support en taguant @sn-digitalbackoffice (format ci-dessous).",
+            "templateId": "move-balance-ds-note-sn",
+            "next": "notify_client_exec"
+        },
+
+        "notify_client_exec": {
+            "type": "info",
+            "text": "Informer le client (demande transmise / exécution en cours).",
+            "templateId": "move-balance"
+        },
+
+        "abroad_collect_relative": {
+            "type": "info",
+            "text": "Demander un proche au Sénégal + pièces (CNI du client & du proche + procuration signée).",
+            "templateId": "move-balance-abroad",
+            "next": "abroad_docs_provided"
+        },
+
+        "abroad_docs_provided": {
+            "type": "question",
+            "text": "Les pièces (n° proche, CNI client & proche, procuration signée) ont-elles été fournies ?",
+            "options": [
+            { "label": "Oui (complet)", "next": "abroad_escalate" },
+            { "label": "Partiel / manquant", "next": "abroad_request_procuration" }
+            ]
+        },
+
+        "abroad_request_procuration": {
+            "type": "info",
+            "text": "Préciser le contenu requis pour la procuration signée (alias disponible).",
+            "templateId": "move-balance-procuration",
+            "next": "abroad_docs_recheck"
+        },
+
+        "abroad_docs_recheck": {
+            "type": "question",
+            "text": "Les documents requis sont-ils maintenant complets et conformes ?",
+            "options": [
+            { "label": "Oui", "next": "abroad_escalate" },
+            { "label": "Non", "next": "end_waiting_docs" }
+            ]
+        },
+
+        "abroad_escalate": {
+            "type": "info",
+            "text": "Escalader au Back-office (#digital-support + @sn-digitalbackoffice) avec CNI client & proche + procuration.",
+            "templateId": "move-balance-ds-note-sn",
+            "next": "abroad_confirm"
+        },
+
+        "abroad_confirm": {
+            "type": "info",
+            "text": "Informer le client (demande transmise / exécution en cours).",
+            "templateId": "move-balance"
+        },
+
+        "end_need_ident": {
+            "type": "end",
+            "text": "Identification incomplète : on ne peut pas procéder au Move balance."
+        },
+        "end_cannot_proceed": {
+            "type": "end",
+            "text": "KYC non conforme : on ne peut pas procéder au Move balance."
+        },
+        "end_waiting_docs": {
+            "type": "end",
+            "text": "Documents manquants (proche/CNI/procuration). En attente du client."
+        }
+        }
+    },
+     "vault": {
+        "title": "Vault",
+        "start": "choose_use_case",
+        "nodes": {
+        "choose_use_case": {
+            "type": "question",
+            "text": "Quel est l’objet de la demande ?",
+            "options": [
+            { "label": "Débloquer un coffre", "next": "unlock_precheck_multivault" },
+            { "label": "Infos sur les multi-coffres", "next": "multi_info" },
+            { "label": "(Re)bloquer un coffre", "next": "reblock_check" }
+            ]
+        },
+
+        "unlock_precheck_multivault": {
+            "type": "question",
+            "text": "Le client a-t-il plusieurs coffres ?",
+            "options": [
+            { "label": "Oui", "next": "ask_which_vault" },
+            { "label": "Non, un seul", "next": "unlock_confirm_warning" }
+            ]
+        },
+        "ask_which_vault": {
+            "type": "info",
+            "text": "Demander quel coffre doit être débloqué.",
+            "templateId": "ask-which-vault-unlock",
+            "next": "unlock_confirm_warning"
+        },
+        "unlock_confirm_warning": {
+            "type": "info",
+            "text": "Rappeler la contrainte (reblocage possible seulement le mois suivant) et demander confirmation.",
+            "templateId": "vault-unlock-ask",
+            "next": "unlock_confirm_question"
+        },
+        "unlock_confirm_question": {
+            "type": "question",
+            "text": "Souhaite-t-il/elle procéder au déblocage maintenant ?",
+            "options": [
+            { "label": "Oui, procéder", "next": "do_unlock" },
+            { "label": "Non, annuler", "next": "end_unlock_cancelled" }
+            ]
+        },
+        "do_unlock": {
+            "type": "info",
+            "text": "Exécuter le déblocage du coffre (aucune question de sécurité requise).",
+            "next": "unlock_done_message"
+        },
+        "unlock_done_message": {
+            "type": "info",
+            "text": "Confirmer au client que le coffre est débloqué.",
+            "templateId": "vault-unlock-done"
+        },
+
+        "reblock_check": {
+            "type": "question",
+            "text": "Le coffre a-t-il déjà été débloqué ce mois-ci ?",
+            "options": [
+            { "label": "Oui (déjà débloqué ce mois-ci)", "next": "inform_reblock_not_allowed" },
+            { "label": "Non", "next": "guide_lock_in_app" }
+            ]
+        },
+        "inform_reblock_not_allowed": {
+            "type": "info",
+            "text": "Informer que le reblocage est refusé si le coffre a été débloqué ce mois-ci.",
+            "templateId": "vault-reblock-not-allowed"
+        },
+        "guide_lock_in_app": {
+            "type": "info",
+            "text": "Guider le client : App > Coffre > choisir le coffre > « Bloquer » > définir la date de déblocage > confirmer.",
+            "templateId": "vault-lock-howto"
+        },
+
+        "multi_info": {
+            "type": "info",
+            "text": "Expliquer le fonctionnement des multi-coffres.",
+            "templateId": "vault-multiple-info",
+            "next": "multi_add_info"
+        },
+        "multi_add_info": {
+            "type": "info",
+            "text": "Expliquer comment ajouter un coffre supplémentaire.",
+            "templateId": "vault-multiple-add"
+        },
+
+        "end_unlock_cancelled": {
+            "type": "end",
+            "text": "Déblocage annulé à la demande du client."
+        }
+        }
+    },
+    "unblock-account": {
+        "title": "Unblock account / Stolen phone",
+        "start": "collect_ident",
+        "nodes": {
+        "collect_ident": {
+            "type": "info",
+            "text": "Demander l’identification (Nom & Prénom) et confirmer le numéro objet.",
+            "templateId": "unblock-ident-ask",
+            "next": "confirm_ident"
+        },
+
+        "confirm_ident": {
+            "type": "question",
+            "text": "Les informations d’identification correspondent-elles ?",
+            "options": [
+            { "label": "Identification OK", "next": "ask_sim_recovered" },
+            { "label": "Identification NOK", "next": "end_need_ident" }
+            ]
+        },
+
+        "ask_sim_recovered": {
+            "type": "question",
+            "text": "Le client a-t-il récupéré sa carte SIM ?",
+            "options": [
+            { "label": "Oui", "next": "ask_kyc" },
+            { "label": "Non", "next": "sim_not_recoverable" }
+            ]
+        },
+
+        "sim_not_recoverable": {
+            "type": "info",
+            "text": "SIM non récupérable : proposer d’ouvrir un nouveau compte (KYC2) puis Move balance vers ce nouveau compte.",
+            "templateId": "unblock-sim-lost"
+        },
+
+        "ask_kyc": {
+            "type": "info",
+            "text": "Poser les questions de sécurité (dernière transaction + adresse dernier dépôt/retrait).",
+            "templateId": "unblock-kyc-ask",
+            "next": "verify_kyc"
+        },
+
+        "verify_kyc": {
+            "type": "question",
+            "text": "Les contrôles KYC sont-ils validés ?",
+            "options": [
+            { "label": "Tout est conforme", "next": "do_unblock" },
+            { "label": "1 élément conforme", "next": "ask_alt_kyc" },
+            { "label": "Infos non conformes", "next": "send_kyc_failed" }
+            ]
+        },
+
+        "ask_alt_kyc": {
+            "type": "question",
+            "text": "Question alternative : le client est-il KYC1 ou KYC2 ?",
+            "options": [
+            { "label": "KYC1", "next": "collect_alt_kyc1" },
+            { "label": "KYC2", "next": "collect_alt_kyc2" }
+            ]
+        },
+
+        "collect_alt_kyc1": {
+            "type": "info",
+            "text": "Demander le nom complet ou le numéro d’un contact habituel de transaction.",
+            "templateId": "recipient-name-or-number",
+            "next": "recheck_kyc"
+        },
+
+        "collect_alt_kyc2": {
+            "type": "info",
+            "text": "Demander le numéro de CNI/passeport.",
+            "templateId": "nin-request",
+            "next": "recheck_kyc"
+        },
+
+        "recheck_kyc": {
+            "type": "question",
+            "text": "Avec la question alternative, la vérification est-elle maintenant conforme ?",
+            "options": [
+            { "label": "Oui, conforme", "next": "do_unblock" },
+            { "label": "Non, toujours non conforme", "next": "send_kyc_failed" }
+            ]
+        },
+
+        "send_kyc_failed": {
+            "type": "info",
+            "text": "Informer le client que les informations ne permettent pas de confirmer l’identité (KYC KO).",
+            "templateId": "unblock-kyc-failed",
+            "next": "end_kyc_failed"
+        },
+
+        "do_unblock": {
+            "type": "info",
+            "text": "Procéder au déblocage sur Front, puis confirmer au client.",
+            "templateId": "unblock-done",
+            "next": "end_unblocked"
+        },
+
+        "end_need_ident": {
+            "type": "end",
+            "text": "Identification incomplète : impossible de poursuivre pour l’instant."
+        },
+        "end_kyc_failed": {
+            "type": "end",
+            "text": "Vérifications KYC non concluantes : déblocage non effectué."
+        },
+        "end_unblocked": {
+            "type": "end",
+            "text": "Compte débloqué et client informé."
+        }
+        }
+    },
+    "security-challenge": {
+        "title": "Security Challenge",
+        "start": "collect_ident",
+        "nodes": {
+        "collect_ident": {
+            "type": "info",
+            "text": "Demander l’identification (Nom & Prénom) et confirmer le numéro objet.",
+            "templateId": "sc-ident",
+            "next": "confirm_ident"
+        },
+
+        "confirm_ident": {
+            "type": "question",
+            "text": "Les informations d’identification ont-elles été reçues et correspondent-elles ?",
+            "options": [
+            { "label": "Identification OK", "next": "explain_reason" },
+            { "label": "Identification NOK / incomplète", "next": "end_need_ident" }
+            ]
+        },
+
+        "explain_reason": {
+            "type": "info",
+            "text": "Expliquer la raison du blocage (activité inhabituelle, nouvel appareil, etc.).",
+            "templateId": "sc-reason",
+            "next": "ask_kyc_level"
+        },
+
+        "ask_kyc_level": {
+            "type": "question",
+            "text": "Quel est le niveau KYC du client ?",
+            "options": [
+            { "label": "KYC2", "next": "ask_kyc2" },
+            { "label": "KYC1", "next": "ask_kyc1" }
+            ]
+        },
+
+        "ask_kyc2": {
+            "type": "info",
+            "text": "Poser les questions KYC2 : date de naissance, adresse du point du dernier dépôt/retrait, nature & montant de la dernière transaction.",
+            "templateId": "sc-kyc2",
+            "next": "verify_kyc2"
+        },
+
+        "verify_kyc2": {
+            "type": "question",
+            "text": "Les réponses KYC2 sont-elles conformes ?",
+            "options": [
+            { "label": "Tout est conforme", "next": "do_clear" },
+            { "label": "Partiel / à compléter", "next": "request_more_kyc2" },
+            { "label": "Non conforme", "next": "send_mismatch" }
+            ]
+        },
+
+        "request_more_kyc2": {
+            "type": "info",
+            "text": "Demander l’élément manquant (ex. date de naissance si non fournie).",
+            "templateId": "ask-birthdate",
+            "next": "recheck_kyc2"
+        },
+
+        "recheck_kyc2": {
+            "type": "question",
+            "text": "Après complément, les réponses KYC2 sont-elles maintenant conformes ?",
+            "options": [
+            { "label": "Oui, conforme", "next": "do_clear" },
+            { "label": "Non, toujours non conforme", "next": "send_mismatch" }
+            ]
+        },
+
+        "ask_kyc1": {
+            "type": "info",
+            "text": "Poser les alternatives KYC1 (contact fréquent OU nature & montant d’une transaction récente + adresse dernier dépôt/retrait).",
+            "templateId": "sc-kyc1",
+            "next": "verify_kyc1"
+        },
+
+        "verify_kyc1": {
+            "type": "question",
+            "text": "Les réponses KYC1 sont-elles conformes ?",
+            "options": [
+            { "label": "Tout est conforme", "next": "do_clear" },
+            { "label": "Partiel / à compléter", "next": "request_more_kyc1" },
+            { "label": "Non conforme", "next": "send_mismatch" }
+            ]
+        },
+
+        "request_more_kyc1": {
+            "type": "info",
+            "text": "Redemander une des preuves KYC1 listées (contact fréquent, nature & montant d’une transaction récente, adresse du point).",
+            "templateId": "sc-kyc1",
+            "next": "recheck_kyc1"
+        },
+
+        "recheck_kyc1": {
+            "type": "question",
+            "text": "Après complément, les réponses KYC1 sont-elles maintenant conformes ?",
+            "options": [
+            { "label": "Oui, conforme", "next": "do_clear" },
+            { "label": "Non, toujours non conforme", "next": "send_mismatch" }
+            ]
+        },
+
+        "do_clear": {
+            "type": "info",
+            "text": "Action Front : cliquer sur « CLEAR » pour lever le Security Challenge sur l’appareil.",
+            "next": "notify_cleared"
+        },
+
+        "notify_cleared": {
+            "type": "info",
+            "text": "Informer le client que le blocage a été levé.",
+            "templateId": "sc-cleared"
+        },
+
+        "send_mismatch": {
+            "type": "info",
+            "text": "Informer le client que les informations ne correspondent pas et que le blocage ne peut pas être levé.",
+            "templateId": "sc-mismatch"
+        },
+
+        "end_need_ident": {
+            "type": "end",
+            "text": "Identification incomplète : impossible de poursuivre pour l’instant."
+        },
+        "end_cleared": {
+            "type": "end",
+            "text": "Security Challenge levé (CLEAR) et client informé."
+        },
+        "end_not_cleared": {
+            "type": "end",
+            "text": "Informations non conformes : blocage maintenu et rappel sécurité envoyé."
+        }
+        }
+    },
+    "in-app-device-restriction": {
+        "title": "In-App Device Restriction",
+        "start": "collect_ident",
+        "nodes": {
+        "collect_ident": {
+            "type": "info",
+            "text": "Demander l’identification (Nom & Prénom) et confirmer le numéro objet.",
+            "templateId": "device-restriction-ident",
+            "next": "confirm_ident"
+        },
+
+        "confirm_ident": {
+            "type": "question",
+            "text": "Les informations d’identification ont-elles été reçues et correspondent-elles ?",
+            "options": [
+            { "label": "Identification OK", "next": "same_number_check" },
+            { "label": "Identification NOK / incomplète", "next": "end_need_ident" }
+            ]
+        },
+
+        "same_number_check": {
+            "type": "question",
+            "text": "Le client nous contacte-t-il avec le même numéro que celui lié au compte ?",
+            "options": [
+            { "label": "Oui (même numéro)", "next": "explain_block" },
+            { "label": "Non (numéro différent)", "next": "ask_kyc_base_diffnum" }
+            ]
+        },
+
+        "ask_kyc_base_diffnum": {
+            "type": "info",
+            "text": "Poser d’abord les questions de sécurité de base (dernière transaction + adresse du point).",
+            "templateId": "device-restriction-kyc-base",
+            "next": "verify_kyc_base"
+        },
+
+        "verify_kyc_base": {
+            "type": "question",
+            "text": "Les réponses KYC de base sont-elles conformes ?",
+            "options": [
+            { "label": "Conformes", "next": "explain_block" },
+            { "label": "Non conformes", "next": "end_need_kyc" },
+            { "label": "1 seul conforme", "next": "ask_profile_for_alt" }
+            ]
+        },
+
+        "ask_profile_for_alt": {
+            "type": "question",
+            "text": "Quel est le profil du client pour la question alternative ?",
+            "options": [
+            { "label": "KYC1", "next": "ask_alt_kyc1" },
+            { "label": "KYC2", "next": "ask_alt_kyc2" }
+            ]
+        },
+
+        "ask_alt_kyc1": {
+            "type": "info",
+            "text": "Demander le nom et prénom d’un contact de transaction fréquent (KYC1).",
+            "templateId": "device-restriction-kyc-alt-kyc1",
+            "next": "recheck_kyc_after_alt"
+        },
+
+        "ask_alt_kyc2": {
+            "type": "info",
+            "text": "Demander le numéro de CNI/passeport (KYC2).",
+            "templateId": "device-restriction-kyc-alt-kyc2",
+            "next": "recheck_kyc_after_alt"
+        },
+
+        "recheck_kyc_after_alt": {
+            "type": "question",
+            "text": "Avec la question alternative, la vérification est-elle maintenant conforme ?",
+            "options": [
+            { "label": "Oui, conforme", "next": "explain_block" },
+            { "label": "Non, toujours non conforme", "next": "end_need_kyc" }
+            ]
+        },
+
+        "explain_block": {
+            "type": "info",
+            "text": "Expliquer clairement la raison du blocage (restriction à un seul appareil).",
+            "templateId": "device-restriction-explain",
+            "next": "show_choice_text"
+        },
+
+        "show_choice_text": {
+            "type": "info",
+            "text": "Présenter les deux options possibles au client.",
+            "templateId": "device-restriction-choice",
+            "next": "choose_action"
+        },
+
+        "choose_action": {
+            "type": "question",
+            "text": "Quelle action souhaitez-vous effectuer ?",
+            "options": [
+            { "label": "Option A — Change Device (autoriser le nouvel appareil)", "next": "do_change_device" },
+            { "label": "Option B — Disable Feature (désactiver complètement la restriction)", "next": "do_disable_feature" }
+            ]
+        },
+
+        "do_change_device": {
+            "type": "info",
+            "text": "Front : cliquer sur « Change Device » dans la bannière, puis confirmer.",
+            "next": "confirm_change"
+        },
+
+        "confirm_change": {
+            "type": "info",
+            "text": "Confirmer au client que le nouvel appareil est autorisé.",
+            "templateId": "device-restriction-done-change",
+            "next": "reminders"
+        },
+
+        "do_disable_feature": {
+            "type": "info",
+            "text": "Front : cliquer sur « Disable Feature » dans la bannière, puis confirmer.",
+            "next": "confirm_disable"
+        },
+
+        "confirm_disable": {
+            "type": "info",
+            "text": "Confirmer au client que la restriction a été désactivée.",
+            "templateId": "device-restriction-done-disable",
+            "next": "reminders"
+        },
+
+        "reminders": {
+            "type": "info",
+            "text": "Rappels :\n• Vérifications KYC UNIQUEMENT si le numéro de contact est différent de celui du compte ;\n• Inutile de demander la marque/modèle des téléphones (ancien/nouveau).",
+            "next": "end_done"
+        },
+
+        "end_need_ident": {
+            "type": "end",
+            "text": "Identification incomplète : impossible de traiter la demande."
+        },
+        "end_need_kyc": {
+            "type": "end",
+            "text": "KYC non concluant : impossible de traiter la demande."
+        },
+        "end_done": {
+            "type": "end",
+            "text": "Action effectuée (Change Device ou Disable Feature) et client informé."
+        }
+        }
+    },
+    "wave-business": {
+        "title": "Wave Business",
+        "start": "choose_intent",
+        "nodes": {
+        "choose_intent": {
+            "type": "question",
+            "text": "Quel est l’objet de la demande ?",
+            "options": [
+            { "label": "Demande d’ouverture Wave Business", "next": "check_personal_account" },
+            { "label": "Problème sur un paiement marchand", "next": "merchant_issue_rule" }
+            ]
+        },
+
+        "check_personal_account": {
+            "type": "question",
+            "text": "Le client dispose-t-il d’un compte Wave personnel (sur ce numéro) ?",
+            "options": [
+            { "label": "Oui", "next": "check_kyc2" },
+            { "label": "Non", "next": "not_personal_account_msg" }
+            ]
+        },
+
+        "not_personal_account_msg": {
+            "type": "info",
+            "text": "Partager les étapes : ouvrir un compte perso puis le déplafonner (KYC2). Envoyer ensuite le lien Business.",
+            "templateId": "business-not-personal-account"
+        },
+
+        "check_kyc2": {
+            "type": "question",
+            "text": "Le compte personnel est-il déplafonné (KYC2, pièce d’identité valide) ?",
+            "options": [
+            { "label": "Oui (KYC2 OK)", "next": "check_uniqueness" },
+            { "label": "Non (KYC2 KO)", "next": "personal_not_upgraded_msg" }
+            ]
+        },
+
+        "personal_not_upgraded_msg": {
+            "type": "info",
+            "text": "Guider le client vers le déplafonnement KYC2, puis envoyer le lien Business.",
+            "templateId": "business-personal-not-upgraded"
+        },
+
+        "check_uniqueness": {
+            "type": "question",
+            "text": "Existe-t-il déjà un compte Wave Business ouvert avec cette même pièce d’identité ?",
+            "options": [
+            { "label": "Oui (déjà un compte Business)", "next": "already_has_business_msg" },
+            { "label": "Non (aucun Business existant)", "next": "agent_send_link_in_front" }
+            ]
+        },
+
+        "already_has_business_msg": {
+            "type": "info",
+            "text": "Informer qu’un autre compte Business existe déjà avec cette pièce (unicité obligatoire).",
+            "templateId": "business-already-has-account"
+        },
+
+        "agent_send_link_in_front": {
+            "type": "info",
+            "text": "Envoyer le lien Business au client.",
+            "templateId": "business-send-link"
+        },
+
+        "merchant_issue_rule": {
+            "type": "info",
+            "text": "Règle générale : un paiement marchand n’est pas annulable par Wave.",
+            "templateId": "merchant-cancel-not-possible",
+            "next": "ask_have_merchant_cs"
+        },
+
+        "ask_have_merchant_cs": {
+            "type": "question",
+            "text": "Un numéro du support du marchand est-il disponible dans la partie note du compte du marchand ?",
+            "options": [
+            { "label": "Oui (numéro disponible)", "next": "share_merchant_cs" },
+            { "label": "Non (pas de numéro)", "next": "escalate_merchant_team" }
+            ]
+        },
+
+        "share_merchant_cs": {
+            "type": "info",
+            "text": "Partager au client le numéro du service client du marchand indiqué sur le compte.",
+            "templateId": "merchant-share-cs-number"
+        },
+
+        "escalate_merchant_team": {
+            "type": "info",
+            "text": "Escalader vers l’équipe marchands (cela ne garantit pas un remboursement).",
+            "templateId": "merchant-escalation"
+        }
+        }
+    },
+    "virtual-visa-card": {
+    "title": "Virtual Visa Card",
+    "start": "choose_topic",
+    "nodes": {
+      "choose_topic": {
+        "type": "question",
+        "text": "Quel sujet souhaitez-vous traiter pour la carte Visa virtuelle ?",
+        "options": [
+          { "label": "Découvrir / Disponibilité", "next": "about_definition" },
+          { "label": "Plafonds & limites", "next": "send_global_limit" }
+        ]
+      },
+
+      "about_definition": {
+        "type": "info",
+        "text": "Partager la définition de la carte Visa virtuelle.",
+        "templateId": "visa-card-definition",
+        "next": "about_deployment"
+      },
+      "about_deployment": {
+        "type": "info",
+        "text": "Informer du déploiement progressif.",
+        "templateId": "visa-card-obtention"
+      },
+
+      "send_activation": {
+        "type": "info",
+        "text": "Envoyer les étapes d’activation.",
+        "templateId": "visa-card-activ",
+        "next": "send_view_details"
+      },
+      "send_view_details": {
+        "type": "info",
+        "text": "Expliquer comment voir les détails (numéro, date d’expiration, CVV).",
+        "templateId": "visa-card",
+        "next": "send_topup_withdraw"
+      },
+      "send_topup_withdraw": {
+        "type": "info",
+        "text": "Expliquer comment déposer/retirer entre carte et solde principal.",
+        "templateId": "visa-card-recharg",
+        "next": "end_activation"
+      },
+      "end_activation": {
+        "type": "end",
+        "text": "Activation / Détails / Rechargement traités."
+      },
+
+      "send_global_limit": {
+        "type": "info",
+        "text": "Rappeler que la carte compte dans les limites globales du compte personnel.",
+        "templateId": "plafond-visa-card",
+        "next": "send_specific_limits"
+      },
+      "send_specific_limits": {
+        "type": "info",
+        "text": "Partager les limites spécifiques Virtual Visa (par transaction, jour, mois…).",
+        "templateId": "virtual-visa-limits"
+      },
+      "show_lock_unlock": {
+        "type": "info",
+        "text": "Depuis l’écran de la carte, appuyer sur « Verrouiller la carte » ou « Déverrouiller la carte » selon le besoin.",
+        "next": "show_delete_card"
+      },
+      "show_delete_card": {
+        "type": "info",
+        "text": "Pour supprimer la carte : s’assurer que le solde carte = 0 F, puis Paramètres → Supprimer la carte → confirmer.",
+        "next": "show_fees"
+      },
+      "show_fees": {
+        "type": "info",
+        "text": "Frais : émission gratuite • dépôts/retraits carte↔principal gratuits • frais de transaction / rejet : se référer au barème en vigueur (vérifier périodiquement la grille interne).",
+        "next": "end_manage"
+      },
+      "end_manage": {
+        "type": "end",
+        "text": "Informations gestion de carte transmises."
+      },
+
+      "assist_collect_prereq": {
+        "type": "info",
+        "text": "Prérequis à collecter : Nom & Prénom, numéro concerné, date de naissance (JJ/MM/AAAA).",
+        "next": "assist_verify_kyc"
+      },
+      "assist_verify_kyc": {
+        "type": "question",
+        "text": "Les vérifications d’identité (KYC) sont-elles validées ?",
+        "options": [
+          { "label": "Oui (KYC validé)", "next": "assist_choose_action" },
+          { "label": "Non (KYC non concluant)", "next": "end_kyc_failed" }
+        ]
+      },
+      "assist_choose_action": {
+        "type": "question",
+        "text": "Quelle action souhaitez-vous effectuer pour la carte ?",
+        "options": [
+          { "label": "Bloquer la carte", "next": "assist_block_done" },
+          { "label": "Déverrouiller la carte", "next": "assist_unlock_done" },
+          { "label": "Verrouiller la carte", "next": "assist_lock_done" },
+          { "label": "Supprimer la carte (solde carte = 0 F)", "next": "assist_delete_done" }
+        ]
+      },
+      "assist_block_done": {
+        "type": "info",
+        "text": "Procéder au blocage depuis l’outil interne puis confirmer au client que l’opération est effectuée.",
+        "next": "end_assist_done"
+      },
+      "assist_unlock_done": {
+        "type": "info",
+        "text": "Procéder au déblocage/déverrouillage depuis l’outil interne puis confirmer au client.",
+        "next": "end_assist_done"
+      },
+      "assist_lock_done": {
+        "type": "info",
+        "text": "Procéder au verrouillage depuis l’outil interne puis confirmer au client.",
+        "next": "end_assist_done"
+      },
+      "assist_delete_done": {
+        "type": "info",
+        "text": "Vérifier que le solde carte est à 0 F, puis Paramètres → Supprimer la carte → confirmer. Informer le client une fois fait.",
+        "next": "end_assist_done"
+      },
+      "end_assist_done": {
+        "type": "end",
+        "text": "Assistance effectuée et client informé."
+      },
+      "end_kyc_failed": {
+        "type": "end",
+        "text": "KYC non concluant : ne pas procéder et demander des éléments complémentaires."
+      },
+
+      "mb_collect_prereq": {
+        "type": "info",
+        "text": "Collecter : Nom & Prénom, numéro concerné, solde disponible sur la carte Visa, N° de CNI, montant de deux opérations récentes faites avec la carte.",
+        "next": "mb_where_is_client"
+      },
+      "mb_where_is_client": {
+        "type": "question",
+        "text": "Localisation du client pour le Move Balance (Visa → principal) ?",
+        "options": [
+          { "label": "Au Sénégal", "next": "mb_escalate_sn" },
+          { "label": "À l’étranger", "next": "mb_abroad_collect_relative" }
+        ]
+      },
+      "mb_escalate_sn": {
+        "type": "info",
+        "text": "Si KYC validé : poster la demande dans #digital-support en taguant @sn-digitalbackoffice (format ci-dessous).",
+        "templateId": "move-balance-ds-note-sn",
+        "next": "end_mb_sent"
+      },
+      "mb_abroad_collect_relative": {
+        "type": "info",
+        "text": "Client à l’étranger : demander un proche au Sénégal + pièces (CNI client & proche + procuration signée).",
+        "templateId": "move-balance-abroad",
+        "next": "mb_abroad_docs_provided"
+      },
+      "mb_abroad_docs_provided": {
+        "type": "question",
+        "text": "Les pièces (n° proche, CNI client & proche, procuration signée) ont-elles été fournies ?",
+        "options": [
+          { "label": "Oui (complet)", "next": "mb_abroad_escalate" },
+          { "label": "Partiel / manquant", "next": "mb_abroad_request_procuration" }
+        ]
+      },
+      "mb_abroad_request_procuration": {
+        "type": "info",
+        "text": "Préciser le contenu requis pour la procuration signée.",
+        "templateId": "move-balance-procuration",
+        "next": "mb_abroad_docs_recheck"
+      },
+      "mb_abroad_docs_recheck": {
+        "type": "question",
+        "text": "Les documents requis sont-ils maintenant complets et conformes ?",
+        "options": [
+          { "label": "Oui", "next": "mb_abroad_escalate" },
+          { "label": "Non", "next": "end_mb_waiting_docs" }
+        ]
+      },
+      "mb_abroad_escalate": {
+        "type": "info",
+        "text": "Escalader au Back-office (#digital-support + @sn-digitalbackoffice) avec CNI client & proche + procuration.",
+        "templateId": "procuration-signee",
+        "next": "end_mb_sent"
+      },
+      "end_mb_sent": {
+        "type": "end",
+        "text": "Move Balance (Visa → principal) transmis / en cours de traitement."
+      },
+      "end_mb_waiting_docs": {
+        "type": "end",
+        "text": "Documents manquants (proche/CNI/procuration). En attente du client."
+      },
+
+      "support_app_intro": {
+        "type": "info",
+        "text": "Les demandes Virtual Visa se font via la Support App (enregistrées dans Monday pour Integration). Plus d’envoi Slack avec les anciens templates.",
+        "next": "support_app_not_in_history"
+      },
+      "support_app_not_in_history": {
+        "type": "info",
+        "text": "Paiement en échec / non visible dans l’historique — étapes : 1) Appuyer sur « Escalader » ; 2) Choisir « Escalader un problème de Virtual Visa » (4e option) ; 3) Sélectionner le type de problème ; 4) Ajouter des commentaires clairs ; 5) Cliquer « Escalader ».",
+        "next": "support_app_in_history"
+      },
+      "support_app_in_history": {
+        "type": "info",
+        "text": "Problème sur un paiement RÉUSSI (présent dans l’historique) — étapes : 1) Ouvrir la transaction concernée (flèche) ; 2) « Signaler un problème de Virtual Visa » ; 3) Choisir le type de problème ; 4) Décrire précisément dans Commentaires ; 5) « Escalader ». Le suivi apparaît dans l’onglet Historique de la Support App.",
+        "next": "support_app_double_charge_checks"
+      },
+      "support_app_double_charge_checks": {
+        "type": "info",
+        "text": "Cas « doublement facturé » — vérifier d’abord : • envois multiples par l’utilisateur ? • même montant débité deux fois ? • si oui, escalader via la Support App comme ci-dessus.",
+        "next": "support_app_reminder"
+      },
+      "support_app_reminder": {
+        "type": "info",
+        "text": "Rappel sécurité : ne jamais partager CVV / codes / PIN.",
+        "next": "end_support_app"
+      },
+      "end_support_app": {
+        "type": "end",
+        "text": "Réclamation / escalade Virtual Visa guidée."
+      }
+    }
+  }
+  }
+}

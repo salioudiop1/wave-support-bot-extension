@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Wave Front Assist",
+  "version": "1.0.0",
+  "description": "Ajoute un bouton d'assistance sur la page Front pour ouvrir l'assistant.",
+  "icons": { "128": "assets/logo.png" },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://frontplugin.wave-internal.com/*",
+    "https://flex.wave.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://frontplugin.wave-internal.com/*",
+        "https://flex.wave.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "widget.js",
+        "dist/assistant-adapter.js",
+        "dist/templates-adapter.js",
+        "assets/*",
+        "flows/*",
+        "templates/*",
+        "processes/*",
+        "dist/assets/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -1,0 +1,1905 @@
+{
+  "deplafonnement": [
+    {
+      "id": "deplafonnement-sn",
+      "label": "Déplafonnement (au Sénégal)",
+      "langs": {
+        "fr": "Bonjour,\nRavis de vous lire. 😊\nPour déplafonner votre compte, merci de vous rendre dans un point Wave au Sénégal avec une pièce d'identité valide (CNI, passeport, carte consulaire ou carte d'identité étrangère). L'agent procédera au déplafonnement sur place.\nNous restons disponibles au besoin.",
+        "en": "Hello,\nHappy to hear from you. 😊\nTo raise your account limits, please go to a Wave point in Senegal with a valid ID (National ID, passport, consular card, or foreign ID). The agent will complete the process on site.\nWe're here if you need anything."
+      }
+    },
+    {
+      "id": "deplafonnement-hors-sn",
+      "label": "Déplafonnement - (hors Sénégal)",
+      "langs": {
+        "fr": "Bonjour,\nRavis de vous lire. 😊\nPour des raisons de conformité, le déplafonnement à distance n'est pas disponible.\nVous devez être au Sénégal et vous rendre dans un point Wave avec votre pièce d'identité pour déplafonner votre compte.\nNous vous prions de patienter jusqu'à votre retour.\nNous restons disponibles au besoin.",
+        "wo": "Salam,\nDi la jajefël bu bax ci mbindë mi. 😊\nFaw gua nékk Sénégal nguir meunë déff déplafonnement bi.\nDila ñane ngua bayi ba delouci nguir ñu meunë la thi taxawu.\nJam ak jam.\nJajëf.",
+        "en": "Hello,\nFor compliance reasons, remote de-funding isn't available.\nYou must be in Senegal and go to a Wave point with your ID to de-fund the account.\nPlease be patient until you return.\nWe are available if needed. 🙏"
+      }
+    },
+    {
+    "id": "account-limits-unlocked",
+    "label": "Déplafonnement — Limites du compte",
+    "tags": ["déplafonné", "plafond", "limite", "compte", "transactions"],
+    "langs": {
+        "fr": "Merci pour ces informations. 😊\nVotre compte est déjà déplafonné.\nVous pouvez recevoir jusqu’à 2 000 000 FCFA sur votre compte, avec une limite mensuelle de transactions fixée à 10 000 000 FCFA.\nNous restons à votre disposition pour toute autre question.",
+        "wo": "Jërëjëf ci say xibaar. 😊\nSa compte dafa déplafonné ba noppi.\nMën nga jot ba 2 000 000 XOF ci sa compte, te limitu jëfandikoo ci weer wi mooy 10 000 000 XOF.\nSu laaj amee, nu ngi ci ñoom.",
+        "en": "Thank you for this information. 😊\nYour account is already uncapped.\nYou can receive up to 2,000,000 XOF on your account, with a monthly transaction limit of 10,000,000 XOF.\nWe remain available for any further questions."
+    }
+    }
+  ],
+  "reset-pin": [
+    {
+        "id": "location-check-senegal",
+        "label": "Vérification présence au Sénégal",
+        "langs": {
+            "fr": "Merci pour ces informations.\nÊtes-vous actuellement au Sénégal ?",
+            "en": "Thank you for the information.\nAre you currently in Senegal?",
+            "wo": "Jërëjëf ci xibaar yi.\nNdax nekk nga leegi ci Senegaal ?"
+        }
+    },
+    {
+        "id": "sim-possession-check",
+        "label": "Vérification possession SIM",
+        "langs": {
+            "fr": "Merci pour cette précision.\nAvez-vous actuellement la carte SIM en votre possession ?",
+            "en": "Thank you for the clarification.\nDo you currently have the SIM card in your possession?",
+            "wo": "Jërëjëf ci leeral bi.\nAm nga kàrt SIM bi ci sa loxo leegi ?"
+        }
+    },
+    {
+      "id": "reset-pin-etranger",
+      "label": "Reset PIN – Hors Sénégal",
+      "langs": {
+        "fr": "Bonjour,\nMerci de nous avoir contactés. 😊\nPour des raisons de sécurité, nous ne pouvons pas donner suite à votre demande si vous êtes hors du Sénégal, car vous ne recevrez pas le code de validation.\nMerci de patienter jusqu'à votre retour sur le territoire national.\nNous restons disponibles au besoin.",
+        "wo": "Salam,\nÑu ngui ley jajëfël bubax. 😊\nSu fekee borom compte bi nekkul ci deuk bi, soppi code secret bi mënul am ndax du mën a jot code de validation bi.\nFaw nga nekk Sénégal nguir mën a jot ko. Jërëjëf ci sa muñ.\nÑu ngui taxawu bu baax.",
+        "en": "Hello,\nFor security reasons, we can't proceed while you are outside Senegal because you won't receive the SMS validation code.\nPlease wait until you return to the country.\nWe remain available if needed."
+      }
+    },
+    {
+      "id": "reset-pin-no-sim",
+      "label": "Reset PIN – Client sans SIM",
+      "langs": {
+        "fr": "Bonjour,\nMerci de nous avoir contactés. 😊\nPour des raisons de sécurité, nous ne pouvons pas donner suite à votre demande si vous n’êtes pas en possession de votre carte SIM, car vous ne pourriez pas recevoir le code de validation nécessaire pour accéder à votre compte.\nNous vous invitons à vous rapprocher de votre opérateur, muni(e) de votre pièce d’identité, afin de récupérer votre puce.\nNous restons à votre disposition en cas de besoin.\nWave vous remercie de votre compréhension.",
+        "en": "Hello,\nThank you for reaching out. 😊\nFor security reasons, we can't proceed if you don't have your SIM card, since you wouldn't receive the SMS verification code.\nPlease visit your mobile operator with your ID to recover your SIM card.\nWe remain available if you need anything.\nWave thanks you for your understanding."
+      }
+    },
+    {
+        "id": "security-questions-initial",
+        "label": "Questions de sécurité — Introduction",
+        "tags": ["sécurité", "questions", "authentification"],
+        "langs": {
+            "fr": "Avant de pouvoir vous assister, nous devons d’abord vous poser quelques questions de sécurité.\nMerci d’y répondre.",
+            "wo": "Ngir nu mën a dimbali la, dañu war laaj la ci ay laaj bu ñuy jëfandikoo ngir kaarange.\nJërëjëf ci sa tontu.",
+            "en": "Before we can assist you, we need to ask you a few security questions.\nThank you for your response."
+        }
+    },
+    {
+        "id": "reset-pin-match",
+        "label": "Reset PIN – Numéro match (Questions de sécurité)",
+        "langs": {
+            "fr": "Pour mieux vous assister, pourriez-vous nous préciser :\n- la nature de votre dernière transaction (transfert, retrait, dépôt ou paiement),\n- l’adresse du point où vous avez effectué votre dernier dépôt/retrait ?",
+            "wo": "Ngir nu mëna la dimbali ci gën, waxal ñu:\n- ban transaction nga mujj def (transfert, retrait, dépot walla payement),\n- fan la nekkoon point bi nga mujj def deposit/retrait ?",
+            "en": "To better assist you, could you please specify:\n- the type of your last transaction (transfer, withdrawal, deposit, or payment),\n- the address of the point where you made your last deposit/withdrawal?"
+        }
+    },
+    {
+        "id": "reset-pin-no-match",
+        "label": "Reset PIN – Numéro ne match pas (Questions de sécurité)",
+        "langs": {
+            "fr": "Pour mieux vous assister, veuillez nous indiquer :\n- la nature de votre dernière transaction (transfert, retrait, dépôt ou paiement),\n- l’adresse du point où vous avez effectué votre dernier dépôt ou retrait,\n- votre numéro de CNI ou de passeport.\n\nNous restons dans l’attente de votre retour.",
+            "wo": "Ngir nu mëna la dimbali ci gën, waxal ñu:\n- ban transaction nga mujj def (transfert, retrait, dépôt walla payement),\n- adresu point bi nga mujj defar dépôt walla retrait,\n- sa numéro CNI walla passeport.\n\nNu ngi lay xaar ci sa tontu.",
+            "en": "To better assist you, please provide:\n- the type of your last transaction (transfer, withdrawal, deposit, or payment),\n- the address of the point where your last deposit or withdrawal took place,\n- your ID card or passport number.\n\nWe look forward to your reply."
+        }
+    },
+    {
+        "id": "last-tx-nature-and-amount",
+        "label": "Dernière transaction — Nature et montant (hors réception)",
+        "langs": {
+            "fr": "En dehors de la réception d’argent, pouvez-vous préciser la nature de votre dernière transaction (retrait, dépôt, paiement, achat de crédit ou transfert) ainsi que son montant ?",
+            "en": "Aside from receiving money, could you specify the nature of your last transaction (withdrawal, deposit, payment, airtime purchase, or transfer) and its amount?",
+            "wo": "Bu ñu bàyyi jot xalis, ndax mën nga waxal lii: ban la sa mujj transaction (retrait, dépôt, payement, jënd krediit walla transfert) ak montaan bi?"
+        }
+    },
+    {
+        "id": "habitual-deposit-withdrawal-location",
+        "label": "Adresse habituelle dépôts/retraits",
+        "langs": {
+            "fr": "Pouvez-vous nous préciser, s’il vous plaît, l’adresse du point Wave où vous avez l’habitude d’effectuer vos dépôts et retraits ?",
+            "en": "Could you please provide the address of the Wave point where you usually make your deposits and withdrawals?",
+            "wo": "Ndax man nga jox nu makkaan bi nga gënoo di defar sa depóo ak sa jëmmal ci Wave?"
+        }
+    },
+    {
+        "id": "recipient-name-or-number",
+        "label": "Nom ou numéro d’un destinataire (KYC)",
+        "langs": {
+            "fr": "Pouvez-vous nous indiquer, s’il vous plaît, le nom ou le numéro d’une personne à qui vous avez déjà envoyé de l’argent ?",
+            "en": "Could you please provide the name or phone number of someone you have previously sent money to?",
+            "wo": "Ndax man nga jox nu tur walla numééro bu nit ku nga desëkk ci kow xalis bi nga yonnee?"
+        }
+    },
+    {
+        "id": "nin-request",
+        "label": "Demande du numéro de carte d’identité (NIN)",
+        "langs": {
+            "fr": "Pourriez-vous nous indiquer, s’il vous plaît, le numéro de votre carte d’identité (NIN) ?",
+            "en": "Could you please provide us with your National ID Number (NIN)?",
+            "wo": "Ndax man nga jox nu sa numééro bu kart dantite (NIN), s’il vous plaît?"
+        }
+    },
+    {
+        "id": "sim-possession-duration",
+        "label": "Durée de possession de la carte SIM",
+        "langs": {
+            "fr": "Depuis quand êtes-vous en possession de cette carte SIM, s’il vous plaît ?",
+            "en": "Since when have you been in possession of this SIM card, please?",
+            "wo": "Ci ban waxtu laa nga amoon ak kart SIM bii, s’il vous plaît?"
+        }
+    },
+    {
+      "id": "reset-pin-done",
+      "label": "Reset PIN – Étapes à suivre",
+      "langs": {
+        "fr": "Merci pour ces informations. 🙏\nPour réinitialiser votre code secret, veuillez suivre les étapes suivantes :\n- ouvrez l'application Wave ;\n- choisissez un code secret à 4 chiffres différent de 1234, 0000 ou de votre année de naissance ;\n- confirmez le code secret choisi ;\n- saisissez le code de validation envoyé par SMS.\nNous restons disponibles au besoin.",
+        "wo": "Salam,\nJajëf ci leeral yi. 😊\nNgir yessalaat sa code secret:\n- dugg ci sa application Wave,\n- tannal 4 chiffres yu bokkul ak sa date de naissance, 1234 walla 0000,\n- dëggal code bi,\n- duugal code de validation bi ci SMS.\nÑu ngui taxawu.",
+        "en": "Thank you for the info. 🙏\nTo reset your PIN:\n- open the Wave app;\n- choose a 4-digit code that is not 1234, 0000 or your birth year;\n- confirm the chosen code;\n- enter the SMS validation code.\nWe're here if needed."
+      }
+    },
+    {
+      "id": "reset-pin-false-information",
+      "label": "Reset PIN – Informations non conformes",
+      "langs": {
+        "fr": "Merci pour le retour. 🙏\nAprès vérifications, les informations fournies ne sont pas conformes.\nMerci de bien revérifier et de revenir vers nous pour une meilleure prise en charge de votre demande.",
+        "wo": "Jërëjëf ci sa tontu. 👍\nGuinaaw saytookat, xibar yi nga joxë duñu mël ak yi ci compte bi.\nDi nga ñu la xalat ba noppi ngir nu mën la taxawu bu baax.",
+        "en": "Thank you for your reply.\nAfter checking, the information provided is not correct. Please verify and get back to us so we can assist you properly."
+      }
+    }
+  ],
+  "clear-pin-block": [
+    {
+      "id": "clear-pin-ident",
+      "label": "Clear PIN Block – Identification",
+      "langs": {
+        "fr": "Bonjour,\nPour vous assister, merci de nous communiquer :\n- vos nom et prénom au complet\n- le numéro concerné par le blocage (si différent de celui utilisé ici)\nNous restons à l’écoute.",
+        "en": "Hello,\nTo assist you, please share:\n- your full name\n- the phone number affected by the PIN block (if different from this one)\nWe're here for you."
+      }
+    },
+    {
+      "id": "clear-pin-remember-check",
+      "label": "Clear PIN Block – Confirmation (PIN connu ?)",
+      "langs": {
+        "fr": "Merci pour ces informations. Vous souvenez-vous de votre code secret actuel ? (Oui ou Non)",
+        "en": "Thanks. To confirm, do you still remember your current PIN? (Oui ou Non)"
+      }
+    },
+    {
+      "id": "clear-pin-done",
+      "label": "Clear PIN Block – Levée du blocage (message client)",
+      "langs": {
+        "fr": "C’est fait ✅\nNous venons de lever le blocage.\nVous pouvez réessayer votre code secret maintenant.\nAttention : après 3 codes erronés, le blocage reviendra.\nNous restons disponibles au besoin.",
+        "en": "All set ✅\nWe've cleared the attempt-based block.\nYou can try your PIN again now.\nNote: after 3 wrong attempts, the block will be applied again.\nWe're here if needed."
+      }
+    }
+  ],
+  "refund": [
+    {
+        "id": "refund-info",
+        "label": "Détails du transfert (destinataire, montant, date)",
+        "langs": {
+            "fr": "Pour pouvoir vous assister, merci de nous communiquer le numéro du destinataire, le montant envoyé ainsi que la date de l’envoi, s’il vous plaît.",
+            "en": "To assist you, please provide the recipient’s phone number, the amount sent, and the date of the transfer.",
+            "wo": "Ngir nu mën a la dimbali, jox nu numééro bu nga yonnee xalis bi ci kow, bindum xalis bi ak fan bi nga yonnee ko, s’il vous plaît."
+        }
+    },
+    {
+        "id": "refund-screenshot",
+        "label": "Refund – Demandez une capture d’écran (si nécessaire).",
+        "langs": {
+            "fr": "Ravis de vous lire. 😊\nNous vous prions de nous envoyer la capture de la transaction à annuler, s’il vous plaît.\nNous restons dans l'attente de votre retour.",
+            "en": "Glad to hear from you. 😊\nPlease kindly send us the screenshot of the transaction to be canceled.\nWe look forward to your reply."
+        }
+    },
+    {
+        "id": "refund-amount",
+        "label": "Refund – Montant (à préciser)",
+        "langs": {
+            "fr": "Pourriez-vous nous préciser le montant de la transaction concernée, s’il vous plaît ?",
+            "en": "Could you please specify the amount of the transaction in question?",
+            "wo": "Ndax man nga jox nu bindum xalis bi ci tranzaksiyoŋ bi ñu koy jëfandikoo?"
+        }
+    },
+    {
+        "id": "transfer-phone-number",
+        "label": "Numéro utilisé pour le transfert",
+        "langs": {
+            "fr": "Avec quel numéro de téléphone avez-vous effectué le transfert, s’il vous plaît ?",
+            "en": "With which phone number did you make the transfer, please?",
+            "wo": "Kan la numééro bi nga jëfandikoo ngir yonnee xalis bi, s’il vous plaît?"
+        }
+    },
+    {
+        "id": "refund-partially-used",
+        "label": "Refund — Fonds partiellement utilisés",
+        "langs": {
+            "fr": "Merci pour ces informations, {Prénom}.\nCependant, le destinataire a déjà utilisé une partie des fonds.\nIl ne reste que {Montant} F.\nSouhaitez-vous tout de même procéder à l’annulation ?",
+            "en": "Thank you for the information, {FirstName}.\nHowever, the recipient has already used part of the funds.\nOnly {Amount} F remains.\nWould you still like to proceed with the cancellation?",
+            "wo": "Jërëjëf ci sa leral, {Tur}.\nWante, ki nangu na jël ci xalis bi.\nDafa desee {Montant} F.\nNdax dangay bëgg nu jàpp ci anulation bi nak?"
+        }
+    },
+    {
+        "id": "refund-done",
+        "label": "Refund – Annulation effectuée (confirmation)",
+        "langs": {
+        "fr": "Nous vous remercions pour ces informations, M./Mme … 🙂\nLa transaction a été annulée avec succès.\nNous restons à votre entière disposition si vous avez d'autres questions.",
+        "wo": "Dila jajëfël ci leral yi.\nDélo na ñu la xaliss bi ngua yoné wone. 🙂\nMeunë ngua ñu mbinde fi so amé yénèni laadj.\nJam ak jam. 👍",
+        "en": "Thank you for this information, Mr./Ms. … 🙂\nThe transaction has been successfully canceled.\nPlease do not hesitate to contact us if you have any further questions."
+        }
+    },
+    {
+        "id": "refund-ko",
+        "label": "Refund – Fonds déjà utilisés (KO)",
+        "langs": {
+        "fr": "Bonjour.\nMerci pour votre retour. 🙏\nLe destinataire a déjà utilisé les fonds envoyés.\nNous ne sommes plus en mesure d’annuler le transfert effectué.\nNous vous recommandons de contacter cette personne pour obtenir un remboursement.\nNous restons disponibles pour toute autre requête. 🙏",
+        "wo": "Ñu ngui ley jajëfël thi leeral yi. 😊\nKi gua yoné xaliss bi diote nako jëfëndiko ba noppi.\nDou ñu la ko meunë délo.\nBal ñu nga jokko ak moom.\nNguir yeneni leeral, meunë nga ñu mbind fi.\nJajëf.",
+        "en": "Hello.\nThank you for your feedback. 🙏\nThe recipient has already used the funds sent.\nWe are no longer able to cancel the transfer.\nWe recommend that you contact this person to obtain a refund.\nWe remain available for any further requests. 🙏"
+        }
+    },
+    {
+        "id": "refund-ko-insiste",
+        "label": "Refund – Client insiste (orientation amiable/légale)",
+        "langs": {
+        "fr": "Nous sommes sincèrement désolés d'apprendre cette situation.\nÀ ce stade, nous ne sommes malheureusement pas en mesure de donner suite à votre demande. Nous vous recommandons de tenter un règlement à l'amiable avec le destinataire des fonds. Si cela n'est pas possible, vous pouvez utiliser les voies légales à votre disposition, comme contacter la police ou la gendarmerie.\nNous vous remercions de votre compréhension.",
+        "wo": "Ñu ngui jegalu bubax ci jaffé jaffé bi.\nDila ñane ngua jokko ak ki ngua yonné xaliss bi, walla ngua diar ci yonne (police walla gendarmerie) ngir ñu la taxawu.\nSu retiré xaliss bi ba moppi, du ñu ko meunëti annulé.\nJajëf.",
+        "en": "We are sincerely sorry to hear about this situation.\nAt this stage, we are unfortunately unable to respond to your request. We recommend that you try to reach an amicable settlement with the recipient of the funds. If this is not possible, you may consider taking legal action, such as contacting the police or the gendarmerie.\nThank you for your understanding."
+        }
+    },
+    {
+        "id": "partner-payment-non-refundable",
+        "label": "Paiement vers partenaire – Non annulable",
+        "langs": {
+            "fr": "Merci pour ces informations.\nCependant, les paiements envoyés vers {Partenaire} ne peuvent pas être annulés par Wave.\nNous vous invitons à contacter directement leur service client.",
+            "en": "Thank you for the information.\nHowever, payments sent to {Partner} cannot be canceled by Wave.\nPlease contact their customer support directly.",
+            "wo": "Jërëjëf ci leeral yi.\nWaaye pesé yi ñu yonnee ci {Partenaire} mënatu nañu leen delli ci Wave.\nJokkoolal seen service client, soo bëgg, ngir jàppale."
+        }
+    },
+    {
+        "id": "refund-airtime-not-possible",
+        "label": "Refund — Achat de crédit non annulable",
+        "langs": {
+            "fr": "Merci pour ces informations, {Prénom}.\nCependant, les achats de crédit téléphonique ne peuvent pas être annulés.\nMerci de votre compréhension.\nNous restons à votre disposition pour toute autre demande.",
+            "en": "Thank you for the information, {FirstName}.\nHowever, airtime purchases cannot be cancelled.\nThank you for your understanding.\nWe remain at your disposal for any further requests.",
+            "wo": "Jërëjëf ci leral yi, {Tur}.\nWante, jëfandikoo crédit telefon duñu man a anule.\nJërëjëf ci sa dégg.\nNu nekk foofu ngir ndimbal bu wër."
+        }
+    }
+    ],
+    "rename-user": [
+        {
+            "id": "rename-user-done",
+            "label": "Rename user – Confirmation",
+            "langs": {
+            "fr": "Merci pour votre retour [Prénom du Client].\nNous vous confirmons que le compte Wave rattaché au numéro 77xxxxxxx est désormais à votre nom.\nNous restons disponibles au besoin.\nWave vous remercie pour votre fidélité 🙏",
+            "wo": "Jajëfal na ñu la ci leeral yi [Prénom du Client].\nWave mu ngui lay xamal ni compte bi mi ngui sa tourë ak sa santë legui.\nMeunë nga ñu mbindë fi so ame yénëni laadj.",
+            "en": "Thank you for your answer, [Customer's First Name].\nWe confirm that the Wave account linked to the number 77xxxxxxx is now registered in your name.\nPlease don’t hesitate to reach out if you need further assistance.\nThank you for your loyalty to Wave. 🙏"
+            }
+        },
+        {
+            "id": "rename-user-info",
+            "label": "Rename user – Informations (à demander)",
+            "langs": {
+                "fr": "Bonjour,\nMerci pour votre message. Afin de procéder à la mise à jour du nom du titulaire, merci de nous communiquer :\n- le numéro de téléphone du compte concerné ;\n- votre nom et prénom actuels ;\n- le nouveau nom complet souhaité (orthographe exacte) ;\n- pour vérification KYC : la nature et le montant de votre dernière transaction, ainsi que l'adresse du point de votre dernier dépôt/retrait ;\n  (à défaut : le nom/numéro d'un contact habituel • KYC1, ou votre numéro de CNI/passeport • KYC2).\nDès réception, nous poursuivrons le traitement. Merci.",
+                "wo": "Salam,\nJërëjëf ci sa mbind. Ngir soppi turu borom compte bi, joxal ñu:\n- numéro téléphone bi ci compte bi ;\n- say tur ak sant leegi ;\n- tur bu bees bi (saa su ñu bind koo ak jafe-jafe yi) ;\n- ngir KYC: lan la sa mujj transaction (nature ak montant) ak adresse point bi nga mujj defar dépôt/retrait ;\n  (su fekkee amuloo: tur/numéru benn kontak bu nga di jëfandikoo • KYC1, walla numéru CNI/passeport • KYC2).\nBi nu jot ko, dinañu kontine taxaw.",
+                "en": "Hello,\nThanks for your message. To update the account holder's name, please provide:\n- the phone number of the account concerned;\n- your current first and last name;\n- the new full name to apply (exact spelling);\n- for KYC: the type and amount of your last transaction, and the address of the point of your last deposit/withdrawal;\n  (alternatively: the full name/number of a frequent contact • KYC1, or your ID/passport number • KYC2).\nOnce received, we'll proceed. Thank you."
+            }
+        },
+        {
+            "id": "rename-user-number-and-current-name",
+            "label": "Rename user – Numéro & nom actuel",
+            "langs": {
+                "fr": "Bonjour,\nPour commencer, merci de nous communiquer :\n- le numéro du compte concerné ;\n- le nom actuellement enregistré sur ce compte (orthographe exacte).",
+                "en": "Hello,\nTo begin, please share:\n- the phone number of the account concerned;\n- the name currently registered on that account (exact spelling).",
+                "wo": "Salam,\nNgir tàmbali, joxal nu:\n- numééro téléphone bu compte bi;\n- tur bi ñuy jëfandikoo léegi ci compte bi (bindu bu dëgg)."
+            }
+            },
+            {
+            "id": "rename-user-kyc-two-items",
+            "label": "Rename user – KYC (2 éléments requis)",
+            "langs": {
+                "fr": "Afin de mieux vous aider, pour vérifications, merci de nous communiquer :\n- la nature et le montant de votre dernière transaction ;\n- l'adresse du point de votre dernier dépôt/retrait.",
+                "en": "To help you better, for verification please provide:\n- the type and amount of your last transaction;\n- the address of the point for your last deposit/withdrawal.",
+                "wo": "Ngir seetlu, joxal nu:\n- lii la sa mujj tranzaksiyoŋ ak bindum xalis bi;\n- adresu point bi nga mujj defar depóo/retiré."
+            }
+            },
+            {
+            "id": "rename-user-kyc-alternative",
+            "label": "Rename user – KYC alternatif (si 1 seul élément conforme)",
+            "langs": {
+                "fr": "Merci. Il nous manque un élément pour finaliser la vérification.\nPouvez-vous fournir l'un des deux suivants :\n- le nom/numéro d'un contact habituel (KYC1) ;\n- votre numéro de CNI/passeport (KYC2).",
+                "en": "Thanks. We're missing one item to complete verification.\nCould you provide one of the following:\n- the name/number of a frequent contact (KYC1);\n- your ID/passport number (KYC2).",
+                "wo": "Jërëjëf. Benn mbir la nu mënuma jot ngir sotti seetlu bi.\nJoxal nu benn ci yii:\n- tur/numéérou benn kontak bu nga di jëfandikoo (KYC1);\n- sa numééro CNI/passeport (KYC2)."
+            }
+        },
+        {
+            "id": "rename-user-kyc1-request",
+            "label": "Rename user – Demande KYC1 (contact habituel)",
+            "langs": {
+                "fr": "Pouvez-vous nous communiquer le nom/numéro d'un contact habituel, s'il vous plaît ?",
+                "en": "Could you please share the name/phone number of a frequent contact?",
+                "wo": "Ndax man nga jox nu tur ak/numééro bu benn kontak bu nga di jëfandikoo, s'il vous plaît?"
+            }
+            },
+            {
+            "id": "rename-user-kyc2-request",
+            "label": "Rename user – Demande KYC2 (CNI/passeport)",
+            "langs": {
+                "fr": "Pouvez-vous nous communiquer votre numéro de CNI/passeport, s'il vous plaît ?",
+                "en": "Could you please provide your ID/passport number?",
+                "wo": "Ndax man nga jox nu sa numééro CNI/passeport, s'il vous plaît?"
+            }
+        },
+        {
+        "id": "rename-user-new-name-request",
+        "label": "Rename user – Nouveau nom complet",
+        "langs": {
+            "fr": "Merci de nous communiquer le prénom et nom que vous souhaitez mettre sur le compte maintenant (orthographe exacte).",
+            "en": "Please share the exact new full name (first and last) you want on the account.",
+            "wo": "Joxal nu sa tur bu bees (sant ak tur) bu ñu wara bind ci compte bi, bindu bu dëgg."
+        }
+        }
+    ],
+    "rename-wallet": [
+        {
+            "id": "rename-wallet-done",
+            "label": "Rename wallet – Confirmation",
+            "langs": {
+            "fr": "Merci pour votre retour. ✅\nLa mise à jour du nom du bénéficiaire a bien été effectuée : [Nouveau nom complet].\nLe WD code reste inchangé et peut être utilisé pour le retrait.\nRappel : le code expire sous 7 jours. Après 15 jours sans retrait, la transaction est annulée automatiquement et les fonds sont retournés sur votre compte.\nNous restons disponibles au besoin.",
+            "en": "Thank you. ✅\nThe beneficiary's name has been updated: [New full name].\nThe WD code is unchanged and can be used for cash-out.\nReminder: the code expires after 7 days. After 15 days with no cash-out, the transfer is automatically canceled and funds return to your account.\nWe're here if you need anything."
+            }
+        },
+        {
+            "id": "wd-code",
+            "label": "WD code – Annulation automatique J+15 (info sender)",
+            "langs": {
+            "fr": "Merci pour votre retour. 😊\nAprès vérification, nous vous informons que vous aviez effectué un transfert vers un numéro n'ayant pas de compte Wave.\nVu que les fonds n'ont pas été retirés après 15 jours, le système a donc annulé cette transaction et les fonds ont été repositionnés dans votre compte.\nNous restons disponibles au besoin.\nWave vous remercie pour votre fidélité. 🙏",
+            "wo": "Ñu ngui ley jajëfël bubax ci leral yi. 😊\nGuinaaw bi ñu saytoo, guiss na ñu ni xaliss bi ngua yonné won ci numéro bou amul Wave la tek si keine retiré woul khaliss bi si fuk ak juromi faan yi top si yoni bi loolu mo waral ñu dello lako.\nNguir yeneni leeral meunë nga ñu mbind fi.",
+            "en": "Thank you for your response. 😊\nAfter verification, we found that you made a transfer to a number that does not have a Wave account.\n\nSince the funds were not withdrawn within 15 days, the system automatically canceled the transaction and the funds were returned to your account.\n\nWe remain available if you need any further assistance.\nThank you for your loyalty to Wave. 🙏"
+            }
+        },
+        {
+            "id": "rename-wallet-beneficiary-and-newname",
+            "label": "Rename wallet – Bénéficiaire & nouveau nom",
+            "langs": {
+                "fr": "Merci de nous communiquer :\n- le numéro du bénéficiaire ;\n- le nouveau nom complet à appliquer (orthographe exacte).",
+                "en": "Please share:\n- the beneficiary’s phone number;\n- the exact new full name to apply.",
+                "wo": "Joxal nu:\n- numééro bu bénéficiaire bi;\n- tur bu bees bu ñu wara bind (bindu bu dëgg)."
+            }
+        },
+        {
+        "id": "rename-wallet-only-sender",
+        "label": "Rename wallet – Seul le sender peut contacter",
+        "langs": {
+            "fr": "Merci pour votre message. Pour demander la modification du nom du bénéficiaire, seul l'émetteur (sender) peut nous contacter. Merci de lui demander de nous écrire directement.",
+            "en": "Thanks for your message. To request a beneficiary name change, only the sender can contact us. Please ask the sender to reach out directly.",
+            "wo": "Jërëjëf ci sa mbind. Ngir soppi turu bénéficiaire, soxna/sëriñ mi mooy nangu (sender) moom rekk la wara jokkoo ak sunu ndimbal. Waxeel ko mu bind ci sunu kanam, s'il vous plaît."
+        }
+        }
+    ],
+    "forget-qr": [
+        {
+            "id": "forget-qr-id",
+            "label": "Forget QR – Demande d’identification",
+            "langs": {
+            "fr": "Bonjour,\nMerci de nous avoir contactés. 😉\nPour une meilleure prise en charge, merci de nous communiquer votre nom et prénom au complet.\nNous restons dans l'attente de votre retour.",
+            "wo": "Salam,\nÑu gui lay jajëfël bou bax. 😊\nBal ñu diox ñu sa tur ak sa sante.\nJajëf.",
+            "en": "Hello, thank you for reaching out. 😉\nFor the best possible service, please provide your full name.\nWe look forward to your reply."
+            }
+        },
+        {
+            "id": "forget-qr-suite",
+            "label": "Forget QR – Carte annulée (confirmation)",
+            "langs": {
+            "fr": "Merci de votre retour.\nNous venons d'annuler votre carte.\nVous pouvez vous rendre dans un point Wave le plus proche pour obtenir gratuitement une nouvelle carte.\nWave vous remercie pour votre fidélité. 🙏",
+            "wo": "Jajëf ci leral yi. 🙏\nDaggeu na ñu sa carte bi.\nMeunë ngua dème ci point Wave bou la gëna jege ngir am benn bés carte.\nMeunë gua ñu binde fi so amé yénëni laaj.\nJajëf.",
+            "en": "Thank you for your feedback.\nWe have just canceled your card.\nYou can visit your nearest Wave point to get a new card for free.\nWave appreciates your loyalty. 🙏"
+            }
+        },
+        {
+            "id": "forget-qr-remember-pin-check",
+            "label": "Forget QR – Vérification du PIN (souvenir ?)",
+            "langs": {
+                "fr": "Pour confirmation, vous souvenez-vous encore de votre code secret ? (Oui / Non)\n⚠️ Merci de ne pas saisir votre code ici.",
+                "en": "To confirm, do you still remember your current PIN? (Yes / No)\n⚠️ Please do not type your PIN here.",
+                "wo": "Ngir dëggal, ndax dangay xamal sa code secret? (Waaw / Déedéet)\n⚠️ Bul ko bind fii."
+            }
+        }
+    ],
+    "sms-code": [
+        {
+            "id": "sms-code-info",
+            "label": "SMS Code – Informations de base (à demander)",
+            "langs": {
+            "fr": "Bonjour,\nMerci pour votre message. Pour vous assister, merci de nous communiquer :\n- vos nom et prénom au complet ;\n- le numéro concerné par votre demande ;\n- votre localisation actuelle ;\n- confirmation que vous avez toujours la carte SIM.\nNous attendons votre retour.",
+            "wo": "Salam,\nJërëjëf ci sa mbind. Ngir nu la taxawu, joxal ñu:\n- sa tur ak sant bu mat ;\n- nimro bi nga laaj gi ;\n- fan nga nek leegi ;\n- tey nga am nañu puce bi walla déédéet.\nNu ngi lay xarandi.",
+            "en": "Hello,\nThanks for your message. To assist you, please provide:\n- your full name;\n- the phone number concerned;\n- your current location;\n- confirmation that you still have the SIM card.\nWe look forward to your reply."
+            }
+        },
+        {
+            "id": "sms-code-kyc-request",
+            "label": "SMS Code – Numéro match (Questions de sécurités)",
+            "langs": {
+                "fr": "Merci. Pour poursuivre, merci de nous communiquer :\n- la nature et le montant de votre dernière transaction (transfert, retrait, dépôt, paiement) ;\n- l'adresse du point Wave où a eu lieu votre dernier dépôt/retrait ;\n- à défaut, l'une de ces informations : le nom/numéro d'un contact habituel (KYC1) OU votre numéro de CNI/passeport (KYC2).\nDès réception, nous pourrons finaliser la vérification.",
+                "wo": "Jërëjëf. Ngir kontine, joxal ñu:\n- nature ak montant sa mujj transaction (transfert, retrait, dépot, payement) ;\n- adresse point Wave bi nga mujj defar dépôt/retrait ;\n- su fekkee amuloo, benn ci yii : tur/numéru benn kontak bu nga di jëfandikoo (KYC1) WALA sa numéru CNI/passeport (KYC2).\nBi nu jot ko, dinañu sotti say vérifications.",
+                "en": "Thank you. To proceed, please provide:\n- the type and amount of your last transaction (transfer, withdrawal, deposit, payment);\n- the address of the Wave point of your last deposit/withdrawal;\n- alternatively, one of: the full name/number of a frequent contact (KYC1) OR your ID/passport number (KYC2).\nOnce received, we can complete the verification."
+            }
+        },
+        {
+            "id": "sms-code-no-match-kyc",
+            "label": "SMS Code – Numéro ne match pas (Questions de sécurités)",
+            "langs": {
+            "fr": "Bonjour,\nPour traiter votre demande, merci de nous communiquer obligatoirement :\n- la nature et le montant de votre dernière transaction ;\n- l’adresse du point WAVE de votre dernier dépôt/retrait ;\n- votre numéro de CNI.\nDès réception, nous poursuivrons la prise en charge.",
+            "wo": "Salam,\nNgir nu taxawu, joxal ñu bii xibar yi (war na):\n- nature ak montant sa mujj transaction ;\n- adresse point WAVE ba nga mujj defar dépôt/retrait ;\n- sa numéru CNI.\nBi nu jot ko, dinañu kontine taxaw.",
+            "en": "Hello,\nTo handle your request, please provide (mandatory):\n- the type and amount of your last transaction;\n- the address of the WAVE point of your last deposit/withdrawal;\n- your ID card number.\nOnce received, we will proceed."
+            }
+        },
+        {
+            "id": "login-sms-code-expired",
+            "label": "Connexion — Code SMS expiré (renvoi nécessaire)",
+            "langs": {
+                "fr": "Merci pour ces informations, {Prénom}.\nNous vous invitons à réessayer de vous connecter, puis à revenir vers nous lorsque le système vous demandera de saisir un code de validation afin que nous puissions vous le communiquer.",
+                "en": "Thank you for the information, {FirstName}.\nPlease try logging in again, then get back to us once the system asks you to enter a validation code so we can provide it to you.",
+                "wo": "Jërëjëf ci leral yi, {Tur}.\nJoxal nañu la nga jéemaat a jokkoo, ci biir nga dellusi ci sunu wet ci saa su sistem bi la laajee code de validation ngir nu mën ko lay jox."
+            }
+        },
+        {
+            "id": "sms-code-send",
+            "label": "SMS Code – Communication du code (à éditer)",
+            "langs": {
+            "fr": "Merci, vos informations ont été vérifiées.\nVotre code de validation est : {code}.\n⚠️ Ne partagez ce code avec personne. Il est valable pour une courte durée.\nNous restons disponibles au besoin.",
+            "wo": "Jërëjëf, say xibaar ñu ko seet nañu.\nSa code de validation mooy: {code}.\n⚠️ Bul koy seddoo ak kenn. Dafa am validité bu gëy.\nNu ngi ci taxaw.",
+            "en": "Thank you, your details have been verified.\nYour verification code is: {code}.\n⚠️ Do not share this code with anyone. It is valid for a short time.\nWe're here if you need anything."
+            }
+        },
+        {
+            "id": "sms-code-abroad-alert",
+            "label": "SMS Code – Alerte (client à l’étranger, SIM potentiellement réattribuée)",
+            "langs": {
+            "fr": "Bonjour {nom},\nNous vous rappelons que si vous n'avez plus la carte SIM, l'opérateur peut la réattribuer après une période d’inactivité, ce qui échappe à notre contrôle. Nous vous transmettons tout de même le code de validation, mais Wave se dégage de toute responsabilité en cas de réattribution de la SIM. Si cela se produit, merci de nous contacter pour déplacer les fonds vers un numéro d’un proche de confiance.",
+            "en": "Hello {name},\nPlease note: if you no longer have the SIM card, your operator may reassign it after a period of inactivity, which is outside our control. We will provide the verification code, but Wave cannot be held responsible if the SIM is reassigned. If that happens, please contact us so we can move the funds to a trusted contact’s number."
+            }
+        },
+        {
+            "id": "sms-code-2",
+            "label": "SMS Code – Pas de SIM (refus + explications)",
+            "langs": {
+            "fr": "Bonjour {nom},\nMerci de nous avoir contactés. 😊\nNous sommes dans l'impossibilité de donner suite à votre demande pour des raisons de sécurité.\nMerci de nous recontacter lorsque vous aurez récupéré votre carte SIM.\nNous sommes disponibles au besoin.\nWave vous remercie pour votre compréhension. 🙏\n\nIl est déconseillé d'utiliser un compte Wave sans la carte SIM associée, car cela empêche de recevoir le code de validation.\nVeuillez récupérer la carte SIM auprès de votre opérateur et nous recontacter pour une assistance appropriée. Merci.",
+            "wo": "Ñu ngi jegalu bubax, wante ngir karangue, du ñu la meun taxawu su fekkee amuloo puce bi. 🙏\nBal ñu la jot puce bi, nga nu bindaat ngir nu la taxawu.\nJërëjëf ci sa ndigël.\n\nJàpp nañu ni kenn du jëfandikoo compte Wave mu amul puce, ndax du la may jot code de validation bi.\nJëlal sa puce ci sa opérateur te nga nu bindaat ngir taxaw gën a mën.",
+            "en": "Hello {name},\nThank you for contacting us. 😊\nFor security reasons, we cannot proceed with your request.\nPlease contact us again once you have retrieved your SIM card.\nWe are available if needed. Wave thanks you for your understanding. 🙏\n\nUsing a Wave account without the associated SIM card is not recommended because you will not receive the verification code.\nPlease obtain the SIM card from your operator and contact us for appropriate assistance."
+            }
+        },
+        {
+            "id": "get-smscode-solut1",
+            "label": "Move Balance for Lost SIM (ouvrir un nouveau compte)",
+            "langs": {
+            "fr": "KYC1:\nMerci pour ces informations.\nNous vous invitons à ouvrir un nouveau compte à votre nom et à nous recontacter afin que nous puissions transférer l’intégralité des fonds sur ce compte.\nNous restons dans l'attente de votre retour.\n\nKYC2:\nMerci pour ces informations.\nVeuillez ouvrir un nouveau compte, l'identifier avec la même pièce d'identité et nous recontacter afin que nous puissions y transférer la totalité des fonds.\nNous restons dans l'attente de votre retour.",
+            "wo": "KYC1:\nJarama ci leral yi. 🙏\nOubi benn compte bu bees ci sa tur te nga nu bindaat. Bi nga ko defee, dinañu transféré xalis bi ci ko.\nNu ngi lay xarandi.\n\nKYC2:\nJarama ci leral yi. 🙏\nOubi benn compte bu bees ci sa pièce d'identité te nga nu bindaat. Bi nga ko defee, dinañu transféré xalis bi ci ko.\nNu ngi lay xarandi.",
+            "en": "KYC1:\nThank you for this information.\nPlease open a new account in your name and contact us again so we can transfer all funds to it.\nWe look forward to your reply.\n\nKYC2:\nThank you for this information.\nPlease open a new account, verify it with the same ID document, and contact us again so we can transfer all funds to it.\nWe look forward to your reply."
+            }
+        },
+        {
+            "id": "sms-code-kyc-base",
+            "label": "SMS Code – Questions de sécurité (base)",
+            "langs": {
+                "fr": "Merci. Pour poursuivre, merci de nous communiquer :\n- la nature et le montant de votre dernière transaction (transfert, retrait, dépôt, paiement) ;\n- l'adresse du point Wave où a eu lieu votre dernier dépôt/retrait.\nDès réception, nous pourrons finaliser la vérification.",
+                "en": "Thank you. To proceed, please provide:\n- the type and amount of your last transaction (transfer, withdrawal, deposit, payment);\n- the address of the Wave point of your last deposit/withdrawal.\nOnce received, we can complete the verification.",
+                "wo": "Jërëjëf. Ngir kontine, joxal ñu:\n- nature ak montant sa mujj transaction (transfert, retrait, dépôt, payement) ;\n- adresse point Wave ba nga mujj defar dépôt/retrait.\nBi nu jot ko, dinañu sotti say vérifications."
+            }
+        },
+        {
+            "id": "sms-code-alt-kyc1",
+            "label": "SMS Code – Alternative KYC1 (contact habituel)",
+            "langs": {
+                "fr": "Merci. Pouvez-vous indiquer le nom et le numéro d’un contact avec qui vous effectuez régulièrement des transactions ?",
+                "en": "Thank you. Please provide the full name and number of a contact you regularly transact with.",
+                "wo": "Jërëjëf. Joxeel ñu tur ak nimero u kontak buy nga di laaloo ak mooy leegi."
+            }
+        },
+        {
+            "id": "sms-code-alt-kyc2",
+            "label": "SMS Code – Alternative KYC2 (CNI/passeport)",
+            "langs": {
+                "fr": "Merci. Indiquez votre numéro de CNI ou de passeport s’il vous plaît.",
+                "en": "Thank you. Please provide your ID or passport number.",
+                "wo": "Jërëjëf. Joxeel nu sa numéru CNI walla passeport."
+            }
+        }
+    ],
+    "cas-de-deces": [
+        {
+            "id": "cas-de-deces-pasdefond",
+            "label": "Décès — Pas de fonds sur le compte",
+            "langs": {
+            "fr": "Bonjour,\nNous vous présentons nos sincères condoléances. 🙏🏽\nAprès vérification, nous vous informons que le compte du défunt ne dispose pas de fonds.\nNous restons disponibles au besoin.",
+            "en": "Hello,\nPlease accept our deepest condolences. 🙏🏽\nAfter checking, we confirm the deceased’s account has no funds.\nWe remain available if needed."
+            }
+        },
+        {
+            "id": "cas-de-deces1",
+            "label": "Décès — Majeur (solde ≤ 500 000 F) — liste complète",
+            "langs": {
+            "fr": "Bonjour,\nNous vous présentons nos sincères condoléances. 🙏🏽\nL'accès au compte du défunt est malheureusement impossible.\nCependant, nous pouvons mettre les fonds à disposition en les transférant sur un autre compte.\n\nPour procéder, merci d'imprimer, remplir et signer le formulaire joint, puis de nous le transmettre avec les documents ci-dessous au Siège Social (Namer VDN) ou par e-mail à sn-comptes-deces@wave.com :\n• Courrier de déclaration de décès et de demande de mise à disposition des fonds ;\n• Certificat de décès de la mairie ou jugement supplétif d’acte de décès (1 copie certifiée conforme à l’original) ;\n• Pièces d'identité du défunt et des bénéficiaires ;\n• Actes de naissance ou de mariage des bénéficiaires (le cas échéant) ;\n• S’il y a plus d’un bénéficiaire : procuration notariée ou sous-seing privé légalisée des autres bénéficiaires ;\n  si un bénéficiaire est mineur : procuration notariée ou sous-seing privé légalisée de son représentant légal ;\n• Cas KYC1 (aucun document d’identité détenu par Wave) : preuve que le numéro rattaché au compte appartenait au défunt et est identifié chez l’opérateur.\n\nNous restons disponibles au besoin.",
+            "en": "Hello,\nPlease accept our condolences. 🙏🏽\nAccess to the deceased’s account is not possible, but we can release the funds by transferring them to another account.\n\nPlease print, complete and sign the attached form, then send it with the documents below to our Head Office (Namer VDN) or by email to sn-comptes-deces@wave.com:\n• Death declaration letter and request to release funds;\n• Death certificate from the city hall or court order (1 certified copy);\n• IDs of the deceased and the beneficiaries;\n• Beneficiaries’ birth or marriage certificates (as applicable);\n• If more than one beneficiary: notarized/legalized power of attorney from the other beneficiaries;\n  if a beneficiary is a minor: notarized/legalized power of attorney from their legal representative;\n• KYC1 case: proof the phone number linked to the account belonged to the deceased and is identified with the operator.\n\nWe remain available if needed."
+            }
+        },
+        {
+            "id": "cas-de-deces2",
+            "label": "Décès — Majeur (solde > 500 000 F) — liste complète",
+            "langs": {
+            "fr": "Bonjour,\nNous vous présentons nos sincères condoléances. 🙏🏽\nL'accès au compte du défunt est impossible, mais nous pouvons mettre les fonds à disposition en les transférant sur un autre compte.\n\nMerci d'imprimer, remplir et signer le formulaire joint, puis de nous le transmettre avec l’ensemble des documents suivants au Siège Social (Namer VDN) ou par e-mail à sn-comptes-deces@wave.com :\n• Courrier de déclaration de décès et de demande de mise à disposition des fonds ;\n• Certificat de décès de la mairie ou jugement supplétif d’acte de décès (1 copie certifiée conforme à l’original) ;\n• Pièces d'identité du défunt et des bénéficiaires ;\n• Actes de naissance ou de mariage des bénéficiaires (le cas échéant) ;\n• S’il y a plusieurs bénéficiaires : procurations notariées/légalisées des héritiers majeurs et des représentants des héritiers mineurs ;\n• Cas KYC1 : preuve que le numéro rattaché au compte appartenait au défunt et est identifié chez l’opérateur ;\n• Certificat d’hérédité (désignant tous les bénéficiaires et le représentant des mineurs, le cas échéant) ou copie certifiée conforme ;\n• Certificat de non-appel du jugement d’hérédité (ou acte de notoriété si applicable).\n\nNous restons disponibles au besoin.",
+            "en": "Hello,\nPlease accept our condolences. 🙏🏽\nAccess to the deceased’s account is not possible, but we can release the funds by transferring them to another account.\n\nPlease print, complete and sign the attached form, then send it with all of the following documents to our Head Office (Namer VDN) or by email to sn-comptes-deces@wave.com:\n• Death declaration letter and request to release funds;\n• Death certificate or court order (1 certified copy);\n• IDs of the deceased and the beneficiaries;\n• Beneficiaries’ birth or marriage certificates (as applicable);\n• If multiple beneficiaries: notarized/legalized powers of attorney from adult heirs and from the representatives of minor heirs;\n• KYC1 case: proof the phone number linked to the account belonged to the deceased and is identified with the operator;\n• Heirship certificate listing all beneficiaries and the representative of minors (or a certified copy if the original is unavailable);\n• Certificate of no-appeal of the heirship judgment (or deed of notoriety if applicable).\n\nWe remain available if needed."
+            }
+        },
+        {
+            "id": "cas-de-deces-mineur-leq-500k",
+            "label": "Décès — Mineur (solde ≤ 500 000 F) — liste complète",
+            "langs": {
+            "fr": "Bonjour,\nNous vous présentons nos sincères condoléances. 🙏🏽\nL'accès au compte est impossible, mais nous pouvons mettre les fonds à disposition en les transférant sur un autre compte.\n\nMerci d'imprimer, remplir et signer le formulaire joint, puis de nous le transmettre avec les documents ci-dessous au Siège Social (Namer VDN) ou par e-mail à sn-comptes-deces@wave.com :\n• Courrier de déclaration de décès et de demande de mise à disposition des fonds ;\n• Certificat de décès de la mairie ou jugement supplétif d’acte de décès (1 copie certifiée conforme à l’original) ;\n• Pièces d'identité du défunt et du titulaire de l’autorité parentale ;\n• Acte de naissance du défunt ;\n• Cas KYC1 : preuve que le numéro rattaché au compte appartenait au défunt et est identifié chez l’opérateur.\n\nNous restons disponibles au besoin.",
+            "en": "Hello,\nPlease accept our condolences. 🙏🏽\nAccess to the account is not possible, but we can release the funds by transferring them to another account.\n\nPlease print, complete and sign the attached form, then send it with the documents below to our Head Office (Namer VDN) or by email to sn-comptes-deces@wave.com:\n• Death declaration letter and request to release funds;\n• Death certificate or court order (1 certified copy);\n• IDs of the deceased and of the holder of parental authority;\n• The deceased’s birth certificate;\n• KYC1 case: proof the number linked to the account belonged to the deceased and is identified with the operator.\n\nWe remain available if needed."
+            }
+        },
+        {
+            "id": "cas-de-deces-mineur-gt-500k",
+            "label": "Décès — Mineur (solde > 500 000 F) — liste complète",
+            "langs": {
+            "fr": "Bonjour,\nNous vous présentons nos sincères condoléances. 🙏🏽\nL'accès au compte est impossible, mais nous pouvons mettre les fonds à disposition en les transférant sur un autre compte.\n\nMerci d'imprimer, remplir et signer le formulaire joint, puis de nous le transmettre avec l’ensemble des documents ci-dessous au Siège Social (Namer VDN) ou par e-mail à sn-comptes-deces@wave.com :\n• Courrier de déclaration de décès et de demande de mise à disposition des fonds ;\n• Certificat de décès de la mairie ou jugement supplétif d’acte de décès (1 copie certifiée conforme à l’original) ;\n• Pièces d'identité du défunt et du titulaire de l’autorité parentale ;\n• Acte de naissance du défunt ;\n• Cas KYC1 : preuve que le numéro rattaché au compte appartenait au défunt et est identifié chez l’opérateur ;\n• Certificat de tutelle ou d’administration légale (si applicable).\n\nNous restons disponibles au besoin.",
+            "en": "Hello,\nPlease accept our condolences. 🙏🏽\nAccess to the account is not possible, but we can release the funds by transferring them to another account.\n\nPlease print, complete and sign the attached form, then send it with all the documents below to our Head Office (Namer VDN) or by email to sn-comptes-deces@wave.com:\n• Death declaration letter and request to release funds;\n• Death certificate or court order (1 certified copy);\n• IDs of the deceased and of the holder of parental authority;\n• The deceased’s birth certificate;\n• KYC1 case: proof the number linked to the account belonged to the deceased and is identified with the operator;\n• Guardianship or legal administration certificate (if applicable).\n\nWe remain available if needed."
+            }
+        },
+        {
+            "id": "cas-de-deces-recuperation-sim",
+            "label": "Décès — Récupération du numéro / SIM",
+            "langs": {
+            "fr": "Bonjour,\nL'accès au compte du défunt est malheureusement impossible.\nSi vous souhaitez réutiliser le numéro de téléphone, merci de le ré-identifier à votre nom auprès de votre opérateur (avec votre pièce d'identité), puis de revenir vers nous.\nLe compte pourra ensuite être utilisé en toute sécurité.\nNous restons à votre disposition.",
+            "en": "Hello,\nAccess to the deceased’s account is not possible.\nIf you wish to use the phone number again, please re-identify it in your name with your mobile operator (with your ID), then get back to us.\nThe account can then be used safely.\nWe remain available if needed."
+            }
+        },
+        {
+        "id": "cas-de-deces-mineur-leq-500k",
+        "label": "Décès — Mineur (solde ≤ 500 000 F) — liste complète",
+        "langs": {
+            "fr": "Bonjour,\nNous vous présentons nos sincères condoléances. 🙏🏽\nL'accès au compte est impossible, mais nous pouvons mettre les fonds à disposition en les transférant sur un autre compte.\n\nMerci d'imprimer, remplir et signer le formulaire joint, puis de nous le transmettre avec les documents ci-dessous au Siège Social (Namer VDN) ou par e-mail à sn-comptes-deces@wave.com :\n• Courrier de déclaration de décès et de demande de mise à disposition des fonds ;\n• Certificat de décès de la mairie ou jugement supplétif d’acte de décès (1 copie certifiée conforme à l’original) ;\n• Pièces d'identité du défunt et du titulaire de l’autorité parentale ;\n• Acte de naissance du défunt ;\n• Cas KYC1 : preuve que le numéro rattaché au compte appartenait au défunt et est identifié chez l’opérateur.\n\nNous restons disponibles au besoin.",
+            "en": "Hello,\nPlease accept our condolences. 🙏🏽\nAccess to the account is not possible, but we can release the funds by transferring them to another account.\n\nPlease print, complete and sign the attached form, then send it with the documents below to our Head Office (Namer VDN) or by email to sn-comptes-deces@wave.com:\n• Death declaration letter and request to release funds;\n• Death certificate or court order (1 certified copy);\n• IDs of the deceased and of the holder of parental authority;\n• The deceased’s birth certificate;\n• KYC1 case: proof the number linked to the account belonged to the deceased and is identified with the operator.\n\nWe remain available if needed."
+        }
+        },
+        {
+        "id": "cas-de-deces-mineur-gt-500k",
+        "label": "Décès — Mineur (solde > 500 000 F) — liste complète",
+        "langs": {
+            "fr": "Bonjour,\nNous vous présentons nos sincères condoléances. 🙏🏽\nL'accès au compte est impossible, mais nous pouvons mettre les fonds à disposition en les transférant sur un autre compte.\n\nMerci d'imprimer, remplir et signer le formulaire joint, puis de nous le transmettre avec l’ensemble des documents ci-dessous au Siège Social (Namer VDN) ou par e-mail à sn-comptes-deces@wave.com :\n• Courrier de déclaration de décès et de demande de mise à disposition des fonds ;\n• Certificat de décès de la mairie ou jugement supplétif d’acte de décès (1 copie certifiée conforme à l’original) ;\n• Pièces d'identité du défunt et du titulaire de l’autorité parentale ;\n• Acte de naissance du défunt ;\n• Cas KYC1 : preuve que le numéro rattaché au compte appartenait au défunt et est identifié chez l’opérateur ;\n• Certificat de tutelle ou d’administration légale (si applicable).\n\nNous restons disponibles au besoin.",
+            "en": "Hello,\nPlease accept our condolences. 🙏🏽\nAccess to the account is not possible, but we can release the funds by transferring them to another account.\n\nPlease print, complete and sign the attached form, then send it with all the documents below to our Head Office (Namer VDN) or by email to sn-comptes-deces@wave.com:\n• Death declaration letter and request to release funds;\n• Death certificate or court order (1 certified copy);\n• IDs of the deceased and of the holder of parental authority;\n• The deceased’s birth certificate;\n• KYC1 case: proof the number linked to the account belonged to the deceased and is identified with the operator;\n• Guardianship or legal administration certificate (if applicable).\n\nWe remain available if needed."
+        }
+        },
+        {
+        "id": "deces-ask-relation-cert",
+        "label": "Décès — Demande lien de parenté + certificat",
+        "langs": {
+            "fr": "Bonjour,\nNous vous présentons nos sincères condoléances. 🙏🏽\nPour sécuriser le compte, merci de préciser votre lien de parenté avec le défunt et de nous envoyer une photo lisible du certificat de décès (document officiel).",
+            "en": "Hello,\nPlease accept our condolences. 🙏🏽\nTo secure the account, please state your relationship to the deceased and send a clear photo of the official death certificate."
+        }
+        },
+        {
+        "id": "deces-no-block-without-cert",
+        "label": "Décès — Pas de blocage sans certificat",
+        "langs": {
+            "fr": "Merci. Sans certificat de décès officiel, nous ne pourrons pas donner suite à votre demande. Merci de nous transmettre une photo nette et lisible du document, où doivent apparaître l’autorité émettrice, la date et l’identité du défunt.",
+            "en": "Thank you. Without an official death certificate, we cannot proceed with your request. Please provide a clear photo of the document showing the issuing authority, the date, and the identity of the deceased."
+        }
+        },
+        {
+        "id": "deces-cert-mismatch",
+        "label": "Décès — Certificat ne correspond pas",
+        "langs": {
+            "fr": "Merci. Le certificat transmis ne correspond pas aux informations du compte (nom/numéro). Pour protéger les fonds, nous ne pouvons pas intervenir à ce stade. Merci d’envoyer un document correspondant au titulaire du compte.",
+            "en": "Thank you. The certificate provided doesn’t match the account information (name/number). To protect funds, we can’t proceed at this stage. Please send a document that matches the account holder."
+        }
+        },
+        {
+        "id": "deces-blocked-confirmation",
+        "label": "Décès — Confirmation de blocage",
+        "langs": {
+            "fr": "Nous avons bloqué le compte par mesure de sécurité et transféré le dossier à l’équipe dédiée. Vous pouvez nous envoyer tout document complémentaire en réponse à ce message. Nous restons à votre disposition.",
+            "en": "We have blocked the account for security and forwarded the case to the dedicated team. You may send any additional documents by replying to this message. We remain available."
+        }
+        },
+        {
+        "id": "deces-internal-slack-note",
+        "label": "Décès — Poste Slack",
+        "langs": {
+            "fr": "Bonjour @fraudcomsn\n[Qui] Nom défunt: {nom_defunt}\nNuméro de compte: +221{numero_compte}\nPourquoi: {raison}\n[Par] Déclarant: {nom_declarant} | Téléphone: +221{tel_declarant} | Relation: {relation}\n[Quand] {date_heure}",
+            "en": "Hello @fraudcomsn\n[Who] Deceased full name: {deceased_full_name}\nAccount number: +221{account_number}\nWhy: {reason}\n[By] Reporter: {reporter_name} | Phone: +221{reporter_phone} | Relation: {relation}\n[Match] Certificate: {certificate_yes_no} | Issuing authority: {issuing_authority} | Ref/ID: {certificate_ref}\n[Action] Account: {account_status} (Blocked / Already blocked / Not blocked — no certificate)\n[When] {datetime}\n[Agent] {agent}"
+        }
+        }
+    ],
+    "sim-reattribuee": [
+        {
+            "id": "sim-reat-ident-ask",
+            "label": "SIM réattribuée — Demande d'infos (identité + date achat SIM)",
+            "langs": {
+            "fr": "Bonjour,\nMerci de nous communiquer, s'il vous plaît :\n- vos nom et prénom au complet ;\n- la date d'achat de votre carte SIM ;\nDès réception, nous poursuivrons le traitement.",
+            "en": "Hello,\nPlease share the following:\n- your full name;\n- the purchase date of your SIM card;\nOnce received, we’ll proceed."
+            }
+        },
+
+        {
+            "id": "yas-sim-ident-ussd",
+            "label": "YAS / Free — USSD #183# (preuve d'identification)",
+            "langs": {
+            "fr": "Bonjour,\nPour vérifier l'identification de votre SIM YAS/Free, merci de composer le code USSD #183# puis :\n- Sélectionnez l'option 2 et validez ;\n- Saisissez votre numéro d'identification nationale ;\n- Faites une capture d'écran des informations reçues et envoyez-la ici.\nNous restons dans l'attente de votre retour.",
+            "en": "Hello,\nTo check your YAS/Free SIM identification, please dial USSD #183# and:\n- Select option 2 and confirm;\n- Enter your national ID number;\n- Take a screenshot of the returned info and send it here.\nWe look forward to your reply."
+            }
+        },
+
+        {
+            "id": "orange-sim-ident-ussd",
+            "label": "Orange — USSD #336# (preuve d'identification)",
+            "langs": {
+            "fr": "Bonjour,\nPour vérifier l'identification de votre SIM Orange, composez #336# puis :\n- Sélectionnez l'option 1 et validez ;\n- Entrez votre numéro de téléphone actuel ;\n- Entrez votre nom de famille, puis votre prénom ;\n- Envoyez-nous la capture d'écran des informations obtenues.\nMerci 🙂",
+            "en": "Hello,\nTo check your Orange SIM identification, please dial #336# and:\n- Select option 1 and confirm;\n- Enter your current phone number;\n- Enter your last name, then your first name;\n- Send us a screenshot of the returned information.\nThanks 🙂"
+            }
+        },
+
+        {
+            "id": "promobile-sim-ident",
+            "label": "Promobile / Expresso — preuve d'identification (WhatsApp)",
+            "langs": {
+            "fr": "Merci pour votre retour 😊\nPour la prise en charge, il faut un justificatif d'identification de la SIM.\nVeuillez contacter votre opérateur via WhatsApp au 755250000 afin d'obtenir l'attestation puis nous l'envoyer ici.\nNous restons dans l'attente de votre retour.",
+            "en": "Thank you for your reply 😊\nTo proceed, we need a SIM identification proof.\nPlease contact your carrier via WhatsApp at 755250000 to get the attestation and send it to us here.\nWe look forward to your response."
+            }
+        },
+        {
+            "id": "sim-reattribuee-confirmation",
+            "label": "SIM réattribuée — confirmation (terminate fait, ouvrir compte)",
+            "langs": {
+            "fr": "Merci pour les informations fournies.\nLe nécessaire vient d'être fait. 😊\nVous pouvez à présent ouvrir un compte Wave à votre nom.\nNous restons disponibles au besoin.",
+            "wo": "Ñu ngui ley jajëfël ci leral yi. 😊\nMën nga ubbi benn compte Wave ci sa tur, ak sa kart d'identité.\nSu amee laaj, nga ñu mbind.\nJërëjëf.",
+            "en": "Thank you for the information.\nWe’ve completed the required steps. 😊\nYou can now open a Wave account in your name.\nWe remain available if needed."
+            }
+        },
+
+        {
+            "id": "sim-reat-1xbet-ask",
+            "label": "Payout 1XBET — Demande des pièces",
+            "langs": {
+            "fr": "Bonjour,\nMerci de nous transmettre, s'il vous plaît :\n- la capture du message de retrait 1XBET ;\n- la capture (ou attestation) d'identification de la SIM ;\nDès réception, nous procéderons au traitement.",
+            "en": "Hello,\nPlease share:\n- a screenshot of the 1XBET payout message;\n- a screenshot/attestation of SIM identification;\nOnce received, we will proceed."
+            }
+        },
+        {
+        "id": "sim-reat-1xbet-terminate",
+        "label": "Payout 1XBET — Après terminate (confirmation simplifiée)",
+        "langs": {
+            "fr": "Merci pour ces informations. ✅\nNous avons effectué le nécessaire.\nNous vous invitons maintenant à ouvrir un nouveau compte sur ce numéro, puis à vous rendre chez un agent Wave muni de votre carte d’identité afin de le déplafonner.\nUne fois cette étape terminée, merci de revenir vers nous afin que nous puissions reverser les fonds dans ce nouveau compte.\nNous restons dans l’attente de votre retour.",
+            "en": "Thank you for the information. ✅\nWe have completed the required action.\nPlease now open a new Wave account on this number, then visit a Wave agent with your national ID to lift the limit.\nOnce this step is done, kindly get back to us so we can transfer the funds to this new account.\nWe look forward to your reply."
+        }
+        },
+        {
+        "id": "sim-reat-1xbet-identification-or-cancel",
+        "label": "Payout 1XBET — Identification opérateur ou annulation",
+        "langs": {
+            "fr": "Nous vous invitons à vous rapprocher de votre opérateur afin de faire enregistrer la SIM à votre nom.\nSi vous n’êtes pas en mesure d’accomplir cette démarche, nous vous prions de bien vouloir contacter directement le service client 1XBET pour demander l’annulation du paiement.\nNous restons à votre disposition si besoin.",
+            "en": "Please visit your mobile operator to have the SIM registered in your name.\nIf you are unable to do so, kindly contact 1XBET customer support directly to request a payment cancellation.\nWe remain available if needed.",
+            "wo": "Demal ci sa opérateur ngir indental SIM bi ci sa tur.\nSu ko mënuloo def, ñaanleen ngeen jokkoo ak 1XBET service client ngir laaj anulationu peyment bi.\nNu nekk foofu ngir ndimbal."
+        }
+        },
+        {
+        "id": "sim-reat-no-proof",
+        "label": "SIM réattribuée — Impossible de procéder (preuve non fournie)",
+        "langs": {
+            "fr": "Merci pour ces informations.\nCependant, sans la preuve d’identification de votre carte SIM (capture ou attestation de l’opérateur), nous ne sommes pas en mesure de procéder à la fermeture du compte.\nNous vous prions de bien vouloir fournir cette preuve afin que nous puissions continuer le traitement.",
+            "en": "Thank you for the information.\nHowever, without proof of your SIM identification (screenshot or attestation from the operator), we are unable to proceed with closing the account.\nPlease provide this proof so we can continue processing.",
+            "wo": "Jërëjëf ci leral yi.\nWante, su nu amuloo dayo bu wóor ci sa SIM (capture walla attestation bu opérateur bi), du nu man a japp ci tëj compte bi.\nDafa war nga yónnee dayo bi ngir nu mën kontine ci liggéey bi."
+        }
+        },
+        {
+        "id": "sim-reat-cession-ask",
+        "label": "Cession de SIM — Validation avec propriétaire initial",
+        "langs": {
+            "fr": "Bonjour,\nPour pouvoir effectuer la cession, nous devons d’abord confirmer avec le propriétaire initial du numéro :\n- son accord pour céder la SIM ;\n- la réponse à quelques questions de sécurité.\nMerci de nous le mettre en relation ou de lui demander de nous contacter directement.\nNous restons disponibles.",
+            "en": "Hello,\nTo proceed with the SIM transfer, we first need to confirm with the original owner of the number:\n- their consent to hand over the SIM;\n- answers to a few security questions.\nPlease connect us with them or ask them to contact us directly.\nWe remain available."
+        }
+        },
+
+        {
+        "id": "sim-reat-cession-done",
+        "label": "Cession de SIM — Confirmation après fermeture",
+        "langs": {
+            "fr": "Merci, la vérification est terminée. ✅\nL’ancien compte a été fermé.\nVous pouvez désormais ouvrir un nouveau compte Wave avec votre pièce d’identité.\nNous restons à votre disposition si besoin.",
+            "en": "Thank you, the verification is complete. ✅\nThe old account has been closed.\nYou can now open a new Wave account with your ID.\nWe remain at your disposal if needed."
+        }
+        },
+        {
+        "id": "sim-reat-kyc-main",
+        "label": "Questions de sécurité — dernière transaction + adresse",
+        "langs": {
+            "fr": "Merci. Pour vérification, pouvez-vous nous communiquer :\n• la nature et le montant de votre dernière transaction (transfert, retrait, dépôt ou paiement) ;\n• l'adresse du point Wave où vous avez effectué votre dernier dépôt/retrait ?",
+            "en": "Thank you. For verification, please provide:\n• the type and amount of your last transaction (transfer, withdrawal, deposit or payment);\n• the address of the Wave point where you made your last deposit/withdrawal."
+        }
+        },
+        {
+        "id": "sim-reat-kyc1",
+        "label": "KYC1 — Contact habituel (nom/numéro)",
+        "langs": {
+            "fr": "Pouvez-vous nous indiquer, s’il vous plaît, le nom ou le numéro d’une personne à qui vous avez déjà envoyé de l’argent ?",
+            "en": "Could you please provide the name or phone number of someone you have previously sent money to?",
+            "wo": "Ndax man nga jox nu tur walla numééro bu nit ku nga desëkk ci kow xalis bi nga yonnee?"
+        }
+        },
+        {
+        "id": "sim-reat-kyc2",
+        "label": "KYC2 — Numéro de CNI / passeport",
+        "langs": {
+            "fr": "Pourriez-vous nous indiquer, s’il vous plaît, le numéro de votre carte d’identité (NIN) ?",
+            "en": "Could you please provide us with your National ID Number (NIN)?",
+            "wo": "Ndax man nga jox nu sa numééro bu kart dantite (NIN), s’il vous plaît?"
+        }
+        },
+        {
+        "id": "sim-reat-1xbet-cancel",
+        "label": "Payout 1XBET — Pas de SIM (demander l’annulation)",
+        "langs": {
+            "fr": "Merci pour votre retour. Comme vous n’avez pas la carte SIM en votre possession, nous vous prions de bien vouloir contacter directement le service client 1XBET afin de demander l’annulation du paiement.\nNous restons à votre disposition si besoin.",
+            "en": "Thank you for your reply. Since you do not have the SIM card, please contact 1XBET customer support directly to request the cancellation of the payout.\nWe remain available if needed."
+        }
+        }
+    ],
+    "dormancy-block": [
+        {
+            "id": "dormancy-ident-ask",
+            "label": "Dormancy — Demande d'identification",
+            "langs": {
+            "fr": "Bonjour,\nMerci de nous communiquer :\n- votre numéro de téléphone (objet de la demande) ;\n- vos nom et prénom au complet.\nDès réception, nous poursuivrons le traitement. 😊",
+            "en": "Hello,\nPlease share:\n- your phone number (concerned by the request);\n- your full name.\nOnce received, we’ll proceed. 😊"
+            }
+        },
+        {
+            "id": "dormancy",
+            "label": "Dormancy — Confirmation après déblocage",
+            "langs": {
+            "fr": "Bonjour,\nMerci de nous avoir contactés. 😊\nNous vous informons que votre compte avait été désactivé pour cause d'inactivité.\nVous pouvez vous connecter à nouveau, le nécessaire vient d'être fait.\nNous restons disponibles pour toute autre requête.",
+            "wo": "Salam,\nDi la jajëfël bu baax. 😊\nDi la xamal ni compte bi, da ñu ko tëj ndax yaggul jëfandikoo ko.\nDeffa ñu li war, mën nga ci duggaat.\nJajëf.",
+            "en": "Hello,\nThank you for reaching out to us. 😊\nYour account had been deactivated due to inactivity.\nYou can log in again now; the necessary steps have been taken.\nPlease feel free to contact us if you have any further questions."
+            }
+        },
+        {
+            "id": "dormancy-kyc-ask",
+            "label": "Dormancy — Vérifications de sécurité (Reset PIN)",
+            "langs": {
+            "fr": "Merci. Pour des raisons de sécurité, pouvez-vous nous indiquer :\n- l’adresse du point Wave où vous avez l’habitude d’effectuer vos dépôts/retraits ;\n- votre numéro de CNI (KYC2) ;\n- le nom d’un contact avec qui vous effectuez souvent des transactions (KYC1).\nDès validation, nous vous aiderons à définir un nouveau code secret.",
+            "en": "Thanks. For security reasons, please provide:\n- the address of the Wave point where you usually deposit/withdraw;\n- your national ID number (KYC2);\n- the name of a frequent transaction contact (KYC1).\nOnce validated, we’ll help you set a new PIN."
+            }
+        },
+        {
+            "id": "dormancy-abroad-known-pin",
+            "label": "Dormancy — À l'étranger (PIN connu)",
+            "langs": {
+            "fr": "Merci pour ces informations. ✈️\nNous venons de débloquer votre compte.\nSi vous rencontrez des difficultés pour recevoir le code par SMS, merci de nous le signaler afin que nous puissions vous assister.\nNous restons disponibles au besoin.",
+            "en": "Thank you for the information. ✈️\nWe’ve unlocked your account.\nIf you face any issue receiving the SMS code, please let us know so we can assist.\nWe remain available."
+            }
+        },
+        {
+            "id": "dormancy-abroad-reset-unavailable",
+            "label": "Dormancy — À l'étranger (Reset PIN indisponible)",
+            "langs": {
+            "fr": "Bonjour,\nSuite au déblocage, nous vous informons que la réinitialisation du code secret n’est pas disponible depuis l’étranger.\nDès votre retour au Sénégal, nous pourrons vous assister pour le Reset PIN.\nNous restons disponibles si besoin.",
+            "en": "Hello,\nFollowing the unblock, please note that PIN reset is not available from abroad.\nOnce you return to Senegal, we’ll be able to assist you with the PIN reset.\nWe remain available if needed."
+            }
+        }
+    ],
+    "minor-compliance": [
+        {
+        "id": "minor-compliance1",
+        "label": "Autorisation parentale — Lien côté mineur",
+        "langs": {
+            "fr": "Bonjour !\nMerci de nous avoir contactés. 😊 Afin de mieux vous aider, veuillez suivre ces étapes :\n- Cliquez sur le lien reçu par SMS.\n- Saisissez le numéro de téléphone de votre parent ou tuteur.\nVotre parent/tuteur recevra ensuite un lien pour valider ou refuser votre demande d’autorisation parentale.\nN’hésitez pas à revenir vers nous pour toute autre demande !",
+            "wo": "Salam,\nÑu ngi lay sant bu baax ci say laaj. 😊\nLaaj nañu la ngir nga toppal ci loolu:\n- Beessal ci lien bi nga jot ci SMS.\n- Dugëlal numéro bu sa kilifa walla tuteur.\nBu ko defee, mom dina jot lien ngir mu nangu walla bañ sa laaj autorisation parentale.\nSu laaj bu bees amee, ñu ngi ci nekk ngir ndimbal la.",
+            "en": "Hello!\nThank you for reaching out. 😊 To help you, please follow these steps:\n- Click the link you received by SMS.\n- Enter your parent or guardian’s phone number.\nYour parent/guardian will then receive a link to approve or deny your parental authorization request.\nFeel free to contact us again if you need any further assistance!"
+        }
+        },
+        {
+        "id": "minor-compliance2",
+        "label": "Autorisation parentale — Validation côté tuteur",
+        "langs": {
+            "fr": "Merci de nous avoir contactés. 😊\nAvez-vous déjà reçu la notification vous invitant à approuver l’autorisation parentale de votre enfant ?\nSi ce n’est pas le cas, demandez à votre enfant de vous renvoyer la demande. Une fois la notification reçue, suivez ces étapes :\n- Cliquez sur la notification.\n- Dans la fenêtre qui s’affiche, sélectionnez « Approuver » afin de permettre à votre enfant d’utiliser pleinement son compte Wave.",
+            "wo": "Salam,\nÑu ngi lay sant bu baax. 😊\nNdax nga jotoon jot notifikasioon bi ci application bi ngir nga approové autorisasioon bu sa doom?\nSu fekkee doo ko jot, laaj sa doom mu delloo la kërëm autorisasioon bi. Bu ko defee, toppal léegi:\n- Beessal ci notifikasioon bi,\n- Ci windiir bi di feeñ, togg ci « Approuver » ngir sa doom man a jëfandikoo ak yoon sa compte Wave.",
+            "en": "Thank you for contacting us. 😊\nHave you already received the notification asking you to approve your child's parental authorization?\nIf not, please ask your child to resend the request. Once the notification is received, follow these steps:\n- Tap the notification.\n- In the window that appears, select \"Approve\" to allow your child to fully use their Wave account."
+        }
+        },
+        {
+        "id": "minor-compliance-approved",
+        "label": "Autorisation parentale — Notification après approbation validée",
+        "langs": {
+            "fr": "Bonne nouvelle ! ✅ L’autorisation parentale a bien été validée.\nVous pouvez désormais utiliser pleinement votre compte Wave (transferts, recharges de crédit, paiements de factures). Les retraits restent inchangés.\nNous restons à votre disposition en cas de besoin.",
+            "wo": "Xibaar bu neex! ✅ Njoow (kilifa/tuteur) dafa nangu na.\nLéegi mën nga jëfandikoo sa compte bu mat (transfert, jënd crédit, fay facture). Retrait yi amul benn coppite.\nSu laaj bu bees amee, ñu ngi ci ngir ndimbal la.",
+            "en": "Good news! ✅ Parental/guardian approval has been successfully confirmed.\nYou can now fully use your Wave account (transfers, airtime top-ups, bill payments). Withdrawals remain unchanged.\nWe remain at your disposal if you need any assistance."
+        }
+        }
+    ],
+    "scam-case": [
+        {
+            "id": "scam-ident-ask",
+            "label": "SCAM — Demande d’identification",
+            "langs": {
+            "fr": "Bonjour,\nPour sécuriser votre compte, merci de nous communiquer :\n- vos nom et prénom au complet ;\n- le numéro de téléphone concerné.\nNous procédons immédiatement aux actions nécessaires.",
+            "en": "Hello,\nTo secure your account, please share:\n- your full name;\n- the phone number concerned.\nWe’ll take the necessary actions right away."
+            }
+        },
+        {
+            "id": "scam-logout-confirm-sn",
+            "label": "SCAM — Confirmation logout + orientation 200 600 (client au Sénégal)",
+            "langs": {
+            "fr": "Merci. Par mesure de sécurité, nous venons de déconnecter votre compte de tous les appareils. ✅\nNous vous invitons maintenant à contacter le 200 600 pour être mis(e) en relation avec l’équipe Fraude.\nNous restons disponibles au besoin.",
+            "en": "Thank you. For security, we’ve just logged your account out of all devices. ✅\nPlease call 200 600 to be connected with our Fraud team.\nWe remain available if needed."
+            }
+        },
+        {
+            "id": "scam-ask-whatsapp",
+            "label": "SCAM — Demander le numéro WhatsApp joignable (client à l’étranger)",
+            "langs": {
+            "fr": "Merci. Pour la prise en charge par notre équipe Fraude, merci de nous confirmer un numéro WhatsApp joignable (ex. +22177XXXXXXX).",
+            "en": "Thank you. For escalation to our Fraud team, please confirm a reachable WhatsApp number (e.g., +22177XXXXXXX)."
+            }
+        },
+        {
+            "id": "scam-note-logout-done",
+            "label": "SCAM — Note interne obligatoire (logout done)",
+            "langs": {
+            "fr": "Nouveau cas de scam : logout done — all sessions terminated",
+            "en": "Scam Case : logout done — all sessions terminated"
+            }
+        },
+        {
+            "id": "scam-escalade-fraude-client",
+            "label": "SCAM — Message client (escalade Fraude / WhatsApp)",
+            "langs": {
+            "fr": "Merci. Nous venons de sécuriser votre compte.\nNous transmettons votre dossier à notre équipe Fraude qui vous contactera sur WhatsApp au numéro communiqué.\nNous restons disponibles au besoin.",
+            "en": "Thank you. We’ve secured your account.\nWe’re escalating your case to our Fraud team, who will contact you on WhatsApp at the number provided.\nWe remain available."
+            }
+        },
+
+        {
+            "id": "scam-sensibilisation",
+            "label": "Sécurité — Scam sensibilisation 1",
+            "langs": {
+            "fr": "Merci pour le retour.\nLes arnaqueurs n'ont pas la possibilité de vous appeler avec le 200600.\nVous avez reçu un appel du robot chargé de vous communiquer le code de validation.\nPar ailleurs, vous ne devez pas donner suite à cet appel si vous n'avez effectué aucune manipulation susceptible de le déclencher. Nous vous conseillons dans ces cas de nous contacter au plus vite pour assistance.\nWave garantit la sécurité de son réseau et vous conseille de ne jamais partager vos données personnelles.\nNous restons disponibles pour plus d'informations.",
+            "wo": "Ñu ngui ley jajëfël bubax ci mbind mi. 😊\nDi la xamal ni sambaboy yi mënu ñu la wo ak 200600 😉\nSu ñu ay jumtukaay yu ñu ligeyal sunu bopp ñolay woo nguir jox la sa code de validation soko yittéwo.\nBoobu wooté nak, dooko jott ci ganaw lathié wooko.\nSu lolu wesso, sula numéro bobu woowé, tekk ci amo benë jaffé jaffé code, ñu ngui lay ñane ngua woo ñu ci numu genë gawé ci 200600, wala nga bind ñu nguir xamal ñuko.\nNguir yeneni leral meunë ngañu mbind.",
+            "en": "Thank you for your response.\nScammers are not able to call you using 200600.\nThe call you received was from our automated system that delivers validation codes.\nHowever, if you didn’t perform any action that might trigger it, do not respond to that call and contact us as soon as possible for assistance.\nWave guarantees the security of its network and strongly advises you never to share your personal information.\nWe remain available for further information."
+            }
+        },
+        {
+            "id": "scam-suspicious-2",
+            "label": "Sécurité — Scam sensibilisation 2",
+            "langs": {
+            "fr": "Bonjour,\nMerci de nous avoir écrit. 🙂\nWave garantit la sécurité de son réseau et vous conseille de ne jamais partager vos données personnelles à toute personne se faisant passer pour son personnel.\nNotre numéro de contact est uniquement le 200600.\nPour rappel, un code secret ne doit être ni 1234, ni 0000, ni votre année de naissance, ni les quatre derniers chiffres de votre numéro de téléphone.\nVous pouvez modifier votre code secret à tout moment dans les paramètres de l'application Wave.\nNous restons disponibles au besoin.\nWave vous remercie pour votre fidélité. 🙏",
+            "wo": "Salam\nDi la jajefël bu bax ci mbindë mi. 😊\nWave mi ngui weyël di samë lepp louy karangue bou jëm thi sen compte tek thi dilen fatali ni benë numéro rek la ñu am, moy 200600.\nÑu ngui len di fatali ni code secret waroul done 0000, 1234 wala sa atoumë juddou.\nSa code secret, meunë ngako soppi sa sula nexe thi say parametre application.\nNguir yeneni leral meunë nga ñu mbind fi.\nWave jajëfël nala ci koluté bi.",
+            "en": "Hello,\nThank you for reaching out. 🙂\nWave guarantees the security of its network and strongly advises you never to share your personal information with anyone pretending to be Wave staff.\nOur official contact number is 200600.\nAs a reminder, your PIN should never be 1234, 0000, your birth year, or the last four digits of your phone number.\nYou can update it at any time in the Wave app settings.\nWe remain available if needed.\nThank you for your loyalty to Wave. 🙏"
+            }
+        },
+        {
+            "id": "scam-wave-imposteur",
+            "label": "Sécurité — Wave imposteur",
+            "langs": {
+            "fr": "Bonjour,\nNous sommes navrés de la situation. 🙏\nNotre unique numéro est le 200 600 et notre compte WhatsApp officiel affiche un badge bleu vérifié.\nVeuillez rester vigilant(e) et ne jamais communiquer vos informations personnelles ou votre code secret.\nNous restons disponibles au besoin.\nWave vous remercie pour votre fidélité. 🙏",
+            "wo": "Salam,\nÑu ngui jegalu bubax ci jaffé jaffé bi.\nDi la xamal ni Wave, benë numéro rek la ñu am mouy 200600.\nSu ñu numéro WhatsApp bi itam, dafay am benn mandarga bu bleu, moo tax nga xam ni moom mooy ofisel.\nBul jox kenn sa xibaar bu bopp walla sa code secret.\nSu amee laaj, nga ñu bind.\nJërëjëf.",
+            "en": "Hello,\nWe’re sorry to hear about the situation. 🙏\nOur only official number is 200 600, and our WhatsApp account shows a blue verified badge.\nPlease remain vigilant and never share your personal information or secret code.\nWe remain available if needed.\nThank you for your loyalty to Wave. 🙏"
+            }
+        },
+        {
+            "id": "scam-robotcall",
+            "label": "Sécurité — Robotcall",
+            "langs": {
+            "fr": "Merci pour le retour. 🙏\nLes arnaqueurs ne peuvent pas vous appeler avec le 200600.\nL’appel reçu provient du robot qui délivre le code de validation par appel lorsqu’un SMS n’aboutit pas.\nSi vous n’avez initié aucune action, ne donnez pas suite et contactez-nous avec votre numéro Wave pour assistance.",
+            "wo": "Ñu ngui ley jajëfël bubax ci mbind mi. 😊\nDi la xamal ni sambaboy yi mënu ñu la wo ak 200600.\nWakhtaan bi nga jot mooy robot bi muy jox code de validation.\nSu fekkee doo def benn transaction walla neexee seetaan, bul ko topp. Waxel ñu ci sa numéro Wave.\nJërëjëf.",
+            "en": "Thanks for the feedback. 🙏\nScammers cannot call you using 200600.\nThe call you received was our robot delivering the validation code by voice when SMS fails.\nIf you did not initiate any action, do not proceed and contact us with your Wave number for assistance."
+            }
+        }
+    ],
+    "requetes-agents": [
+        {
+            "id": "ouverture-point-suspendue",
+            "label": "Ouverture point Wave suspendue",
+            "tags": ["ouverture", "point", "wave", "suspendue"],
+            "langs": {
+                "fr": "Merci pour ces informations.\nCependant, les ouvertures de points Wave sont pour le moment suspendues.\nToutefois, vous pouvez soumettre votre demande en cliquant sur le lien que nous venons de vous envoyer par e-mail.\nAinsi, dès qu’un besoin se présentera dans votre zone, nous ne manquerons pas de vous recontacter.",
+                "wo": "Jërëjëf ci say xibaar.\nWaaye, toppandoo ak taxawlu pont Wave yi dañuy taxaw ci leegi.\nNaka noonu, mën nga yónnee sa laaj ci lëkkal bi nu la yónnee ci email.\nSu bes bu nekk di jàpp ci sa zone, dinañu la jàpp ci kaw.",
+                "en": "Thank you for this information.\nHowever, new Wave point openings are currently suspended.\nNevertheless, you can submit your request by clicking on the link we just sent you by email.\nAs soon as there is a need in your area, we will make sure to get back to you."
+            }
+        },
+        {
+            "id": "agent-open-point-initial",
+            "label": "Ouverture de point — Demande initiale",
+            "langs": {
+                "fr": "Bonjour,\nMerci pour votre intérêt. 😊\nPour ouvrir un point Wave, nous vous invitons à remplir le formulaire que nous venons de vous envoyer par SMS.\nUne fois votre demande soumise, il faudra patienter le temps du traitement (aucun délai précis n’est communiqué).\nNous restons disponibles si besoin.",
+                "en": "Hello,\nThank you for your interest. 😊\nTo open a Wave point, please fill out the form we just sent you by SMS.\nOnce your request is submitted, please wait while it’s being processed (no specific timeframe is provided).\nWe remain available if needed."
+            }
+        },
+        {
+            "id": "agent-open-point-got-reply",
+            "label": "Ouverture de point — Client a reçu un message",
+            "langs": {
+            "fr": "Merci. Pouvez-vous partager le contenu du message reçu (ou une capture d’écran), s’il vous plaît ?\nCela nous permettra de vous guider précisément.",
+            "en": "Thank you. Could you share the content of the message you received (or a screenshot), please?\nThis will help us guide you precisely."
+            }
+        },
+        {
+            "id": "agent-open-point-no-reply",
+            "label": "Ouverture de point — Pas de retour reçu",
+            "langs": {
+            "fr": "Merci pour votre retour. Votre demande est en cours de traitement.\nNous vous prions de patienter (aucun délai communiqué).\nNous restons disponibles si besoin.",
+            "en": "Thanks for your message. Your request is being processed.\nPlease wait (no ETA provided).\nWe remain available."
+            }
+        },
+        {
+            "id": "agent-app-change-pin",
+            "label": "PIN Agent — Modifier le code",
+            "langs": {
+            "fr": "Pour modifier le code PIN de votre application Agent :\n- connectez-vous à votre compte ;\n- ouvrez les Paramètres ;\n- choisissez « Changer le code PIN » ;\n- définissez un code à 4 chiffres (différent de 1234/0000/année de naissance).",
+            "en": "To change your Agent app PIN:\n- log in to your account;\n- open Settings;\n- choose “Change PIN”;\n- set a 4-digit PIN (not 1234/0000/birth year)."
+            }
+        },
+
+        {
+            "id": "agent-assistant-contact-tl",
+            "label": "Assistant — Ajouter / Désactiver",
+            "langs": {
+            "fr": "Pour ajouter ou désactiver un assistant sur votre compte Agent, merci de vous rapprocher de votre responsable d’équipe.",
+            "en": "To add or disable an assistant on your Agent account, please contact your team lead."
+            }
+        },
+        {
+            "id": "agent-main-number-contact-tl",
+            "label": "Numéro principal — Changement",
+            "langs": {
+            "fr": "Pour changer le numéro principal de votre compte Agent, merci de contacter votre responsable d’équipe.",
+            "en": "To change the main number on your Agent account, please contact your team lead."
+            }
+        },
+        {
+            "id": "agent-shopname-contact-tl",
+            "label": "Nom de la boutique — Changement",
+            "langs": {
+            "fr": "Pour modifier le nom de votre boutique, merci de vous rapprocher de votre responsable d’équipe.",
+            "en": "To change your shop name, please reach out to your team lead."
+            }
+        },
+        {
+        "id": "agent-rebalance-limits-unflagged",
+        "label": "Rebalance limits — Demande",
+        "langs": {
+            "fr": "Merci. Votre demande a été transmise à l’équipe compétente. \nVous recevrez une notification dès qu’elle sera traitée.\nNous restons à votre disposition pour toute autre question.",
+            "en": "Thank you. Your request has been forwarded to the appropriate team. You will receive a notification once it has been processed.\nWe remain available if you have any further questions."
+        }
+        },
+        {
+        "id": "agent-rebalance-limits-flagged",
+        "label": "Rebalance limits — Revue nécessaire",
+        "langs": {
+            "fr": "Nous ne sommes pas en mesure de donner suite à votre demande. Merci de vous rapprocher de votre responsable de zone.",
+            "en": "We are unable to process your request. Please contact your area manager."
+        }
+        },
+
+        {
+        "id": "agent-commission-cut-escalate-risk",
+        "label": "Commission — Réduction constatée",
+        "langs": {
+            "fr": "Votre demande a été transmise à l’équipe compétente. Nous vous prions de bien vouloir patienter, l’équipe reviendra vers vous dès que possible.",
+            "en": "Your request has been forwarded to the appropriate team. Please be patient, the team will get back to you as soon as possible."
+        }
+        },
+        {
+            "id": "agent-training-performance",
+            "label": "Overdraft / Formation / Performance",
+            "langs": {
+            "fr": "Merci pour votre intérêt. Pour toute information sur l’Overdraft, la formation ou la performance/qualité, merci de vous rapprocher de votre responsable de zone.",
+            "en": "Thanks for your interest. For Overdraft, training or performance/quality information, please contact your territory lead."
+            }
+        },
+
+        {
+            "id": "agent-overdraft-summary",
+            "label": "Overdraft — Récapitulatif",
+            "langs": {
+            "fr": "Les UV de secours permettent de poursuivre l’activité en cas d’insuffisance d’UV :\n- notification d’éligibilité par SMS en début de mois ;\n- activation dans l’application Agent ;\n- remboursement au plus tard le lendemain avant 00h (sinon pénalité 1%/jour) ;\n- 40% des commissions générées via UV de secours reviennent à Wave.",
+            "en": "Emergency UV lets you continue when UV is insufficient:\n- eligibility notified by SMS at the start of the month;\n- activation in the Agent app;\n- repay by next day before 00:00 (otherwise 1%/day penalty);\n- 40% of commissions from these transactions go to Wave."
+            }
+        },
+        {
+            "id": "agent-open-point-ask-submitted",
+            "label": "Ouverture de point — Avez-vous déjà soumis le formulaire ?",
+            "langs": {
+            "fr": "Bonjour,\nAvant de poursuivre, avez-vous déjà soumis une demande d’ouverture de point Wave via notre formulaire en ligne ? (Oui / Non)",
+            "en": "Hello,\nBefore we proceed, have you already submitted a Wave point opening request via our online form? (Yes / No)"
+            }
+        },
+        {
+            "id": "agent-open-point-ask-got-reply",
+            "label": "Ouverture de point — Avez-vous reçu un retour ?",
+            "langs": {
+            "fr": "Merci. Avez-vous reçu un retour (message ou email) suite à votre formulaire d’ouverture de point ?",
+            "en": "Thank you. Have you received any reply (message or email) after submitting your point opening form?"
+            }
+        }
+    ],
+    "bill-payments": [
+        {
+        "id": "bill-pay-ask-basics",
+        "label": "Bill Pay — Demande d’infos de base",
+        "langs": {
+            "fr": "Bonjour,\nPour mieux vous assister, pourriez-vous nous envoyer une capture d’écran de votre paiement, s’il vous plaît ?",
+            "en": "Hello,\nTo better assist you, could you please send us a screenshot of your payment?"
+        }
+        },
+        {
+        "id": "bill-pay-escalation-integration",
+        "label": "Bill Pay — Escalade Integration Ops",
+        "langs": {
+            "fr": "Merci. Votre demande a été transmise à l’équipe compétente pour vérification.\nNous vous prions de bien vouloir patienter, l’équipe reviendra vers vous dès que possible.",
+            "wo": "Jërëjëf. Sa laaj nu ngi yónnee ko ci équipe bu dëgg bu saytu.\nNu ngi la ñaan nga muñ, équipe bi dina la dellu ba muy mottali.",
+            "en": "Thank you. Your request has been forwarded to the appropriate team for review.\nPlease be patient, the team will get back to you as soon as possible."
+        }
+        },
+        {
+        "id": "bill-pay-senelec-seneau-partner-txid",
+        "label": "Senelec / Sen’Eau — Partner Tx ID à présenter",
+        "langs": {
+            "fr": "Merci. Votre paiement a bien été effectué. ✅\nVeuillez vous rapprocher de votre agence Senelec / Sen’Eau muni de cet identifiant de transaction : [partner_tx_id] afin de faire votre réclamation.\nNous restons à votre disposition pour toute autre demande.",
+            "wo": "Jërëjëf. Sa paiement dafa am solo. ✅\nDogg Senelec walla Sen’Eau ak identifiant bii ci sa kow: [partner_tx_id] ngir def sa réclamation.\nSu laaj bu bees amee, ñu ngi ci ngir la ndimbal.",
+            "en": "Thank you. Your payment has been successfully processed. ✅\nPlease go to your Senelec / Sen’Eau agency with this transaction ID: [partner_tx_id] to submit your claim.\nWe remain available if you need any further assistance."
+        }
+        },
+        {
+        "id": "bill-pay-non-cancellable",
+        "label": "Bill Pay — Non annulable (info client)",
+        "langs": {
+            "fr": "Merci. Cependant, ce paiement ne peut pas être annulé par Wave. Nous vous invitons à contacter directement le partenaire concerné.\nNous restons à votre disposition pour toute autre demande.",
+            "wo": "Jërëjëf. Waaye paiement bii Wave du ko mën a neenal. Ñu ngi lay sant ngir nga jokk ci partenaire bi ci bopp.\nSu laaj bu bees amee, ñu ngi ci ngir la ndimbal.",
+            "en": "Thank you. However, this payment cannot be canceled by Wave. Please contact the partner directly.\nWe remain at your disposal for any further requests."
+        }
+        },
+        {
+        "id": "bill-pay-woyofal-resend",
+        "label": "Woyofal — Renvoyer code de recharge",
+        "langs": {
+            "fr": "Nous venons de vous renvoyer votre code de recharge Woyofal.\nNous restons à votre disposition pour toute autre demande.",
+            "wo": "Nu ngi delloo ci la sa code Woyofal.\nSu laaj bu bees amee, ñu ngi ci ngir la ndimbal.",
+            "en": "We have just re-sent your Woyofal top-up code.\nWe remain at your disposal for any further requests."
+        }
+        },
+        {
+        "id": "bill-pay-woyofal-support",
+        "label": "Woyofal — Redirection support technique",
+        "langs": {
+            "fr": "Nous vous invitons à contacter le service client Woyofal pour toute assistance au 301006666 / 33 867 66 66.\nNous restons à votre disposition pour toute autre demande.",
+            "wo": "Ñu ngi lay sant ngir nga jokkoo ak service client Woyofal ci 301006666 / 33 867 66 66 ngir ndimbal.\nSu laaj bu bees amee, ñu ngi ci ngir la ndimbal.",
+            "en": "We kindly invite you to contact Woyofal customer service for assistance at 301006666 / 33 867 66 66.\nWe remain at your disposal for any further requests."
+        }
+        },
+        {
+        "id": "bill-pay-baobab-cancel-possible",
+        "label": "Baobab+ — Annulation possible si crédit intact",
+        "langs": {
+            "fr": "Une remontée a été faite auprès du partenaire pour l’annulation.\nCependant, l’annulation n’est possible que si l’intégralité du montant est encore disponible chez le destinataire.\nL’équipe en charge reviendra vers vous.\nNous restons à votre disposition pour toute autre demande.",
+            "wo": "Nu ngi yónnee laaj bi ci partenaire ngir annulation.\nWaaye annulation mën na am su montant bépp nekk ci kow destinataire bi.\nÉquipe bu dëgg dina dellu ci yaw.\nSu laaj bu bees amee, ñu ngi ci ngir la ndimbal.",
+            "en": "A request has been escalated to the partner for cancellation.\nHowever, please note that cancellation is only possible if the full amount is still available with the recipient.\nThe team in charge will get back to you.\nWe remain at your disposal for any further requests."
+        }
+        },
+        {
+            "id": "bill-pay-baobab-cancel-unavailable",
+            "label": "Baobab+ — Annulation impossible (crédit utilisé)",
+            "langs": {
+            "fr": "Après vérification, le crédit a déjà été utilisé. L’annulation n’est malheureusement pas possible.\nNous restons disponibles pour toute question.",
+            "wo": "Saytane bi jëkk na: crédit bi jëfandikoon na ko. Annulation du mën nekk.\nMën nga bind ci bi amee laaj.",
+            "en": "After checking, the credit has already been used. Cancellation isn’t possible.\nWe remain available for any questions."
+            }
+        },
+        {
+        "id": "bill-pay-rapido-cancel-possible",
+        "label": "Rapido — Annulation possible si solde intact",
+        "langs": {
+            "fr": "Une remontée a été faite auprès du partenaire pour l’annulation.\nCependant, l’annulation n’est possible que si l’intégralité du montant est encore disponible chez le destinataire.\nL’équipe en charge reviendra vers vous.\nNous restons à votre disposition pour toute autre demande.",
+            "wo": "Nu ngi yónnee laaj bi ci partenaire ngir annulation.\nWaaye annulation mën na am su montant bépp nekk ci kow destinataire bi.\nÉquipe bu dëgg dina dellu ci yaw.\nSu laaj bu bees amee, ñu ngi ci ngir la ndimbal.",
+            "en": "A request has been escalated to the partner for cancellation.\nHowever, cancellation is only possible if the full amount is still available with the recipient.\nThe team in charge will get back to you.\nWe remain at your disposal for any further requests."
+        }
+        },
+        {
+        "id": "bill-pay-canal-pre-effect-escalate",
+        "label": "Canal+ — Avant prise d’effet (escalade)",
+        "langs": {
+            "fr": "Une remontée a été faite auprès de l’équipe habilitée afin que l’abonnement soit repositionné sur le bon décodeur.\nNous vous prions de patienter, l’équipe en charge reviendra vers vous.\nNous restons à votre disposition pour toute autre demande.",
+            "wo": "Nu ngi yónnee ci équipe bu dëgg ngir abonnement bi ñu ko defaat ci décodeur bu baax.\nNanga muñ, équipe bi dina la dellu.\nSu laaj bu bees amee, ñu ngi ci ngir ndimbal la.",
+            "en": "A request has been escalated to the appropriate team so the subscription can be repositioned on the correct decoder.\nPlease be patient, the team in charge will get back to you.\nWe remain at your disposal for any further requests."
+        }
+        },
+        {
+            "id": "bill-pay-canal-post-effect-contact",
+            "label": "Canal+ — Après prise d’effet (contacter Canal+)",
+            "langs": {
+            "fr": "L’abonnement a déjà pris effet sur le mauvais décodeur. Nous vous invitons à contacter directement le service client Canal+ pour la suite de la prise en charge.",
+            "wo": "Abonnement bi dëmb na ci décodeur bu baaxul. Jokkool sen service client Canal+ ngir ñuy taxawu ci des.",
+            "en": "The subscription has already started on the wrong decoder. Please contact Canal+ customer service directly for further assistance."
+            }
+        }
+    ],
+    "refund-verification": [
+        {
+        "id": "refund-verif-scan-ack",
+        "label": "Refund Vérif — Scan (création de ticket)",
+        "langs": {
+            "fr": "Votre demande d’annulation nécessite une vérification préalable. Nous vous prions de patienter. Les fonds ont été gelés et le traitement sera effectué sous 48h.\nNous restons à votre disposition pour toute question.",
+            "en": "Your cancellation request requires a prior verification. Please be patient. The funds have been frozen and processing will be completed within 48 hours.\nWe remain at your disposal for any questions."
+        }
+        },
+        {
+        "id": "refund-verif-wait-48h-sender",
+        "label": "Refund Vérif — Patience 48h (sender)",
+        "langs": {
+            "fr": "Votre demande d’annulation nécessite une vérification préalable. Nous vous prions de patienter. Les fonds ont été gelés et le traitement sera effectué sous 48h.\nNous restons à votre disposition pour toute question.",
+            "en": "Your cancellation request requires a prior verification. Please be patient. The funds have been frozen and processing will be completed within 48 hours.\nWe remain at your disposal for any questions."
+        }
+        },
+        {
+        "id": "refund-verif-sender-renounce-48h",
+        "label": "Refund Vérif — Sender renonce (48h)",
+        "langs": {
+            "fr": "Votre demande de renoncement à l’annulation en cours est en cours de traitement.\nNous vous prions de patienter un instant, s’il vous plaît.",
+            "en": "Your request to withdraw the ongoing cancellation is being processed.\nPlease be patient for a moment."
+        }
+        },
+        {
+        "id": "refund-verif-recipient-confirm-48h",
+        "label": "Refund Vérif — Recipient confirme (48h)",
+        "langs": {
+            "fr": "Merci pour votre retour.\nLes fonds ont été reversés sur le compte de l’expéditeur.\nNous restons à votre disposition pour toute autre demande.",
+            "en": "Thank you for your reply.\nThe funds have been returned to the sender’s account.\nWe remain at your disposal for any further requests."
+        }
+        },
+        {
+        "id": "refund-verif-recipient-contest-48h",
+        "label": "Refund Vérif — Recipient conteste (ouvrir Dispute)",
+        "langs": {
+            "fr": "Merci pour votre retour.\nUne remontée a été effectuée auprès de notre équipe habilitée et les fonds ont été gelés.\nLe traitement sera effectué sous 72h.\nNous vous invitons à patienter, notre équipe reviendra vers vous.",
+            "en": "Thank you for your reply.\nA request has been escalated to our specialized team and the funds have been frozen.\nProcessing will be completed within 72h.\nPlease be patient, our team will get back to you."
+        }
+        },
+        {
+        "id": "refund-verif-after48h-sender-wants-refund",
+        "label": "Refund Vérif — >48h Sender souhaite être rembourser",
+        "langs": {
+            "fr": "Merci pour votre retour. Nous avons remonté la demande à l’équipe en charge. Nous vous prions de patienter un moment, s’il vous plaît.",
+            "en": "Thank you for your reply. The request has been forwarded to the relevant team. Please allow some time for the additional checks."
+        }
+        },
+        {
+            "id": "refund-verif-after48h-recipient-claims-refund",
+            "label": "Refund Vérif — >48h Recipient dit avoir été remboursé",
+            "langs": {
+            "fr": "Merci pour votre retour. Nous avons remonté la demande à l’équipe en charge. Nous vous prions de patienter un moment, s’il vous plaît.",
+            "en": "Thank you for your reply. The request has been forwarded to the relevant team. Please allow some time for the additional checks."
+            }
+        }
+    ],
+    "bank-to-wallet": [
+        {
+        "id": "b2w-activ",
+        "label": "Bank to Wallet — Étapes d’activation (app)",
+        "langs": {
+            "fr": "Bonjour,\nMerci de nous avoir écrit. 😊\nPour lier votre compte Wave à votre banque, veuillez suivre les étapes suivantes :\n- Assurez-vous que votre application Wave est à jour ;\n- Dans l'application, appuyez sur « Banque » ;\n- Choisissez votre banque ;\n- À la fin, une clé d’activation est créée.\nRendez-vous ensuite en agence et remettez cette clé à votre gestionnaire pour lier votre compte bancaire à votre compte Wave.\nNous restons disponibles pour toute information supplémentaire.",
+            "wo": "Salam,\nDi la jajëfël bu baax. 😊\nNguir ñu meun la taxawu, toppal tektal yi:\n- xoolal ndax sa application Wave am na à jour ;\n- dugg ci application bi te beuss ci « Banque » ;\n- tannal sa banque ;\nBi procedure bi jeexee, dina génn benn code d’activation ci sa application.\nYóbbu ko ci agenci bi te jox ko sa gestionnaire ngir yokkal sa Wave ak sa compte bancaire.\nJajëf.",
+            "en": "Hello,\nThank you for writing to us. 😊\nTo link your Wave account to your bank, please follow these steps:\n- Make sure your Wave app is up to date;\n- In the app, tap “Bank”;\n- Select your bank;\n- Once completed, an activation key is generated.\nThen visit a branch and give this key to your account manager to link your bank account to your Wave account.\nWe remain at your disposal if you need anything else."
+        }
+        },
+        {
+        "id": "bank-to-wallet-single-device",
+        "label": "Bank to Wallet — Limité à un seul appareil",
+        "tags": ["bank to wallet", "appareil", "limitation"],
+        "langs": {
+            "fr": "Merci pour ces informations.\nCependant, la liaison Bank to Wallet est restreinte à un seul appareil.\nC’est pourquoi vous ne parvenez pas à effectuer d’opérations depuis votre nouveau téléphone.",
+            "wo": "Jërëjëf ci say xibaar.\nWaaye jappante Bank to Wallet bi dafay ñakk ci benn aparey rekk.\nLoolu mooy tax doo mën a defar jëf jëf yi ci sa telefon bu bees.",
+            "en": "Thank you for this information.\nHowever, the Bank to Wallet link is restricted to a single device.\nThat is why you are unable to perform transactions from your new phone."
+        }
+        },
+        {
+        "id": "b2w-linkdevice",
+        "label": "Bank to Wallet — Lier un nouvel appareil (infos à collecter)",
+        "langs": {
+            "fr": "Pour une meilleure prise en charge, merci de nous communiquer :\n- le nom de votre banque ;\n- votre numéro de carte d’identité (CNI) ;\n- la marque et le modèle de l’ANCIEN téléphone ;\n- la marque et le modèle du NOUVEAU téléphone ;\n- la raison du changement (perdu, changé, volé) ;\n- votre localisation actuelle.\nNous restons dans l’attente de votre retour. 🙏",
+            "wo": "Nguir ñu meunë la taxawu, yónnee xibar yii: 🙏\n- sa banque ;\n- sa numéru CNI ;\n- marque ak modèle téléphone bu ndjeuk bi ;\n- marque ak modèle téléphone bu bees bi ;\n- sabab bi (misse, soppiku, voo) ;\n- sa fukkital leegi.\nÑu ngi lay xarandi.",
+            "en": "To help us handle your request, please share: 🙏\n- your full name;\n- your bank name;\n- your ID number;\n- the brand & model of the OLD phone;\n- the brand & model of the NEW phone;\n- the reason for the change (lost, changed, stolen);\n- your current location.\nWe look forward to your reply."
+        }
+        },
+        {
+        "id": "bank-to-wallet-link-new-device",
+        "label": "Bank to Wallet — Demande de rattachement nouveau téléphone",
+        "tags": ["bank to wallet", "rattachement", "nouveau téléphone"],
+        "langs": {
+            "fr": "Merci pour ces informations.\nNous venons de transmettre la demande afin que votre compte bancaire soit rattaché à votre nouveau téléphone.\nNous vous prions de patienter quelques instants.",
+            "wo": "Jërëjëf ci say xibaar.\nNu ngi yónnee laaj bi ngir sa konto bank bi ñu boole ko ak sa telefon bu bees.\nNangu ko moytul bu njëkk.",
+            "en": "Thank you for this information.\nWe have just submitted the request to link your bank account to your new phone.\nPlease be patient for a short while."
+        }
+        },
+        {
+        "id": "b2w-identification",
+        "label": "Bank to Wallet — Identification requise (sans CNI)",
+        "langs": {
+            "fr": "Bonjour,\nMerci de nous avoir contactés. 😊\nPour lier votre compte Wave à votre compte bancaire, l’identification du compte est d’abord nécessaire.\nVeuillez vous rendre dans un point Wave avec votre pièce d’identité afin que l’agent puisse vous assister.\nNous restons disponibles au besoin.",
+            "wo": "Salam,\nÑu ngui lay jajëfël bu baax. 😊\nNgir yokkal sa compte Wave ak sa compte bancaire, war nañu jëfandikoo duggali (identification) ci biir compte bi.\nDemal ci point Wave ak sa carte d’identité ngir agent bi la dimbali.\nJajëf.",
+            "en": "Hello,\nThank you for contacting us. 😊\nTo link your Wave account to your bank account, identity verification is required first.\nPlease visit a Wave point with your ID so an agent can assist you.\nWe remain available if needed."
+        }
+        },
+        {
+            "id": "b2w-oldphone-incorrect",
+            "label": "Bank to Wallet — Ancien téléphone : information incorrecte",
+            "langs": {
+                "fr": "Merci pour votre retour.\nLa marque de l’ancien téléphone que vous avez indiquée est incorrecte.\nNous vous invitons à vérifier et à nous transmettre la bonne information afin que nous puissions poursuivre le traitement.",
+                "wo": "Jërëjëf ci sa xibaar.\nMarku telefon bi yàgg nga wax baaxul.\nXoolal te dellusi mark bu dëgg ngir nu mën kontine liggéey bi.",
+                "en": "Thank you for your reply.\nThe brand of the old phone you provided is incorrect.\nPlease verify and send us the correct information so we can proceed with your request."
+            }
+        },
+        {
+            "id": "b2w-id-incorrect",
+            "label": "Bank to Wallet — CNI / Passeport incorrect",
+            "langs": {
+                "fr": "Merci pour votre retour.\nLe numéro de CNI/passeport transmis ne correspond pas à celui enregistré sur le compte.\nNous vous invitons à vérifier et à nous envoyer le numéro correct.\nDès réception, nous pourrons continuer le traitement.",
+                "wo": "Jërëjëf ci sa xibaar.\nNuméru CNI/passport bi nga yónnee du mbir mi ñu bind ci kont bi.\nSeetal te dellusi numéru bu wóor ngir nu mën kontine liggéey bi.",
+                "en": "Thank you for your reply.\nThe CNI/passport number you provided does not match the one registered on the account.\nPlease verify and send us the correct number.\nOnce received, we will continue processing your request."
+            }
+        },
+        {
+            "id": "b2w-cannot-proceed",
+            "label": "Bank to Wallet — Impossible de procéder (infos manquantes/incorrectes)",
+            "langs": {
+                "fr": "Merci pour votre retour.\nNous ne pouvons pas finaliser la liaison car les informations transmises sont inexactes.\nMerci de vérifier et de nous renvoyer les éléments corrects afin que nous puissions poursuivre le traitement de votre demande.",
+                "wo": "Jërëjëf ci sa xibaar.\nDu ñu mën def liggéey bi ndax xibaar yi nga jox baaxul.\nSeetal te dellusi xibaar yi baax ngir nu mën kontine jappante bi.",
+                "en": "Thank you for your reply.\nWe cannot proceed with the linking as the information provided is incorrect.\nPlease verify and send us the correct details so we can continue processing your request."
+            }
+        }
+    ],
+    "move-balance": [
+        {
+        "id": "move-balance-abroad",
+        "label": "Move balance — Client à l’étranger (proche + pièces)",
+        "langs": {
+            "fr": "Merci pour ces informations.\nVeuillez nous fournir le numéro d'un proche de confiance habitant au Sénégal et disposant d'un compte Wave afin que nous puissions lui transférer les fonds.\nPour ce faire, merci de nous envoyer :\n- une copie de sa pièce d'identité ainsi que de la votre;\n- une procuration signée vous autorisant à verser les fonds sur son compte Wave.\nNous restons dans l’attente de votre retour.",
+            "wo": "Jarama ci leral yi. 🙏\nBal ñu jox ñu numéro bu benn mbok bu wóolu ci Sénégal buy am compte Wave ngir ñu koy yónnee xalis bi.\nNgir loolu, yónnee nu:\n- fotoo carte d'identité wam ;\n- procuration bu nga signé buy firndeel autorisation bi.\nÑu ngi lay xarandi.",
+            "en": "Thank you for this information.\nPlease provide the number of a trusted relative living in Senegal who has a Wave account so we can transfer the funds to them.\nPlease also send:\n- a copy of their ID;\n- a signed power of attorney authorizing the transfer to their Wave account.\nWe look forward to your reply."
+        }
+        },
+        {
+        "id": "move-balance",
+        "label": "Move balance — Confirmation (effectué)",
+        "langs": {
+            "fr": "Merci pour ces informations. Nous avons transmis la demande à l’équipe en charge. Nous vous prions de patienter un instant.",
+            "wo": "Jërëjëf ci leeral yi. Ñu ngi joxe ko ci ekip buy liggéey ci kaw. Ñu ngi lay ñaan mujjantal tuuti.",
+            "en": "Thank you for the information. We have forwarded the request to the relevant team. Please allow a short time."
+        }
+        },
+        {
+        "id": "move-balance-procuration",
+        "label": "Move balance — Contenu de la procuration signée",
+        "langs": {
+            "fr": "Merci pour ces informations, {nom_client} 😊\nAfin de procéder au transfert de vos fonds vers un autre compte, merci de nous transmettre une procuration signée nous autorisant à effectuer l’opération, incluant :\n- votre nom complet et numéro Wave ;\n- votre numéro de CNI/passeport ;\n- le solde de votre compte Wave ;\n- le nom complet du destinataire, son numéro Wave et son n° de CNI/passeport.",
+            "wo": "Jajëf ci leral yi, {nom_client} 😊\nNgir yóbbu xalis bi ci beneen compte, yónnee nu procuration bu nga signé buy may ndigeul.\nDa fa wara am:\n- sa tur ak sa numéro Wave ;\n- sa numéru CNI/passeport ;\n- sa solde ci compte Wave ;\n- turu jëfandikukat bi, numéru Wave ak numéru CNI/passeport.",
+            "en": "Thank you, {customer_name} 😊\nTo transfer funds from your Wave account to another account, please send a signed power of attorney authorizing us to proceed, including:\n- your full name and Wave number;\n- your ID/passport number;\n- your Wave account balance;\n- the recipient’s full name, Wave number, and ID/passport number."
+        }
+        },
+        {
+        "id": "procuration-signee",
+        "label": "Move balance — Procuration signée (alias)",
+        "langs": {
+            "fr": "Merci pour ces informations, {nom_client} 😊\nAfin de procéder au transfert de vos fonds vers un autre compte, merci de nous transmettre une procuration signée nous autorisant à effectuer l’opération, incluant :\n- votre nom complet et numéro Wave ;\n- votre numéro de CNI/passeport ;\n- le solde de votre compte Wave ;\n- le nom complet du destinataire, son numéro Wave et son n° de CNI/passeport.",
+            "wo": "Jajëf ci leral yi, {nom_client} 😊\nNgir yóbbu xalis bi ci beneen compte, yónnee nu procuration bu nga signé buy may ndigeul.\nDa fa wara am:\n- sa tur ak sa numéro Wave ;\n- sa numéru CNI/passeport ;\n- sa solde ci compte Wave ;\n- turu jëfandikukat bi, numéru Wave ak numéru CNI/passeport.",
+            "en": "Thank you, {customer_name} 😊\nTo transfer funds from your Wave account to another account, please send a signed power of attorney authorizing us to proceed, including:\n- your full name and Wave number;\n- your ID/passport number;\n- your Wave account balance;\n- the recipient’s full name, Wave number, and ID/passport number."
+        }
+        },
+        {
+        "id": "move-balance-ident",
+        "label": "Move balance — Identification (nom + numéro objet)",
+        "langs": {
+            "fr": "Bonjour,\nAfin de mieux vous assister, merci de nous communiquer :\n- vos nom et prénom complets ;\n- le numéro concerné par votre demande (s’il est différent de celui utilisé ici).\nNous restons à votre disposition.",
+            "wo": "Salam,\nNgir nu mën dimaale la gën, joxeel ñu:\n- sa tur ak sant bu mat ;\n- niméro bi muy japp (su wuutee ci bii).\nNu ngi ci ñaawle ci la.",
+            "en": "Hello,\nTo better assist you, please provide:\n- your full name;\n- the phone number concerned by your request (if different from this one).\nWe remain at your disposal."
+        }
+        },
+        {
+            "id": "move-balance-kyc-ask",
+            "label": "Move balance — Questions de sécurité (KYC)",
+            "langs": {
+            "fr": "Merci. Pour des raisons de sécurité, merci d’indiquer :\n- la nature et le montant de votre dernière transaction ;\n- l’adresse du point Wave de votre dernier dépôt / retrait.",
+            "wo": "Jërëjëf. Ngir kaarange, waxal ñu:\n- nature ak montant sa mujj transaction ;\n- adresse point Wave bi nga mujj defar depósito/retrait.",
+            "en": "Thanks. For security, please provide:\n- the type and amount of your last transaction;\n- the address of the Wave point of your last deposit/withdrawal."
+            }
+        },
+        {
+        "id": "move-balance-ds-note-sn",
+        "label": "Move balance — Note interne (#digital-support, client au Sénégal)",
+        "langs": {
+            "fr": "What : Move Balance\nFrom : {Prenom} {Nom} +221{Numero_From}\nTo : {Prenom} {Nom} +221{Numero_To}\nReason : {Raison}\nAmount : {Montant}F @sn-digitalbackoffice",
+            "en": "What : Move Balance\nFrom : {FirstName} {LastName} +221{Number_From}\nTo : {FirstName} {LastName} +221{Number_To}\nReason : {Reason}\nAmount : {Amount}F @sn-digitalbackoffice"
+        }
+        }
+    ],
+    "vault": [
+    {
+        "id": "vault-unlock-ask",
+        "label": "Vault — Confirmation avant déblocage",
+        "langs": {
+        "fr": "Merci pour ces informations.\nCependant, nous tenons à vous préciser qu’une fois le coffre débloqué, vous ne pourrez le bloquer à nouveau qu’à partir du mois prochain.\nSouhaitez-vous tout de même procéder au déblocage ?",
+        "wo": "Jërëjëf ci leeral yi.\nTeewul, bu nu dëlekoo coffre bi, mënuloo koy blokkeewaat ba ci weer bi di ñëw.\nNdax bëgg ngeen nu dëlekoo léegi?",
+        "en": "Thank you for the details.\nPlease note: once the vault is unlocked, you won’t be able to lock it again until next month.\nWould you still like to proceed with the unlock?"
+        }
+    },
+    {
+        "id": "vault-unlock-done",
+        "label": "Vault — Déblocage effectué (confirmation)",
+        "langs": {
+        "fr": "Merci pour ces informations. 🙏🏿\nVotre coffre a été débloqué avec succès. Vous pouvez désormais retirer vos fonds.\nNous restons à votre disposition pour toute autre demande.",
+        "wo": "Jërëjëf ci xibaar yi. 🙏🏿\nCoffre bi deblokkees na bu baax. Léegi mën nga jël sa xalis.\nSu amee beneen laaj, men ngeen nu bind.",
+        "en": "Thank you for the information. 🙏🏿\nYour vault has been successfully unlocked. You can now withdraw your funds.\nWe’re here if you need anything else."
+        }
+    },
+    {
+        "id": "ask-which-vault-unlock",
+        "label": "Coffre — Demande de précision (quel coffre débloquer)",
+        "langs": {
+            "fr": "Quel coffre souhaitez-vous débloquer ?",
+            "en": "Which vault would you like to unlock?",
+            "wo": "Anaa ban coffre la ngay bëgg nu ubbi?"
+        }
+    },
+    {
+        "id": "vault-multiple-info",
+        "label": "Vault — Informations sur les multi-coffres",
+        "langs": {
+        "fr": "Les multiples coffres permettent de créer des coffres supplémentaires, de les modifier et de les supprimer après utilisation. Chaque coffre est indépendant et alimenté par le solde du compte principal. Les utilisateurs peuvent bloquer chaque coffre individuellement.",
+        "wo": "Coffre yu bari di may sos ay coffre yu bees, soppi leen te simpi leen bi nga ko soxla. Benn benn lañu, daldi leen daggal ci solde principal. Mën nga it blokkee benn benn.",
+        "en": "Multiple vaults let users create additional vaults, edit them, and delete them after use. Each vault is independent and funded from the main account balance. Users can lock each vault individually."
+        }
+    },
+    {
+        "id": "vault-multiple-add",
+        "label": "Vault — Ajouter un coffre supplémentaire",
+        "langs": {
+        "fr": "Pour créer un coffre supplémentaire :\n1) Ouvrez l’onglet « Coffre » ;\n2) Appuyez sur « Ajouter un coffre » ;\n3) Sélectionnez un modèle puis « Créer un coffre ».\nAstuce : si vous appuyez directement sur « Créer un coffre », un coffre « Imprévus » sera créé par défaut.",
+        "wo": "Ngir yokk benn coffre bu bees:\n1) Ubbi « Coffre »;\n2) Bëss « Ajouter un coffre »;\n3) Tannal benn modèle te « Créer un coffre ».\nNdaje: Su bëssee « Créer un coffre » seen, dina sos « Imprévus » ndax ndigal.",
+        "en": "To add another vault:\n1) Open the “Vault” tab;\n2) Tap “Add Vault”;\n3) Choose a template, then “Create a vault”.\nTip: tapping “Create a vault” directly creates a default “Contingencies” vault."
+        }
+    },
+    {
+        "id": "vault-reblock-not-allowed",
+        "label": "Vault — Blocage refusé (déjà débloqué ce mois-ci)",
+        "langs": {
+            "fr": "Merci pour votre demande.\nCependant, votre Coffre a déjà été débloqué ce mois-ci. Il ne sera possible de le bloquer à nouveau qu’à partir du mois prochain.\nMerci de votre compréhension.",
+            "wo": "Jërëjëf ci sa laaj.\nWaaye, Coffre bi deblokkees na ci weer wii. Mënuloo koy blokkee waaté ba ci weer bi di ñëw.\nJërëjëf ci sa muñ.",
+            "en": "Thank you for your request.\nHowever, your vault has already been unlocked this month. You will only be able to lock it again starting next month.\nThank you for your understanding."
+        }
+    },
+    {
+    "id": "vault-lock-howto",
+    "label": "Vault — Verrouiller le coffre (pas-à-pas)",
+    "langs": {
+        "fr": "Pour bloquer un coffre dans l’app :\n1) Ouvrez l’onglet « Coffre » ;\n2) Sélectionnez le coffre concerné ;\n3) Appuyez sur « Bloquer » ;\n4) Choisissez la date de déblocage ;\n5) Confirmez.\nNB : vous pouvez continuer à transférer des fonds vers un coffre même s’il est bloqué.",
+        "en": "To lock a vault in the app:\n1) Open the “Vault” tab;\n2) Select the vault;\n3) Tap “Lock”;\n4) Choose the unlock date;\n5) Confirm.\nTip: you can still transfer money to a vault even while it’s locked.",
+        "wo": "Ngir blokkee benn coffre ci app bi:\n1) Ubbi ko ci « Coffre » ;\n2) Tann coffre bi nga bëgg ;\n3) Bëss « Blokker » ;\n4) Tann bes bi muy ubbiwaat ;\n5) Dëggal.\nNdaxte: man nga ci yónnee xaalis ci coffre bi sax bu mu blokke."
+    }
+    }
+
+    ],
+    "unblock-account": [
+        {
+            "id": "unblock-ident-ask",
+            "label": "Unblock — Demande d’identification (nom + numéro objet)",
+            "langs": {
+            "fr": "Bonjour,\nPour vous assister, merci de nous communiquer :\n- vos nom et prénom au complet ;\n- le numéro concerné par votre demande (si différent de celui utilisé ici).\nNous restons à l’écoute.",
+            "wo": "Salam,\nNgir nu la taxawu, joxeel ñu:\n- sa tur ak sant bu mat ;\n- nimero bi muy japp (su wuutee ci bii).\nÑu ngi lay xarandi.",
+            "en": "Hello,\nTo assist you, please share:\n- your full name;\n- the phone number concerned by the request (if different from this one).\nWe remain available."
+            }
+        },
+        {
+            "id": "unblock-kyc-ask",
+            "label": "Unblock — Questions de sécurité (KYC)",
+            "langs": {
+            "fr": "Merci. Pour des raisons de sécurité, merci d’indiquer :\n- la nature et le montant de votre dernière transaction ;\n- l’adresse du point Wave de votre dernier dépôt/retrait ;\n- selon votre profil : votre n° de CNI (KYC2) OU le nom/numéro d’un contact habituel (KYC1).",
+            "wo": "Jërëjëf. Ngir kaarange, waxal ñu:\n- nature ak montant sa mujj transaction ;\n- adresse point Wave bi nga mujj defar dépôt/retrait ;\n- ci sa xaalis: sa numéru CNI (KYC2) WALA tur/numéru kontak buy ëpp (KYC1).",
+            "en": "Thanks. For security, please provide:\n- the type and amount of your last transaction;\n- the address of the Wave point of your last deposit/withdrawal;\n- depending on your profile: your ID number (KYC2) OR a frequent contact’s full name/number (KYC1)."
+            }
+        },
+        {
+            "id": "unblock-done",
+            "label": "Unblock — Confirmation (compte débloqué)",
+            "langs": {
+            "fr": "C’est fait ✅\nVotre compte a été débloqué. Vous pouvez à présent vous reconnecter et utiliser votre compte normalement.\nNous restons disponibles au besoin.",
+            "wo": "Nekk na ✅\nDagg nañu blokaj bi ci sa compte. Mën nga leen jëfandikoo fannuwi.\nSu amee laaj, nga ñu bind.",
+            "en": "All set ✅\nYour account has been unblocked. You can now log in and use it normally.\nWe're here if you need anything."
+            }
+        },
+        {
+            "id": "unblock-kyc-failed",
+            "label": "Unblock — Informations non concluantes (KYC KO)",
+            "langs": {
+            "fr": "Merci pour votre retour. 🙏\nAprès vérifications, les informations fournies ne permettent pas de confirmer votre identité. Nous ne pouvons pas débloquer le compte pour le moment.\nMerci de bien revérifier et de revenir vers nous avec les éléments demandés.",
+            "wo": "Jërëjëf ci sa tontu. 🙏\nGuinaaw saytookat, xibaar yi doyul ngir dëggal sa dantite. Mënunu di dakk blokaj bi léegi.\nSeetal leen te dellu ak yeneen leeral yi ñu la laaj.",
+            "en": "Thank you for your reply. 🙏\nAfter checks, the information provided does not sufficiently confirm your identity. We can’t unblock the account for now.\nPlease re-verify and get back to us with the requested items."
+            }
+        },
+        {
+            "id": "unblock-sim-lost",
+            "label": "Unblock — SIM non récupérable (nouveau compte + transfert fonds)",
+            "langs": {
+                "fr": "Si vous n’êtes pas en mesure de récupérer votre carte SIM, nous vous invitons à ouvrir un nouveau compte Wave à votre nom (identifié avec votre CNI). Une fois ce compte créé, revenez vers nous afin que nous puissions transférer l’intégralité de vos fonds vers ce nouveau compte.",
+                "wo": "Bu fekkee du nga mën a jot sa SIM, nga ubbi benn compte Wave bu bees ci sa tur (ak sa CNI). Bi nga ko sos, nga dellu ci nun ngir nu yónnee mboolem sa xaalis ci compte bees bi.",
+                "en": "If you are unable to recover your SIM card, please open a new Wave account in your name (verified with your ID). Once the account is created, come back to us so we can transfer all your funds to this new account."
+            }
+        }
+    ],
+    "security-challenge": [
+        {
+            "id": "sc-reason",
+            "label": "Security Challenge — Explication du blocage",
+            "langs": {
+            "fr": "Bonjour,\nPour votre sécurité, notre système a détecté une activité inhabituelle (transaction jugée risquée ou connexion depuis un nouvel appareil).\nUn contrôle supplémentaire a été appliqué. Nous allons vous poser quelques questions de vérification, puis leverons le blocage si tout est conforme.",
+            "wo": "Salam,\nNgir sa kaarange, sistem bi la xamal ay liggéey yu mëlul (transaction bu werante walla dugg ci appareil bu bees).\nDinañu la laaj yeneen laaj yu kaarange, te su lépp doon nirox, dinañu simpi blocage bi.",
+            "en": "Hello,\nFor your safety, our system detected unusual activity (a risky transaction or a login from a new device).\nA security check was applied. We’ll ask a few verification questions and clear the block if everything matches."
+            }
+        },
+        {
+            "id": "sc-ident",
+            "label": "Security Challenge — Identification (nom + numéro)",
+            "langs": {
+            "fr": "Pour commencer, merci de confirmer :\n- vos nom et prénom au complet ;\n- le numéro de téléphone concerné par la demande.",
+            "wo": "Ngir tambali, joxeel ñu:\n- sa tur ak sant bu mat ;\n- nimero bi laaj bi japp.",
+            "en": "To begin, please confirm:\n- your full name;\n- the phone number concerned by this request."
+            }
+        },
+        {
+            "id": "sc-kyc2",
+            "label": "Security Challenge — Questions KYC2",
+            "langs": {
+            "fr": "Pour vérification, indiquez s’il vous plaît :\n- votre date de naissance ;\n- l’adresse du point Wave de votre dernier dépôt/retrait ;\n- la nature et le montant de votre dernière transaction.",
+            "wo": "Ngir seeti, waxal nu:\n- sa besu juddu ;\n- adresse point Wave bi nga mujj defar dépôt/retrait ;\n- nature ak montant sa mujj transaction.",
+            "en": "For verification, please provide:\n- your date of birth;\n- the address of the Wave point of your last deposit/withdrawal;\n- the type and amount of your last transaction."
+            }
+        },
+        {
+            "id": "sc-kyc1",
+            "label": "Security Challenge — Questions KYC1",
+            "langs": {
+                "fr": "Pour vérification, merci de nous indiquer :\n- la nature et le montant d’une transaction récente ;\n- l’adresse du point Wave de votre dernier dépôt/retrait;\n- le nom et prénom d’un contact avec qui vous effectuez régulièrement des transactions.",
+                "wo": "Ngir seeti, joxeel nu:\n- nature ak montant benn transaction bu mujj ;\n- adresse point Wave bi nga mujj defar dépôt/retrait ;\n- tur ak santu benn kontak buy laaloo ak yaw ci lu yagg.",
+                "en": "For verification, please provide:\n- the type and amount of a recent transaction;\n- the address of the Wave point of your last deposit/withdrawal;\n- the full name of a contact you regularly transact with."
+            }
+        },
+        {
+            "id": "ask-birthdate",
+            "label": "Vérification identité — Demande de date de naissance",
+            "langs": {
+                "fr": "Pouvez-vous, s’il vous plaît, nous communiquer votre date de naissance ?",
+                "en": "Could you please provide us with your date of birth?",
+                "wo": "Ndax mën nga jox nu sa besu juddu, bañ ñu kontine ci ndimbal bi?"
+            }
+        },
+        {
+            "id": "sc-cleared",
+            "label": "Security Challenge — Déblocage confirmé (CLEAR)",
+            "langs": {
+                "fr": "Merci pour ces informations.\nLe blocage de sécurité sur votre appareil a été levé avec succès.\nVous pouvez désormais utiliser votre compte normalement.",
+                "wo": "Jërëjëf ci xibaar yi.\nBlocage bi ci sa appareil nees na koy dindi bu baax.\nLeegi mën nga jëfandikoo sa compte ci anam bu normale.",
+                "en": "Thank you for the information.\nThe security block on your device has been successfully lifted.\nYou can now use your account normally."
+            }
+        },
+        {
+            "id": "sc-mismatch",
+            "label": "Security Challenge — Informations non conformes",
+            "langs": {
+            "fr": "Merci pour votre retour.\nNous ne pouvons pas lever le blocage pour l’instant car les informations ne correspondent pas.\nMerci de vérifier et de revenir vers nous avec les bons éléments (KYC) pour finaliser.",
+            "wo": "Jërëjëf ci sa tontu.\nBala ngay deglo, xibaar yi dukkoo nirox, donc du nu mën simpi blocage bi leegi.\nSeetaatal xibaar yi te dellu ak yi dëgg ngir nu sotti ko.",
+            "en": "Thank you for your reply.\nWe can’t clear the block yet because the details don’t match.\nPlease verify and get back to us with the correct KYC information so we can finalize."
+            }
+        },
+        {
+            "id": "sc-edu",
+            "label": "Security Challenge — Rappel sécurité",
+            "langs": {
+            "fr": "Rappel sécurité :\n- ne partagez jamais vos codes (SMS, PIN) ;\n- notre numéro officiel est le 200 600 ;\n- en cas de doute, contactez-nous immédiatement.",
+            "wo": "Kaarange:\n- buloo seddoo yawut (SMS, PIN) ;\n- sunu nimero ofisel mooy 200 600 ;\n- su amee dootu, jokkoolu ci sunu sarwiis.",
+            "en": "Security reminder:\n- never share your codes (SMS, PIN);\n- our official number is 200 600;\n- if in doubt, contact us immediately."
+            }
+        }
+    ],
+    "in-app-device-restriction": [
+    {
+        "id": "device-restriction-explain",
+        "label": "In-App Device Restriction — Explication au client",
+        "langs": {
+            "fr": "Merci pour ces informations.\nAprès vérification, nous constatons que votre compte est limité à un seul appareil, ce qui explique pourquoi vous n’arrivez pas à vous connecter depuis un autre téléphone.",
+            "en": "Thank you for the information.\nAfter verification, we confirm that your account is restricted to a single device, which explains why you cannot log in from another phone.",
+            "wo": "Jërëjëf ci xibaar yi.\nGinnaaw seetlu, ñu xamni sa compte bi dafay taxawal ci benn appareil rekk, loolu moo tax doo mana dugg ci beneen téléphone."
+        }
+    },
+    {
+        "id": "device-restriction-ident",
+        "label": "In-App Device Restriction — Identification (nom + numéro objet)",
+        "langs": {
+        "fr": "Bonjour, afin de vous aider, merci de nous communiquer :\n- vos nom et prénom complets ;\n- le numéro concerné par votre demande.\nNous restons à votre disposition.",
+        "en": "Hello, to assist you please share:\n- your full name;\n- the phone number concerned by your request.\nWe remain at your disposal.",
+        "wo": "Salam, ngir nu la taxawu, joxeel nu:\n- sa tur ak sant bu mat;\n- nimero bi laaj bi japp.\nÑu ngi ci sa yaram."
+        }
+    },
+    {
+        "id": "device-restriction-kyc-different-number",
+        "label": "In-App Device Restriction — KYC (numéro différent)",
+        "langs": {
+            "fr": "Afin de mieux vous aider, pourriez-vous nous préciser :\n- la nature et le montant de votre dernière transaction ;\n- l’adresse du point Wave où vous avez effectué votre dernier dépôt ou retrait ;\n- à défaut : (KYC2) votre numéro de CNI ou (KYC1) le nom complet d’un contact avec qui vous effectuez régulièrement des transactions.",
+            "en": "To better assist you, please provide:\n- the type and amount of your last transaction;\n- the address of the Wave point where you made your last deposit or withdrawal;\n- if not available: (KYC2) your ID number or (KYC1) the full name of a contact with whom you regularly transact.",
+            "wo": "Ngir nu mëna la taxawu gën, joxeel nu:\n- nature ak montant sa mujj transaction;\n- adresse point Wave ba nga mujj defar dépôt walla retrait;\n- bu fekkee du fi am: (KYC2) numéru CNI walla (KYC1) tur ak sant kontak bu nga di liggéey ak mooy leegi."
+        }
+    },
+    {
+        "id": "device-restriction-choice",
+        "label": "In-App Device Restriction — Choix de l’action (formulé client)",
+        "langs": {
+            "fr": "Souhaitez-vous que nous autorisions uniquement la connexion depuis votre nouveau téléphone, ou préférez-vous que nous désactivions complètement la limitation pour que vous puissiez vous connecter depuis plusieurs appareils à la fois ? (Nous vous conseillons la première option pour plus de sécurité).",
+            "en": "Would you like us to allow login only from your new phone, or would you prefer we completely remove the limitation so you can log in from multiple devices at once? (We recommend the first option for better security).",
+            "wo": "Ndax bëgg nga nu ndigal nga dugg ci sa téléphone bu bees rekk, walla nga bëgg nu dindi taxawaay bi ndax nga man dugg ci ay appareil yu bari ci benn yoon? (Nu ngi lay digal taamu bii jëkk ngir gën a am karange)."
+        }
+    },
+    {
+        "id": "device-restriction-done-change",
+        "label": "In-App Device Restriction — Confirmation (Change Device)",
+        "langs": {
+            "fr": "C’est fait ✅ Votre nouveau téléphone a bien été autorisé. Vous pouvez vous reconnecter dès maintenant.\nNous restons à votre disposition pour toute autre demande.",
+            "en": "All set ✅ Your new phone has been authorized. You can now log in.\nWe remain at your disposal for any further request.",
+            "wo": "Nekk na ✅ Téléphone bu bees bi ñu ko ndigal. Leegi mën nga dugg.\nÑu ngi ci sa yaram ngir beneen laaj."
+        }
+    },
+    {
+        "id": "device-restriction-done-disable",
+        "label": "In-App Device Restriction — Confirmation (Disable Feature)",
+        "langs": {
+            "fr": "C’est fait ✅ La restriction a bien été désactivée. Vous pouvez désormais vous connecter depuis n’importe quel appareil.\nNous restons à votre disposition pour toute autre demande.",
+            "en": "All set ✅ The restriction has been disabled. You can now log in from any device.\nWe remain at your disposal for any further request.",
+            "wo": "Nekk na ✅ Karange bi dindi nañu ko. Leegi mën nga dugg ci benn appareil benn.\nÑu ngi ci sa yaram ngir beneen laaj."
+        }
+    },
+    {
+    "id": "device-restriction-kyc-base",
+    "label": "In-App Device Restriction — KYC de base (numéro différent)",
+    "langs": {
+      "fr": "Afin de poursuivre, merci d’indiquer :\n- la nature et le montant de votre dernière transaction ;\n- l’adresse du point Wave où vous avez effectué votre dernier dépôt ou retrait.",
+      "en": "To proceed, please provide:\n- the type and amount of your last transaction;\n- the address of the Wave point where you made your last deposit or withdrawal.",
+      "wo": "Ngir kontine, joxeel nu:\n- nature ak montant sa mujj transaction;\n- adresse point Wave ba nga mujj defar dépôt walla retrait."
+    }
+    },
+    {
+        "id": "device-restriction-kyc-alt-kyc1",
+        "label": "In-App Device Restriction — Question alternative (KYC1)",
+        "langs": {
+        "fr": "Merci d’indiquer le nom et prénom d’un contact avec qui vous effectuez régulièrement des transactions.",
+        "en": "Please provide the full name of a contact you regularly transact with.",
+        "wo": "Joxeel nu tur ak santu kontak bu nga di liggéey ak mooy lee leen di gëna yagg."
+        }
+    },
+    {
+        "id": "device-restriction-kyc-alt-kyc2",
+        "label": "In-App Device Restriction — Question alternative (KYC2)",
+        "langs": {
+        "fr": "Merci d’indiquer votre numéro de CNI ou de passeport.",
+        "en": "Please provide your national ID or passport number.",
+        "wo": "Joxeel nu sa numéru CNI walla passeport."
+        }
+    }
+    ],
+    "wave-business": [
+    {
+        "id": "merchant-eligibility",
+        "label": "Wave Business — Conditions d’éligibilité (à partager si non éligible)",
+        "langs": {
+            "fr": "Merci pour ces informations.\nPour ouvrir un compte Wave Business sur ce numéro, il est nécessaire :\n- d’avoir un compte Wave personnel actif sur ce même numéro ;\n- que ce compte soit déplafonné à l’aide d’une pièce d’identité valide ;\n- de ne pas déjà disposer d’un autre compte Wave Business ouvert avec la même pièce d’identité.\nUne fois ces conditions remplies, vous pourrez utiliser le lien que nous venons de vous envoyer par message afin de démarrer votre inscription.",
+            "en": "Thank you for this information.\nTo open a Wave Business account on this number, you must:\n- have an active personal Wave account on the same number;\n- have your personal account upgraded (KYC2) with a valid ID;\n- not already have another Wave Business account opened with the same ID document.\nOnce these conditions are met, you can use the link we just sent by message to start your registration.",
+            "wo": "Jërëjëf ci xibaar yi.\nNgir ubbi akontu Wave Business ci nimero bii, soxlawul:\n- am akontu Wave bu bopp bu dox ci nimero bii;\n- sa akontu bopp bi di déplafonné (KYC2) ak pièce d’identité bu wér;\n- bu amul benn akontu Wave Business bu jëfandikoo pièce d’identité boobu.\nBu mattee, man ngaa jëfandikoo liŋku nu la yonnee ci mesaj ngir tàmbali sarsifa."
+        }
+    },
+    {
+        "id": "business-send-link",
+        "label": "Wave Business — Envoi du lien (Client éligible)",
+        "langs": {
+            "fr": "Nous venons de vous envoyer par message le lien pour télécharger l’application Wave Business.\nMerci de le télécharger et de l’installer, puis de suivre les instructions dans l’application afin de créer votre compte.\nNous restons à votre disposition pour toute assistance.",
+            "en": "We just sent you the link by message to download the Wave Business app.\nPlease download and install it, then follow the instructions in the app to create your account.\nWe remain at your disposal for any assistance.",
+            "wo": "Nu la yonnee ci mesaj liŋku ngir yeb aplikasióŋ Wave Business.\nJël ko yeb te istale, ci ginnaaw topp ndigalu aplikasióŋ bi ngir sos sa akont.\nNu ngi ci sa yaram bu soxla ndimbal."
+        }
+    },
+    {
+        "id": "business-not-personal-account",
+        "label": "Wave Business — Non éligible (pas de compte perso ouvert)",
+        "langs": {
+            "fr": "Merci pour ces informations.\nPour créer un compte Wave Business, vous devez d’abord ouvrir un compte Wave personnel sur ce numéro, puis le déplafonner à l’aide d’une pièce d’identité valide.\nUne fois ces étapes réalisées, vous pourrez utiliser le lien que nous venons de vous envoyer par message pour télécharger l’application Wave Business et finaliser votre inscription.",
+            "en": "Thank you for this information.\nTo create a Wave Business account, you must first open a personal Wave account on this number, then upgrade it (KYC2) with a valid ID.\nOnce these steps are completed, you can use the link we just sent you by message to download the Wave Business app and finalize your signup.",
+            "wo": "Jërëjëf ci xibaar yi.\nNgir sos akontu Wave Business, da ngay soxla jëkk ubbi akontu Wave bu bopp ci nimero bii, ba noppi ko déplafonné (KYC2) ak pièce d’identité bu wér.\nBu ko mattee, man ngaa jëfandikoo liŋku nu la yonnee ci mesaj ngir yeb aplikasióŋ Wave Business te sàmmal sa sarsifa."
+        }
+    },
+    {
+        "id": "business-personal-not-upgraded",
+        "label": "Wave Business — Non éligible (compte perso non déplafonné)",
+        "langs": {
+            "fr": "Pour ouvrir un compte Wave Business, votre compte Wave personnel doit d’abord être déplafonné à l’aide d’une pièce d’identité valide.\nNous vous invitons à vous rendre dans un point Wave muni de votre carte d’identité afin de procéder au déplafonnement.\nUne fois cette étape effectuée, vous pourrez utiliser le lien que nous venons de vous envoyer par message pour télécharger l’application Wave Business et finaliser votre inscription.",
+            "en": "To open a Wave Business account, your personal Wave account must first be upgraded (KYC2) with a valid ID.\nPlease visit a Wave agent location with your ID card to complete the upgrade.\nOnce this step is done, you can use the link we just sent by message to download the Wave Business app and complete your signup.",
+            "wo": "Ngir ubbi akontu Wave Business, sa akontu Wave bu bopp dafa wara déplafonné (KYC2) ak pièce d’identité bu wér.\nDemal ci benn point Wave ak sa kart d’identité ngir déplafonné akont bi.\nBu mattee, man ngaa jëfandikoo liŋku nu la yonnee ci mesaj ngir yeb aplikasióŋ Wave Business te sàmmal sa sarsifa."
+        }
+    },
+    {
+        "id": "business-already-has-account",
+        "label": "Wave Business — Non éligible (déjà un compte Business avec cette pièce)",
+        "langs": {
+            "fr": "Après vérification, nous constatons qu’un compte Wave Business a déjà été ouvert avec votre carte d’identité.\nIl n’est pas possible d’ouvrir plusieurs comptes Wave Business avec la même pièce d’identité. ⚠️\nVous disposez donc déjà d’un compte Business lié à cette pièce.\nMerci de votre compréhension.",
+            "en": "After verification, we found that a Wave Business account has already been opened with your ID card.\nIt is not possible to open multiple Wave Business accounts with the same ID document. ⚠️\nYou therefore already have a Business account linked to this ID.\nThank you for your understanding.",
+            "wo": "Ci seetlu bi, gisi nanu ne am na ba noppi benn akontu Wave Business bu ubbee ak sa kartu d’identité.\nMënutewul ubbi ay akontu Wave Business yu bari ak pièce d’identité bu benn. ⚠️\nNdax loolu, am nga ba noppi akontu Business bu jëfandikoo pièce bii.\nJërëjëf ci sa ndimbal."
+        }
+    },
+    {
+        "id": "merchant-cancel-not-possible",
+        "label": "Paiement marchand — Annulation non possible (règle générale)",
+        "langs": {
+            "fr": "Merci pour ces informations. Cependant, les paiements effectués vers un compte marchand ne peuvent pas être annulés par Wave.\nNous vous invitons à contacter directement le marchand afin de demander un remboursement.\nNous restons à votre disposition pour toute autre demande.",
+            "en": "Thank you for the information. However, payments made to a merchant account cannot be cancelled by Wave.\nPlease contact the merchant directly to request a refund.\nWe remain available for any further requests.",
+            "wo": "Jërëjëf ci xibaar yi. Waaye jëmmal yi ñu jëfandikoo ci akontu marchand duñu man koo dindi ci Wave.\nJokkool ak marchand bi ngir laaj rembursimaŋ.\nNu ngi ci sa yaram bu amee beneen laaj."
+        }
+    },
+    {
+        "id": "merchant-share-cs-number",
+        "label": "Paiement marchand — Partage numéro support marchand",
+        "langs": {
+        "fr": "Voici le numéro du service client du marchand indiqué sur le compte : {{merchant_cs_number}}. Merci de les contacter pour la suite.",
+        "en": "Here is the merchant support number listed on the account: {{merchant_cs_number}}. Please contact them for further assistance.",
+        "wo": "Lii mooy nimero u support merchant bi nekk ci akont bi: {{merchant_cs_number}}. Jokkool leen ngir xare bi."
+        }
+    },
+    {
+        "id": "merchant-escalation",
+        "label": "Paiement marchand — Escalade équipe marchands",
+        "langs": {
+        "fr": "Nous transmettons votre demande à notre équipe marchands pour examen. À noter : cela ne garantit pas un remboursement. Nous reviendrons vers vous dès qu’une mise à jour sera disponible.",
+        "en": "We’re forwarding your request to our merchants team for review. Note: this does not guarantee a refund. We’ll get back to you as soon as there is an update.",
+        "wo": "Nu ngi yónnee sa laaj ci sunu ekipu marchands ngir seetlu. Li nga xam: loolu du waral remboursement. Dinañu dellu ci yaw bu amee yeesal."
+        }
+    }
+    ],
+    "virtual-visa-card": [
+        {
+            "id": "visa-card-definition",
+            "label": "Visa Card — Définition",
+            "langs": {
+            "fr": "La carte Visa Wave est une carte virtuelle sécurisée qui vous permet d'effectuer des paiements en ligne et en toute simplicité.\nElle est directement liée à votre application Wave.\nNous restons à votre disposition pour toute autre question. 🙏🏽",
+            "wo": "Kart Visa Wave bi kart virtuel bu wóor la bu lay may ngay fay ci internet ci anam yu yomb.\nDafa lëkkaloo ak sa application Wave.\nNguir yeneen léral, man nga ñu bind. 🙏",
+            "en": "The Wave Visa card is a secure virtual card that lets you make online payments with ease.\nIt's directly linked to your Wave app.\nWe remain available for any further questions. 🙏🏽"
+            }
+        },
+        {
+            "id": "visa-card-obtention",
+            "label": "Visa Card — Déploiement",
+            "langs": {
+            "fr": "Merci pour l'intérêt que vous portez à Wave. 😊\nLa carte Visa virtuelle est en lancement progressif et sera bientôt disponible pour tous nos clients.\nMerci de patienter et de rester connecté à nos plateformes pour ne rater aucune mise à jour.",
+            "wo": "Jërëjëf ci sa njiitu Wave. 😊\nKart Visa bi ni ñuy koy yaatal ndank-ndank, ba ci kanam ñépp dinañu ko am.\nNanguel leen muñ te topp sunu canal yi ngir xibaari bees yi.",
+            "en": "Thank you for your interest in Wave. 😊\nThe virtual Visa card is being rolled out gradually and will soon be available to all customers.\nPlease be patient and stay connected to our digital platforms for updates."
+            }
+        },
+        {
+            "id": "visa-card-activ",
+            "label": "Visa Card — Activation",
+            "langs": {
+            "fr": "Pour activer votre carte Visa Wave, suivez ces étapes :\n- Ouvrez l'application Wave\n- Appuyez sur la fenêtre « Carte »\n- Cliquez sur « Activer la carte »\nUne fois terminé, votre carte est prête pour les transactions.\nNous restons disponibles si besoin ! 🙏🏽",
+            "wo": "Ngir activé sa Kart Visa Wave, toppal lii:\n- Ubbil application Wave\n- Bësal ci « Carte »\n- Bësal ci « Activer la carte »\nBamu jeexee, sa kart di jappandi.\nNdax amee yeneen laaj, man nga ñu bind. 🙏",
+            "en": "To activate your Wave Visa card, follow these steps:\n- Open the Wave app\n- Tap the “Card” section\n- Tap “Activate Card”\nOnce done, your card is ready to use.\nWe’re here if you need anything! 🙏🏽"
+            }
+        },
+        {
+            "id": "visa-card",
+            "label": "Visa Card — Afficher les détails",
+            "langs": {
+            "fr": "Pour voir tous les détails de votre carte, appuyez sur l’icône « œil » en haut à droite de l’écran de la carte.\nVous verrez le numéro de carte, la date d’expiration et le CVV.",
+            "wo": "Ngir gis leeral yu mat yu sa kart bi, bëss ci beut bi (ñu woy « ŋaam ») ci kaw ndeyjooru sa kart.\nDina la wone nimméro kart, bis jeex, ak CVV.",
+            "en": "To view your card details, tap the eye icon at the top right of the card screen.\nYou’ll see the card number, expiry date, and CVV."
+            }
+        },
+        {
+            "id": "visa-card-recharg",
+            "label": "Visa Card — Recharger / Retirer",
+            "langs": {
+            "fr": "La carte Visa Wave se recharge depuis votre solde principal.\nProcédure :\n- Ouvrez l’application Wave\n- Allez dans « Carte »\n- Appuyez sur « Déposer » ou « Retirer »\n- Saisissez le montant puis confirmez\nLes fonds sont transférés instantanément et sans frais.",
+            "wo": "Kart Visa Wave bi dafay fattoo ci sa solde principal.\nTegtal:\n- Ubbil application Wave\n- Dem ci « Carte »\n- Bësal « Déposer » walla « Retirer »\n- Bindal montant bi te dëggal\nXaliss bi di dem ci saa si, amul fay.",
+            "en": "Your Wave Visa card reloads from your main balance.\nSteps:\n- Open the Wave app\n- Go to “Card”\n- Tap “Deposit” or “Withdraw”\n- Enter the amount and confirm\nFunds move instantly with no fee."
+            }
+        },
+        {
+            "id": "plafond-visa-card",
+            "label": "Visa Card — Plafonds & limites",
+            "langs": {
+            "fr": "Le solde de la carte Visa est inclus dans les limites globales du compte personnel (incluant Coffre et solde principal).\nEx. : le cumul des soldes (compte + carte + coffre) ne doit pas dépasser 2 000 000 FCFA.",
+            "wo": "Solde bi nekk ci kart Visa bi bokk na ci limite yu kawu kontu bopp (ak Coffre ak solde principal).\nDemoo: jamono bi ñu jaar 2 000 000 FCFA warula weesu (akun + kart + coffre).",
+            "en": "Your Visa card balance counts toward your personal account’s overall limits (including Vault and main balance).\nE.g., the combined total (account + card + vault) must not exceed 2,000,000 CFA."
+            }
+        },
+        {
+            "id": "virtual-visa-limits",
+            "label": "Virtual Visa — Limites spécifiques",
+            "langs": {
+                "fr": "Voici les limites d’utilisation de la carte Visa virtuelle :\n- Par transaction : maximum 1 000 000 F CFA par paiement ;\n- Par jour : maximum 1 000 000 F CFA au total et 10 paiements par jour ;\n- Plusieurs cartes liées au même ID (KYC) : le total reste limité à 10 paiements/jour, toutes cartes confondues ;\n- Par mois : maximum 10 000 000 F CFA cumulés et 150 paiements par mois.\n\nMerci de tenir compte de ces plafonds lors de vos paiements.",
+                "en": "Here are the usage limits for the Virtual Visa card:\n- Per transaction: maximum 1,000,000 CFA per payment;\n- Daily: maximum 1,000,000 CFA in total and up to 10 payments per day;\n- Multiple cards linked to the same ID (KYC): combined limit of 10 payments/day across all cards;\n- Monthly : maximum 10,000,000 CFA in total and up to 150 payments per month.\n\nPlease keep these limits in mind when making payments.",
+                "wo": "Ñii lañu taxawal ci jëfandikoo sa carte Visa virtuelle:\n- Ci benn transaction: 1 000 000 F CFA day max ci benn peyment ;\n- Bés bu nekk : 1 000 000 F CFA day max, ak 10 peyment ci bés ;\n- Su amee ay cartes yu bari ci beneen ID (KYC): 10 peyment ci bés lañu taxawal lépp, ndax du ñu féete ;\n- Ci weer : 10 000 000 F CFA day max, ak 150 peyment ci weer.\n\nJëfandikoo plafon yii bu baax ci sa liggéey."
+            }
+        }
+    ],
+    "accueil": [
+        {
+            "id": "bonjour",
+            "label": "Bonjour",
+            "tags": ["bonjour", "hello"],
+            "langs": {
+                "fr": "Bonjour,\nMerci de nous avoir écrit. 😊\nComment pouvons-nous vous aider ?",
+                "wo": "Salam,\nÑu ngui lay jajefël bu bax ci mbindë mi. 😊\nThi lo beugonë ñu taxawu la ?",
+                "en": "Hello,\nThank you for reaching out to us. 😊\nHow may we help you ?"
+            }
+        },
+        {
+            "id": "relance",
+            "label": "Relance",
+            "tags": ["relance", "aide", "support"],
+            "langs": {
+                "fr": "Merci de nous avoir réécrit. 🙂\nComment pouvons-nous vous aider ?",
+                "wo": "Jërëjëf ci laaj bi nga dellusi. 🙂\nLan la nu mën a def ngir la dimbali ?",
+                "en": "Thank you for writing back to us. 🙂\nHow can we assist you?"
+            }
+        }
+    ],
+    "identification": [
+        {
+            "id": "identification1",
+            "label": "Identification — Nom complet",
+            "tags": ["identification", "nom", "prénom", "numero", "phone", "name"],
+            "langs": {
+                "fr": "Bonjour,\nAfin de mieux vous aider, pourriez-vous, s’il vous plaît, nous communiquer vos nom et prénom complets ? 🙏🏿",
+                "en": "Good morning,\nTo better assist you, could you please provide us with your full name? 🙏🏿"
+            }
+        },
+        {
+            "id": "identification2",
+            "label": "Identification — Nom complet + Numéro",
+            "tags": ["identification", "nom", "prénom", "numero", "phone", "name"],
+            "langs": {
+                "fr": "Bonjour,\nAfin de mieux vous aider, pourriez-vous, s’il vous plaît, nous communiquer vos nom et prénom complets ainsi que le numéro objet de la demande ? 🙏🏿",
+                "en": "Good morning,\nTo better assist you, could you please provide us with your full name and the phone number concerned? 🙏🏿"
+            }
+        },
+        {
+            "id": "account-name-mismatch",
+            "label": "Identification – Nom ne correspond pas",
+            "langs": {
+                "fr": "Merci pour ces informations.\nCependant, le nom que vous nous avez communiqué ne correspond pas à celui enregistré sur ce compte.\nPouvez-vous nous préciser à qui appartient ce compte ?",
+                "en": "Thank you for the information.\nHowever, the name you provided does not match the one registered on this account.\nCould you please clarify who this account belongs to?",
+                "wo": "Jërëjëf ci xibaar yi.\nWaaye tur bi nga jox nu du melni lii ñu kayıt ci account bii.\nNdax mën nga wax kenn la account bii di ko bokk ?"
+            }
+        },
+        {
+        "id": "account-name-corrected",
+        "label": "Correction du nom du compte",
+        "langs": {
+            "fr": "Nous avons constaté une erreur dans le nom indiqué lors de l’ouverture de votre compte. Cette erreur a été corrigée.",
+            "en": "We noticed an error in the name you provided when opening your account. The mistake has now been corrected.",
+            "wo": "Nu gisoon nañu lu jafe-jafe ci tur bi nga joxoon bu ñu di ubbi sa compte. Ñu la jappale nañu ko."
+        }
+        },
+        {
+        "id": "kyc-mismatch-id-rejected",
+        "label": "Déplafonnement — Rejet de la CI (nom différent)",
+        "langs": {
+            "fr": "Après vérification, nous avons constaté que le nom enregistré sur votre compte diffère de celui figurant sur la carte d’identité utilisée pour le déplafonnement. Pour des raisons de conformité, cette carte d’identité a été rejetée. Pour déplafonner à nouveau, merci de vous rendre dans un point Wave muni d’une carte d’identité à votre nom.",
+            "en": "After review, we found that the name on your account differs from the name on the ID card used for limit increase. For compliance reasons, this ID has been rejected. To increase your limits again, please visit a Wave agent with an ID card that matches your account name.",
+            "wo": "Ci seetaan bi, gisee nañu ni tur bi ci sa compte du mel ak tur bi ci sa kartu dantite bu ñu jëfandikoo ngir deplafoon. Ngir kaaraange, kart bi nanguwu. Ngir dellu deplafoon, demal ci benn point Wave ak kartu dantite bu ànd ak turu sa compte."
+        }
+        }
+    ],
+    "mise-en-attente": [
+        {
+            "id": "miseattente1",
+            "label": "Mise en attente — Inviter à patienter",
+            "tags": ["mise en attente", "hold", "patience"],
+            "langs": {
+                "fr": "Merci pour ces informations !\nJe vous prie de patienter un instant, s’il vous plaît. 🙏🏿",
+                "en": "Thank you for this information!\nPlease hold on for a moment. 🙏🏿"
+            }
+        }
+    ],
+    "decouverte":[
+        {
+            "id": "request-clarification",
+            "label": "Demande de précision (clarification)",
+            "langs": {
+                "fr": "Merci pour ces informations. Cependant, pourriez-vous être plus précis, s’il vous plaît ? Nous avons du mal à bien comprendre votre demande.",
+                "en": "Thank you for the information. However, could you please be more specific? We’re having trouble clearly understanding your request.",
+                "wo": "Jërëjëf ci leeral yi. Waaye ndax man ngeen yeeñal ko bu baax? Danu am lu ñu xamadi ci seen laaj."
+            }
+        },
+        {
+            "id": "error-screenshot",
+            "label": "Découverte – Capture message d’erreur",
+            "langs": {
+                "fr": "Pouvez-vous nous envoyer une capture du message d’erreur, s’il vous plaît ?",
+                "en": "Could you please send us a screenshot of the error message?",
+                "wo": "Ndax man nga yónnee nu ab capture ci xibaaru njumte bi, s’il vous plaît?"
+            }
+        }
+    ],
+    "remerciement": [
+        {
+        "id": "remerciement1",
+        "label": "Remerciement",
+        "tags": ["remerciement", "merci", "bonne journée"],
+        "langs": {
+            "fr": "Nous sommes ravis d'avoir pu vous aider. \nWave vous remercie de votre confiance et vous souhaite une très bonne journée/soirée.\nÀ bientôt.",
+            "wo": "Wave mu ngui lay jajëfël. 🙂\nBa bénén yoon.",
+            "en": "We are delighted to have been able to help you.\nWave thanks you for your trust and wishes you a very good day/evening."
+        }
+        },
+        {
+            "id": "remerciement2",
+            "label": "Remerciement court",
+            "tags": ["remerciement", "merci"],
+            "langs": {
+                "fr": "Merci pour ces informations. 🙂",
+                "wo": "Jërëjëf ci say xibaar. 🙂",
+                "en": "Thank you for this information. 🙂"
+            }
+        }
+    ],
+    "remontees-backoffice":[
+        {
+            "id": "device-linking-b2w",
+            "label": "Device Linking B2W",
+            "tags": ["device", "linking", "b2w", "backoffice"],
+            "langs": {
+                "fr": "🔗 Device Linking B2W\n👤 Full Name : \n📱 Phone Number : +221\n📲 Old Device : \n📲 New Device : \n🏦 Bank : \n🌍 Country : \n🆔 CNI : OA0465487\nCc @sn-digitalbackoffice"
+            }
+        },
+        {
+            "id": "refund-verification",
+            "label": "Refund verification - Hors délai",
+            "tags": ["refund", "verification", "hors delai", "backoffice"],
+            "langs": {
+                "fr": "💸 Refund Verification — Hors délai\n👤 Who : \n🔖 TxID : \n📝 Comment : \nCc @sn-digitalbackoffice"
+            }
+        },
+        {
+            "id": "move-balance",
+            "label": "Move Balance",
+            "tags": ["move balance", "transfert", "backoffice"],
+            "langs": {
+                "fr": "🔄 Move Balance\n👤 From : \n➡️ To : \n💰 Amount : \n📝 Reason : \nCc @sn-digitalbackoffice"
+            }
+        }
+    ],
+    "remontees-fraud": [
+        {
+            "id": "notification-deces",
+            "label": "Notification du décès d'un utilisateur",
+            "tags": ["décès", "utilisateur", "fraude", "notification"],
+            "langs": {
+                "fr": "🕊️ Notification du décès d'un utilisateur\n👤 Who : \n👤 By : \n🔗 Relationship between Wave and the deceased : Utilisateur\n📅 When : \nCc @fraudcomsn"
+            }
+        },
+        {
+            "id": "notification-non-deces",
+            "label": "Notification du non décès d'un utilisateur",
+            "tags": ["non décès", "utilisateur", "fraude", "notification"],
+            "langs": {
+                "fr": "🕊️ Notification du non décès d'un utilisateur\n👤 Who : \n🔗 Relationship between Wave and the deceased : Utilisateur\n📝 Comment : \n📅 When : \nCc @fraudcomsn"
+            }
+        }
+    ]
+}
